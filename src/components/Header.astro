@@ -1,5 +1,5 @@
 ---
-import { restaurantBooking } from '../data/site';
-const links = [{ href: '/loyalty', label: 'Программа лояльности' }, { href: '/banquet', label: 'Банкет' }, { href: '/about', label: 'О нас' }, { href: '/promotions', label: 'Акции' }, { href: '/team', label: 'Команда' }];
+import { restaurantBooking, withBase } from '../data/site';
+const links = [{ href: withBase('/loyalty'), label: 'Программа лояльности' }, { href: withBase('/banquet'), label: 'Банкет' }, { href: withBase('/about'), label: 'О нас' }, { href: withBase('/promotions'), label: 'Акции' }, { href: withBase('/team'), label: 'Команда' }];
 ---
-<header class="site-header"><a class="wordmark" href="/" aria-label="Кайфын — главная">КАЙФЫН</a><nav aria-label="Основная навигация">{links.map((link) => <a href={link.href}>{link.label}</a>)}</nav><a class="header-book" href={restaurantBooking.href}>{restaurantBooking.label}</a></header>
+<header class="site-header"><a class="wordmark" href={withBase('/')} aria-label="Кайфын — главная">КАЙФЫН</a><nav aria-label="Основная навигация">{links.map((link) => <a href={link.href}>{link.label}</a>)}</nav><a class="header-book" href={restaurantBooking.href}>{restaurantBooking.label}</a></header>

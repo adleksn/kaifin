@@ -1,3 +1,5 @@
+export const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/?$/, '/')}${path.replace(/^\//, '')}`;
+
 export const site = {
   name: 'Кайфын', city: 'Балашиха', phone: '8 495 522-67-68', email: 'info@kaifin.ru',
   address: 'Московская область, г. Балашиха, мкр. Ольгино, ул. Жилгородок, 43А',
@@ -5,10 +7,10 @@ export const site = {
 };
 export const restaurantBooking = { href: 'tel:84955226768', label: 'Бронь стола', note: 'Скоро здесь будет доступно онлайн-бронирование через RestoPlace.' };
 export const loyalty = { bonus: '500 бонусов', vkUrl: '', telegramUrl: '', unavailableNote: 'Ссылка на регистрацию будет добавлена после подключения канала.' };
-export const generatedImages = { hero: '/images/old-site/restaurant-interior-2.jpg', about: '/images/old-site/restaurant-interior-3.jpg', kids: '/images/old-site/restaurant-interior-2.jpg' };
+export const generatedImages = { hero: withBase('/images/old-site/restaurant-interior-2.jpg'), about: withBase('/images/old-site/restaurant-interior-3.jpg'), kids: withBase('/images/old-site/restaurant-interior-2.jpg') };
 export const banquetFloors = [
-  { slug: 'first-floor', number: '01', name: '1 этаж', subtitle: 'Панорамный зал и «Аквариум» для встреч и ужинов', hero: '/images/banquet/panoramic.jpg', rooms: [{ name: 'Панорамный зал', image: '/images/banquet/panoramic.jpg' }, { name: 'Аквариум', image: '/images/banquet/aquarium.jpg' }], conditions: ['При бронировании от 6 человек включается сервисный сбор 10% от суммы чека.', 'Свои напитки и еду приносить нельзя.'], menuPages: ['/images/banquet/menu-1.jpg', '/images/banquet/menu-2.jpg'] },
-  { slug: 'second-floor', number: '02', name: '2 этаж — банкетный', subtitle: 'Пространство для большого праздника: 100–200 гостей', hero: '/images/banquet/second-floor.jpg', rooms: [{ name: 'Банкетный зал', image: '/images/banquet/second-floor.jpg' }], conditions: ['Вместительность — 100–200 человек.', 'Минимальная сумма заказа — 5 500 ₽ с человека.', 'Можно свой алкоголь и торт.'], menuPages: ['/images/banquet/menu-1.jpg', '/images/banquet/menu-2.jpg'] },
+  { slug: 'first-floor', number: '01', name: '1 этаж', subtitle: 'Панорамный зал и «Аквариум» для встреч и ужинов', hero: withBase('/images/banquet/panoramic.jpg'), rooms: [{ name: 'Панорамный зал', image: withBase('/images/banquet/panoramic.jpg') }, { name: 'Аквариум', image: withBase('/images/banquet/aquarium.jpg') }], conditions: ['При бронировании от 6 человек включается сервисный сбор 10% от суммы чека.', 'Свои напитки и еду приносить нельзя.'], menuPages: [withBase('/images/banquet/menu-1.jpg'), withBase('/images/banquet/menu-2.jpg')] },
+  { slug: 'second-floor', number: '02', name: '2 этаж — банкетный', subtitle: 'Пространство для большого праздника: 100–200 гостей', hero: withBase('/images/banquet/second-floor.jpg'), rooms: [{ name: 'Банкетный зал', image: withBase('/images/banquet/second-floor.jpg') }], conditions: ['Вместительность — 100–200 человек.', 'Минимальная сумма заказа — 5 500 ₽ с человека.', 'Можно свой алкоголь и торт.'], menuPages: [withBase('/images/banquet/menu-1.jpg'), withBase('/images/banquet/menu-2.jpg')] },
 ] as const;
 export const teamRoles = [{ role: 'Кухня', caption: 'Здесь появится портрет шефа или повара' }, { role: 'Сервис', caption: 'Здесь появится портрет менеджера или официанта' }, { role: 'Бар', caption: 'Здесь появится портрет бармена' }];
 export const menuTypes = ['Основное меню', 'Меню бара', 'Банкетное меню', 'Сезонное меню', 'Паровые коктейли'];

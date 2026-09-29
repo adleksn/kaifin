@@ -572,7 +572,7 @@
 .floor-switch { display:flex; justify-content:center; padding:0 clamp(22px,9vw,150px) 20px; }
 .floor-switch a { padding:16px 20px; border:0; background:#343a31; color:#f2eee4; font-size:14px; }
 
-.kids-section { background:#65705a linear-gradient(100deg,#65705af0,#65705a99),url('/images/old-site/restaurant-interior-2.jpg') 70% center/cover; }
+.kids-section { background:#65705a linear-gradient(100deg,#65705af0,#65705a99),var(--kids-image) 70% center/cover; }
 .map-placeholder { min-height:90px; padding-top:22px; padding-bottom:22px; }
 .map-placeholder span { font-size:23px; }
 .map-placeholder p { margin:5px 0 0; }

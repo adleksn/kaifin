@@ -1,5 +1,5 @@
 ---
-import { site } from '../data/site';
+import { site, withBase } from '../data/site';
 const mapLink = `https://yandex.ru/maps/?text=${encodeURIComponent(site.address)}`;
 ---
 <footer class="site-footer">
@@ -10,6 +10,6 @@ const mapLink = `https://yandex.ru/maps/?text=${encodeURIComponent(site.address)
   <div class="footer-meta">
     <div><div class="wordmark">КАЙФЫН</div><p>{site.phone}</p><a href={`mailto:${site.email}`}>{site.email}</a></div>
     <div><p>{site.hours.join(' · ')}</p><p>{site.address}</p></div>
-    <div><a href="/privacy">Политика конфиденциальности</a><a href="/contacts">Контакты</a></div>
+    <div><a href={withBase('/privacy')}>Политика конфиденциальности</a><a href={withBase('/contacts')}>Контакты</a></div>
   </div>
 </footer>

@@ -12,6 +12,7 @@ const loyaltyModal = await read('src/components/LoyaltyModal.astro');
 const loyaltyPage = await read('src/pages/loyalty.astro');
 const firstFloor = await read('src/pages/banquet/first-floor.astro');
 const secondFloor = await read('src/pages/banquet/second-floor.astro');
+const astroConfig = await read('astro.config.mjs');
 
 assert.doesNotMatch(header, /Галерея/);
 assert.match(header, /Программа лояльности/);
@@ -46,6 +47,9 @@ assert.match(firstFloor, /second-floor/);
 assert.match(data, /100–200/);
 assert.match(secondFloor, /Выберите блюда/);
 assert.match(secondFloor, /first-floor/);
+assert.match(astroConfig, /site:\s*'https:\/\/adleksn\.github\.io'/);
+assert.match(astroConfig, /base:\s*'\/kaifin'/);
+assert.match(data, /export const withBase/);
 
 for (const path of ['src/pages/banquet/first-floor.astro', 'src/pages/banquet/second-floor.astro', 'src/components/DemoForm.astro', 'src/components/TeamCarousel.astro']) {
   await read(path);
