@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+<BaseLayout title="Контакты — Кайфын"><section class="inner-hero"><p class="eyebrow">Контакты</p><h1>Ждём вас<br />в Кайфыне</h1></section><section class="contact-grid"><div><span>Адрес</span><p>{site.address}</p></div><div><span>Телефон</span><a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a></div><div><span>Почта</span><a href={`mailto:${site.email}`}>{site.email}</a></div><div><span>Часы работы</span><p>{site.hours.join(' · ')}</p></div></section><section class="map-embed"><iframe title="Кайфын на карте" src="https://yandex.ru/map-widget/v1/?source=constructor&amp;um=constructor%3Ab7f786a01a72a517626a0633c8e5a690f3676e01d6f5c1d276c98b7e9544a1fe" loading="lazy"></iframe></section><section class="contacts-map"><p class="eyebrow">Как добраться</p><h2>Мы в микрорайоне Ольгино</h2><p>Ресторан находится по адресу: {site.address}</p><a class="action-link" href={`https://yandex.ru/maps/?text=${encodeURIComponent(site.address)}`} target="_blank" rel="noreferrer">Построить маршрут ↗</a></section></BaseLayout>

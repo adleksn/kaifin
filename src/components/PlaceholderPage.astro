@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+interface Props { eyebrow: string; title: string; description: string; }
+const { eyebrow, title, description } = Astro.props;
+---
+<BaseLayout title={`${title} — Кайфын`}>
+  <section class="inner-hero">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1>{title}</h1>
+    <p class="lede">{description}</p>
+  </section>
+  <section class="content-placeholder">
+    <p>Раздел готов к наполнению после согласования материалов с рестораном.</p>
+  </section>
+</BaseLayout>

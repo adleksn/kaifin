@@ -1,0 +1,6 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RestaurantBookingCTA from '../components/RestaurantBookingCTA.astro';
+import { restaurantBooking, site } from '../data/site';
+---
+<BaseLayout title="Бронь стола — Кайфын"><section class="booking-hero" style="background-image:linear-gradient(90deg,#171916e8,#17191699),url('/images/old-site/hall-hookah.jpg')"><p class="eyebrow">Бронирование</p><h1>Ваш столик<br />уже ждёт</h1><p>Позвоните нам, чтобы забронировать столик на ближайшее время.</p><RestaurantBookingCTA class="action-link" /></section><section class="booking-note"><p>Онлайн-бронирование</p><strong>Скоро через RestoPlace</strong><span>{restaurantBooking.note}</span><a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a></section></BaseLayout>

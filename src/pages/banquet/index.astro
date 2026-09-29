@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { banquetFloors } from '../../data/site';
+---
+<BaseLayout title="Банкеты — Кайфын"><section class="inner-hero"><p class="eyebrow">Праздники</p><h1>Банкет в Кайфыне</h1><p class="lede">Выберите один из двух залов для вашего события: первый этаж с панорамным залом и «Аквариумом» или большой банкетный зал на втором.</p></section><section class="floor-grid floor-grid--page">{banquetFloors.map((floor) => <a href={`/banquet/${floor.slug}`} class="floor-card" style={`background-image:linear-gradient(#0003,#000a),url('${floor.hero}')`}><em>Этаж {floor.number}</em><strong>{floor.name}</strong><span>{floor.subtitle}</span></a>)}</section></BaseLayout>

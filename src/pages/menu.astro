@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { menuPreview, menuTypes } from '../data/site';
+---
+<BaseLayout title="Меню — Кайфын">
+  <section class="inner-hero"><p class="eyebrow">Кухня и бар</p><h1>Меню</h1><p class="lede">Выберите раздел. Актуальные PDF и состав блюд будут добавлены из материалов ресторана.</p></section>
+  <section class="menu-list">{menuTypes.map((item, index) => <a href="#menu-preview"><span>0{index + 1}</span><b>{item}</b><em>Открыть →</em></a>)}</section>
+  <section class="menu-preview" id="menu-preview">
+    {menuPreview.map(([name, text]) => <article><span>Кухня Кайфына</span><h2>{name}</h2><p>{text}</p><b>Состав и цены — в актуальном меню</b></article>)}
+  </section>
+</BaseLayout>

@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { promotions } from '../data/site';
+---
+<BaseLayout title="Акции — Кайфын"><section class="inner-hero"><p class="eyebrow">Предложения</p><h1>Акции</h1><p class="lede">Поводы встретиться чаще. Перед запуском все условия будут сверены с рестораном.</p></section><section class="promotion-grid">{promotions.map((promo, index) => <article><span>0{index + 1}</span><h2>{promo.title}</h2><p>{promo.text}</p></article>)}</section></BaseLayout>

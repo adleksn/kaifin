@@ -1,0 +1,5 @@
+---
+import { restaurantBooking } from '../data/site';
+const { class: className = '' } = Astro.props;
+---
+<a class:list={['restaurant-booking-cta', className]} href={restaurantBooking.href}>{restaurantBooking.label}</a>

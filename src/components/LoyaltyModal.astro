@@ -1,0 +1,11 @@
+---
+import { loyalty } from '../data/site';
+---
+<dialog class="loyalty-modal" id="loyalty-modal" aria-labelledby="loyalty-title"><button class="modal-close" type="button" aria-label="Закрыть окно">×</button><a class="loyalty-modal__label eyebrow" href="/loyalty">Программа лояльности</a><p class="loyalty-modal__gift">Дарим</p><strong>500 <span>БОНУСОВ</span></strong><h2 id="loyalty-title">за регистрацию<br />в программе лояльности</h2><p>Выберите удобный способ регистрации:</p><div class="loyalty-modal__actions"><button class="loyalty-channel loyalty-channel--vk" type="button" aria-disabled="true" title={loyalty.unavailableNote}>VK</button><button class="loyalty-channel loyalty-channel--telegram" type="button" aria-disabled="true" title={loyalty.unavailableNote}>Telegram</button><button class="loyalty-channel loyalty-channel--max" type="button" aria-disabled="true" title={loyalty.unavailableNote}>MAX</button></div></dialog>
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('#loyalty-modal'); const close = dialog?.querySelector<HTMLButtonElement>('.modal-close');
+  let timeout: number | undefined;
+  if (dialog) timeout = window.setTimeout(() => { if (!dialog.open) dialog.showModal(); }, 4000);
+  close?.addEventListener('click', () => dialog?.close());
+  dialog?.addEventListener('close', () => { if (timeout) window.clearTimeout(timeout); });
+</script>

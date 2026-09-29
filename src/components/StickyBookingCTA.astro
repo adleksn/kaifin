@@ -1,0 +1,15 @@
+---
+import { restaurantBooking } from '../data/site';
+---
+
+<a class="sticky-booking-cta" href={restaurantBooking.href} aria-label="Забронировать стол">
+  Забронировать стол
+</a>
+
+<script>
+  const cta = document.querySelector<HTMLAnchorElement>('.sticky-booking-cta');
+  const updateVisibility = () => cta?.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.72);
+
+  updateVisibility();
+  window.addEventListener('scroll', updateVisibility, { passive: true });
+</script>

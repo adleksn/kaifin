@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { generatedImages, site } from '../data/site';
+---
+<BaseLayout title="Доставка — Кайфын"><section class="booking-hero" style={`background-image:linear-gradient(90deg,#171916e8,#17191699),url('${generatedImages.hero}')`}><p class="eyebrow">Закажите домой</p><h1>Доставка<br />Кайфына</h1><p>Доставляем блюда и напитки каждый день с 12:00 до 23:00. Обычное время доставки — от часа до полутора, в зависимости от ситуации на дорогах.</p><a class="action-link" href={`tel:${site.phone.replace(/\s/g, '')}`}>Оформить по телефону →</a></section><section class="delivery-steps"><div><b>01</b><h2>Минимальная сумма</h2><p>Бесплатная доставка: от 1 000 ₽ в зоне 1, от 2 000 ₽ — в зоне 2, от 3 000 ₽ — в зоне 3.</p></div><div><b>02</b><h2>Уточним адрес</h2><p>Заказы по другую сторону железнодорожных путей от станции Железнодорожная согласуются с менеджером заранее.</p></div><div><b>03</b><h2>Оплата</h2><p>Наличными курьеру или в ресторане; банковской картой в ресторане или при получении заказа у курьера.</p></div></section></BaseLayout>
