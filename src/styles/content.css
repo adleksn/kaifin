@@ -514,6 +514,8 @@
 .hero-actions .hero-actions__primary,
 .hero-actions .hero-actions__primary:hover,
 .hero-actions .hero-actions__primary:focus-visible { background: var(--red); color: #fff; }
+.hero-actions a:not(.hero-actions__primary):hover,
+.hero-actions a:not(.hero-actions__primary):focus-visible { background: var(--red); color: #fff; }
 .hero-actions a:hover,
 .hero-actions a:focus-visible { transform: none; }
 

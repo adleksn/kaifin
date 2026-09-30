@@ -30,6 +30,7 @@ assert.match(contentStyles, /grid-template-columns: repeat\(3, 1fr\)/);
 assert.match(contentStyles, /justify-self: end/);
 assert.match(contentStyles, /width:352px/);
 assert.match(contentStyles, /\.intro-grid > a:hover/);
+assert.match(contentStyles, /\.hero-actions a:not\(\.hero-actions__primary\):hover/);
 assert.match(booking, /restaurantBooking/);
 assert.doesNotMatch(booking, /kaifin-booking-draft/);
 assert.match(loyaltyModal, /window\.setTimeout\(.*4000\)/);
