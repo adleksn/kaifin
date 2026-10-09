@@ -70,6 +70,11 @@ const carousel = await read('src/components/TeamCarousel.astro');
 assert.match(carousel, /Предыдущая карточка/);
 assert.match(carousel, /Следующая карточка/);
 assert.match(carousel, /DOMContentLoaded/);
-assert.match(carousel, /behavior: 'auto'/);
+assert.match(carousel, /behavior: 'smooth'/);
+assert.match(carousel, /team-carousel__viewport/);
+assert.match(contentStyles, /scrollbar-width: none/);
+assert.match(contentStyles, /border-radius: 50%/);
+assert.match(contentStyles, /object-position: var\(--portrait-position/);
+assert.match(contentStyles, /background-size: contain/);
 
 console.log('Site contract checks passed.');

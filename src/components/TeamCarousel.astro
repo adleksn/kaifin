@@ -1,13 +1,19 @@
 ---
 import { teamRoles } from '../data/site';
 ---
-<section class="team-carousel" aria-label="Команда Кайфына"><div class="team-track" id="team-track">{teamRoles.map((member) => <article class="team-slide"><img class="team-avatar" src={member.image} alt={member.title || member.role} loading="lazy" /><p class="eyebrow">{member.role}</p>{member.title && <h2>{member.title}</h2>}<p class="team-slide__caption">{member.caption}</p></article>)}</div><div class="team-carousel__controls"><button type="button" data-team-direction="-1" aria-label="Предыдущая карточка">←</button><button type="button" data-team-direction="1" aria-label="Следующая карточка">→</button></div></section>
+<section class="team-carousel" aria-label="Команда Кайфына">
+  <div class="team-carousel__viewport" data-team-viewport>
+    <div class="team-track">{teamRoles.map((member) => <article class="team-slide"><img class="team-avatar" src={member.image} alt={member.title || member.role} loading="lazy" style={`--portrait-position:${member.position}`} /><p class="eyebrow">{member.role}</p>{member.title && <h2>{member.title}</h2>}<p class="team-slide__caption">{member.caption}</p></article>)}</div>
+  </div>
+  <div class="team-carousel__controls"><button type="button" data-team-direction="-1" aria-label="Предыдущая карточка">←</button><button type="button" data-team-direction="1" aria-label="Следующая карточка">→</button></div>
+</section>
 <script>
   const bindTeamCarousels = () => document.querySelectorAll<HTMLElement>('.team-carousel').forEach((carousel) => {
     if (carousel.dataset.controlsBound) return;
     carousel.dataset.controlsBound = 'true';
+    const viewport = carousel.querySelector<HTMLElement>('[data-team-viewport]');
     carousel.querySelectorAll<HTMLButtonElement>('[data-team-direction]').forEach((button) => button.addEventListener('click', () => {
-      carousel.scrollBy({ left: Number(button.dataset.teamDirection) * 300, behavior: 'auto' });
+      viewport?.scrollBy({ left: Number(button.dataset.teamDirection) * viewport.clientWidth, behavior: 'smooth' });
     }));
   });
 
