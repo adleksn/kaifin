@@ -595,3 +595,41 @@
   .home-hero--structure .hero-actions a { width:auto; min-width:0; padding:15px 6px; font-size:12px; }
 }
 @media(prefers-reduced-motion:reduce) { .sticky-booking-cta { transition:none; } }
+
+/* Corrections from the supplied brief through the red marker. */
+:root { --brief-page-inset: clamp(34px, 7vw, 128px); }
+
+.header-book,
+.hero-actions a,
+.section-booking,
+.action-link,
+.sticky-booking-cta,
+.floor-switch a,
+.map-placeholder a,
+.demo-form button,
+.loyalty-modal__actions button,
+.loyalty-page-actions button { border-radius: 12px; }
+
+@media (min-width: 901px) {
+  .home-hero { padding-left: var(--brief-page-inset); padding-right: var(--brief-page-inset); }
+  .home-hero--structure .hero-actions { left: var(--brief-page-inset); right: var(--brief-page-inset); }
+  .section-space,
+  .banquet-section--full { padding-left: var(--brief-page-inset); padding-right: var(--brief-page-inset); }
+  .home-team__heading { padding-left: var(--brief-page-inset); padding-right: var(--brief-page-inset); }
+}
+
+.story-card--text { background: #343a31; }
+.story-card--text strong { max-width: 390px; }
+.story-card--text p { max-width: 380px; margin: 0; color: #c6caba; line-height: 1.55; }
+.story-card--kids { background-position: left center !important; }
+.intro-grid__visual { background-position: center; }
+
+.section-heading h2 > span { max-width: 670px; }
+.section-heading h2 { font-size: clamp(40px, 4.6vw, 64px); }
+.home-team__heading > p:not(.eyebrow) { max-width: 620px; margin: 20px 0 0; color: #c6caba; line-height: 1.65; }
+
+.team-avatar { display: block; object-fit: cover; object-position: center; border: 0; border-radius: 0; background: #343a31; }
+.team-slide.is-featured .team-avatar { background: #343a31; }
+.team-slide__caption { max-width: 300px; margin: 14px auto 0; color: #c6caba; line-height: 1.55; }
+.team-slide h2 { max-width: 300px; margin-top: 0; font-size: 24px; }
+@media (max-width: 900px) { .team-avatar,.team-slide.is-featured .team-avatar { border-radius: 0; } }
