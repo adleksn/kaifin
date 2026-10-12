@@ -926,7 +926,14 @@
   }
   .mobile-menu nav { margin: 20px 0 auto; }
   .mobile-menu nav a { font-size: clamp(27px, 8.5vw, 34px); }
+  .home-hero--structure {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .home-hero--structure .hero-copy { align-self: stretch; }
   .home-hero--structure .hero-actions {
+    align-self: stretch;
+    flex: 0 0 auto;
     width: 100%;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px;
@@ -934,6 +941,7 @@
   }
   .home-hero--structure .hero-actions > * {
     display: grid;
+    width: 100%;
     min-width: 0;
     min-height: 54px;
     padding: 14px 12px;

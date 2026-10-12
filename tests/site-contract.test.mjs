@@ -112,5 +112,8 @@ assert.match(contentStyles, /\.loyalty-hero h1[\s\S]*margin-bottom/);
 assert.match(contentStyles, /\.mobile-menu/);
 assert.match(contentStyles, /grid-template-columns:\s*repeat\(3, minmax\(0, 1fr\)\)/);
 assert.match(contentStyles, /grid-column:\s*auto/);
+assert.match(contentStyles, /\.home-hero--structure\s*\{\s*flex-direction:\s*column;/);
+assert.match(contentStyles, /\.home-hero--structure \.hero-actions\s*\{[\s\S]*align-self:\s*stretch;/);
+assert.match(contentStyles, /\.home-hero--structure \.hero-actions > \*\s*\{[\s\S]*width:\s*100%/);
 
 console.log('Site contract checks passed.');
