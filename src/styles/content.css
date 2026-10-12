@@ -896,6 +896,23 @@
 .team-slide__caption { min-height: 98px; }
 /* Keep Restoplace's modal logic, but use only the restaurant's own booking buttons. */
 #restoplace-wrapper-btn { display: none !important; }
+.restoplace-modal {
+  width: min(960px, calc(100vw - 32px));
+  height: min(760px, calc(100dvh - 32px));
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  color: var(--paper);
+  background: var(--ink-soft);
+  border: 1px solid rgba(242, 238, 228, .24);
+  border-radius: 18px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .52);
+}
+.restoplace-modal::backdrop { background: rgba(7, 9, 7, .78); backdrop-filter: blur(5px); }
+.restoplace-modal__panel { display: grid; height: 100%; grid-template-rows: auto 1fr; }
+.restoplace-modal__bar { display: flex; align-items: center; justify-content: space-between; min-height: 58px; padding: 0 14px 0 22px; border-bottom: 1px solid rgba(242, 238, 228, .16); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+.restoplace-modal__close { width: 38px; height: 38px; padding: 0; color: var(--paper); background: transparent; border: 1px solid rgba(242, 238, 228, .32); border-radius: 50%; font-size: 26px; line-height: 1; cursor: pointer; }
+.restoplace-modal__frame { width: 100%; height: 100%; border: 0; background: #fff; }
 
 @media (max-width: 900px) {
   .site-header { background: rgba(23, 25, 22, .96); }
@@ -933,5 +950,7 @@
   .team-carousel { padding-bottom: 28px; }
   .team-slide__title { min-height: 54px; font-size: 23px; }
   .team-slide__caption { min-height: 0; }
+  .restoplace-modal { width: 100vw; height: 100dvh; max-width: none; max-height: none; border: 0; border-radius: 0; }
+  .restoplace-modal__bar { min-height: 56px; padding-left: 20px; }
   .about-story h2 { font-size: clamp(30px, 8.6vw, 35px); line-height: 1.1; }
 }

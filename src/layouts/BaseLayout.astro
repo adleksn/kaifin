@@ -3,6 +3,7 @@ import '../styles/global.css';
 import '../styles/content.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import RestoplaceModal from '../components/RestoplaceModal.astro';
 
 interface Props { title?: string; }
 const { title = 'Кайфын — ресторан в Балашихе' } = Astro.props;
@@ -19,6 +20,7 @@ const { title = 'Кайфын — ресторан в Балашихе' } = Astr
     <Header />
     <main><slot /></main>
     <Footer />
+    <RestoplaceModal />
     <script is:inline src="//app.restoplace.cc/widget.js?h=3bced894eaf00be50d31" async></script>
   </body>
 </html>

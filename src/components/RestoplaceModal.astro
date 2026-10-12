@@ -1,0 +1,38 @@
+---
+const widgetUrl = 'https://882300.restoplace.ws/';
+---
+<dialog class="restoplace-modal" aria-labelledby="restoplace-modal-title">
+  <div class="restoplace-modal__panel">
+    <div class="restoplace-modal__bar">
+      <span id="restoplace-modal-title">Бронирование стола</span>
+      <button class="restoplace-modal__close" type="button" aria-label="Закрыть окно бронирования">×</button>
+    </div>
+    <iframe class="restoplace-modal__frame" title="Онлайн-бронирование столика" data-src={widgetUrl}></iframe>
+  </div>
+</dialog>
+
+<script>
+  const modal = document.querySelector<HTMLDialogElement>('.restoplace-modal');
+  const frame = modal?.querySelector<HTMLIFrameElement>('.restoplace-modal__frame');
+  const close = modal?.querySelector<HTMLButtonElement>('.restoplace-modal__close');
+
+  const openModal = () => {
+    if (!modal || !frame) return;
+    if (!frame.src) frame.src = frame.dataset.src || '';
+    if (!modal.open) modal.showModal();
+  };
+
+  document.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    if (!target.closest('.restoplace-click-open')) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    openModal();
+  }, true);
+
+  close?.addEventListener('click', () => modal?.close());
+  modal?.addEventListener('click', (event) => {
+    if (event.target === modal) modal.close();
+  });
+</script>
