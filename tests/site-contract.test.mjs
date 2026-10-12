@@ -27,6 +27,7 @@ assert.match(header, /mobile-menu/);
 assert.match(header, /Escape/);
 assert.doesNotMatch(header, /mobile-menu__booking/);
 assert.match(data, /restaurantBooking/);
+assert.match(data, /https:\/\/882300\.restoplace\.ws/);
 assert.match(data, /banquetFloors/);
 assert.match(data, /menuPages/);
 assert.match(data, /500 бонусов/);
@@ -49,6 +50,8 @@ assert.match(contentStyles, /\.hero-actions a:not\(\.hero-actions__primary\):hov
 assert.match(booking, /restaurantBooking/);
 assert.doesNotMatch(booking, /kaifin-booking-draft/);
 assert.match(bookingCta, /restoplace-click-open/);
+assert.match(bookingCta, /target="_blank"/);
+assert.match(header, /target="_blank"/);
 assert.match(baseLayout, /app\.restoplace\.cc\/widget\.js\?h=3bced894eaf00be50d31/);
 assert.doesNotMatch(baseLayout, /closest<HTMLElement>|querySelector<HTMLElement>/);
 assert.doesNotMatch(contentStyles, /#restoplace-wrapper-btn\s*\{\s*display:\s*none/);

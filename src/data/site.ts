@@ -5,7 +5,7 @@ export const site = {
   address: 'Московская область, г. Балашиха, мкр. Ольгино, ул. Жилгородок, 43А',
   hours: ['Пн–Чт: 12:00–24:00', 'Пт–Сб: 12:00–01:00', 'Вс: 12:00–24:00'],
 };
-export const restaurantBooking = { href: 'tel:84955226768', label: 'Бронь стола', note: 'Онлайн-бронирование доступно через RestoPlace.' };
+export const restaurantBooking = { href: 'https://882300.restoplace.ws/', label: 'Бронь стола', note: 'Онлайн-бронирование доступно через RestoPlace.' };
 export const loyalty = { bonus: '500 бонусов', vkUrl: '', telegramUrl: '', unavailableNote: 'Ссылка на регистрацию будет добавлена после подключения канала.' };
 export const generatedImages = {
   hero: withBase('/images/brief/home-hero.png'),
