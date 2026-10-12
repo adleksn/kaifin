@@ -727,3 +727,140 @@
   .team-slide { width: min(280px, calc(100vw - 64px)); flex-basis: min(280px, calc(100vw - 64px)); }
   .team-avatar,.team-slide.is-featured .team-avatar { width: min(240px, 70vw); height: min(240px, 70vw); border-radius: 50%; }
 }
+
+/* Navigation, booking and page-level responsive corrections. */
+.restaurant-booking-cta,
+.header-book,
+.sticky-booking-cta,
+.mobile-menu__booking,
+.kids-section__booking {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.restaurant-booking-cta { display: inline-flex; align-items: center; justify-content: center; }
+.mobile-menu-toggle,
+.mobile-menu { display: none; }
+
+.story-card--kids {
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  background-position: center !important;
+}
+
+.banquet-section--full {
+  grid-template-columns: minmax(360px, .92fr) minmax(0, 1.28fr);
+  gap: clamp(42px, 5vw, 88px);
+}
+.banquet-section--full .section-heading h2 {
+  max-width: 610px;
+  font-size: clamp(38px, 3.15vw, 56px);
+  line-height: 1.07;
+}
+.banquet-section--full .floor-card { min-height: 470px; }
+
+.loyalty-hero h1 { margin: 0 0 36px; }
+.loyalty-hero .lede { margin-top: 0; }
+
+.kids-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, .92fr);
+  align-items: stretch;
+  gap: 0;
+  margin: 0 clamp(22px, 9vw, 150px) 100px;
+  padding: 0;
+  overflow: hidden;
+  background: #30372d;
+}
+.kids-section__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  object-fit: cover;
+  object-position: center;
+}
+.kids-section__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(34px, 5vw, 76px);
+}
+.kids-section__content .eyebrow { margin-bottom: 18px; }
+.kids-section__content h2 { margin: 0; }
+.kids-section__booking {
+  align-self: flex-start;
+  margin-top: 30px;
+  padding: 15px 20px;
+  background: var(--red);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  body.menu-open { overflow: hidden; }
+  .site-header {
+    height: 72px;
+    padding: 0 18px;
+    gap: 12px;
+  }
+  .site-header__nav { display: none !important; }
+  .wordmark { font-size: 21px; }
+  .header-book {
+    margin-left: auto;
+    padding: 12px 13px;
+    font-size: 10px;
+    letter-spacing: .06em;
+    white-space: nowrap;
+  }
+  .mobile-menu-toggle {
+    display: grid;
+    place-content: center;
+    gap: 6px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid rgba(242, 238, 228, .45);
+    background: rgba(23, 25, 22, .58);
+    color: var(--paper);
+    cursor: pointer;
+  }
+  .mobile-menu-toggle span { display: block; width: 17px; height: 1px; background: currentColor; }
+  .mobile-menu {
+    position: fixed;
+    z-index: 20;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    padding: 22px 24px 32px;
+    background: #1d211c;
+    color: var(--paper);
+  }
+  .mobile-menu[hidden] { display: none; }
+  .mobile-menu__top { display: flex; align-items: center; justify-content: space-between; color: #e7b268; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+  .mobile-menu__close { width: 44px; height: 44px; border: 1px solid rgba(242, 238, 228, .4); background: transparent; color: var(--paper); font: 30px/1 Manrope, sans-serif; cursor: pointer; }
+  .mobile-menu nav { display: grid; gap: 0; margin: auto 0; border-top: 1px solid rgba(242, 238, 228, .18); }
+  .mobile-menu nav a { display: grid; grid-template-columns: 34px 1fr; gap: 12px; padding: 20px 0; border-bottom: 1px solid rgba(242, 238, 228, .18); font: 30px/1.04 Prata, serif; text-transform: none; letter-spacing: -.03em; }
+  .mobile-menu nav a span { padding-top: 4px; color: #e7b268; font: 10px Manrope, sans-serif; letter-spacing: .1em; }
+  .mobile-menu__booking { width: 100%; min-height: 58px; background: var(--red); color: #fff; font-size: 14px; font-weight: 700; }
+  .home-hero { min-height: max(690px, 100svh); padding: 120px 24px 30px; }
+  .hero-copy h1 { max-width: 330px; font-size: clamp(45px, 13vw, 60px); line-height: .98; }
+  .home-hero--structure .hero-actions { margin-top: auto; }
+  .section-space, .banquet-section--full { padding: 58px 20px; }
+  .intro-grid__left { gap: 12px; }
+  .intro-grid .story-card { min-height: 330px; padding: 22px; }
+  .story-card strong { font-size: clamp(29px, 8.5vw, 38px); }
+  .story-card--kids { min-height: 360px !important; }
+  .banquet-section--full .section-heading h2 { max-width: 100%; font-size: clamp(37px, 10.4vw, 46px); }
+  .banquet-section--full .floor-card { min-height: 360px; }
+  .loyalty-hero h1 { margin-bottom: 30px; }
+  .kids-section { grid-template-columns: 1fr; margin: 0 20px 60px; }
+  .kids-section__image { min-height: 275px; max-height: 360px; }
+  .kids-section__content { padding: 34px 24px 38px; }
+  .kids-section__content h2 { font-size: clamp(38px, 11vw, 48px); }
+  .kids-section__booking { width: 100%; margin-top: 24px; min-height: 54px; }
+}

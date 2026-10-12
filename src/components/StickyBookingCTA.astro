@@ -1,13 +1,11 @@
 ---
-import { restaurantBooking } from '../data/site';
 ---
-
-<a class="sticky-booking-cta" href={restaurantBooking.href} aria-label="Забронировать стол">
+<button type="button" class="sticky-booking-cta restoplace-click-open" aria-label="Забронировать стол">
   Забронировать стол
-</a>
+</button>
 
 <script>
-  const cta = document.querySelector<HTMLAnchorElement>('.sticky-booking-cta');
+  const cta = document.querySelector<HTMLButtonElement>('.sticky-booking-cta');
   const updateVisibility = () => cta?.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.72);
 
   updateVisibility();
