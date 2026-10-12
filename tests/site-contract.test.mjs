@@ -51,6 +51,8 @@ assert.doesNotMatch(booking, /kaifin-booking-draft/);
 assert.match(bookingCta, /restoplace-click-open/);
 assert.match(baseLayout, /app\.restoplace\.cc\/widget\.js\?h=3bced894eaf00be50d31/);
 assert.match(baseLayout, /#restoplace-wrapper-btn/);
+assert.match(baseLayout, /MutationObserver/);
+assert.match(baseLayout, /pendingOpen/);
 assert.doesNotMatch(baseLayout, /closest<HTMLElement>|querySelector<HTMLElement>/);
 assert.doesNotMatch(contentStyles, /#restoplace-wrapper-btn\s*\{\s*display:\s*none/);
 assert.match(about, /kids-section__image/);

@@ -21,17 +21,45 @@ const { title = 'Кайфын — ресторан в Балашихе' } = Astr
     <Footer />
     <script is:inline src="//app.restoplace.cc/widget.js?h=3bced894eaf00be50d31" async></script>
     <script is:inline>
+      const restoplaceLauncherSelector = '#restoplace-wrapper-btn button, #restoplace-wrapper-btn [role="button"], #restoplace-wrapper-btn';
+      let pendingOpen = false;
+
+      const openRestoplace = () => {
+        const launcher = document.querySelector(restoplaceLauncherSelector);
+        if (!launcher) return false;
+
+        launcher.dispatchEvent(new MouseEvent('click', {
+          bubbles: true,
+          cancelable: true,
+          view: window,
+        }));
+        return true;
+      };
+
       document.addEventListener('click', (event) => {
         const target = event.target;
         if (!(target instanceof Element)) return;
         const trigger = target.closest('.restoplace-click-open');
         if (!trigger) return;
-        const launcher = document.querySelector('#restoplace-wrapper-btn button, #restoplace-wrapper-btn [role="button"], #restoplace-wrapper-btn');
-        if (!launcher || launcher === trigger) return;
+
+        // The widget loads asynchronously. Queue an early click instead of
+        // silently losing it before Restoplace adds its native launcher.
+        if (!openRestoplace()) {
+          pendingOpen = true;
+          return;
+        }
+
         event.preventDefault();
         event.stopImmediatePropagation();
-        launcher.click();
       }, true);
+
+      const restoplaceObserver = new MutationObserver(() => {
+        if (!pendingOpen || !openRestoplace()) return;
+        pendingOpen = false;
+        restoplaceObserver.disconnect();
+      });
+
+      restoplaceObserver.observe(document.documentElement, { childList: true, subtree: true });
     </script>
   </body>
 </html>
