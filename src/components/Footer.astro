@@ -1,9 +1,9 @@
 ---
-import { site, withBase } from '../data/site';
+import { generatedImages, site, withBase } from '../data/site';
 const mapLink = `https://yandex.ru/maps/?text=${encodeURIComponent(site.address)}`;
 ---
 <footer class="site-footer">
-  <section class="map-placeholder" aria-label="Карта расположения ресторана">
+  <section class="map-placeholder" aria-label="Карта расположения ресторана" style={`--map-image:url('${generatedImages.hero}')`}>
     <div><span>Кайфын</span><p>{site.address}</p></div>
     <a href={mapLink} target="_blank" rel="noreferrer">Как добраться ↗</a>
   </section>

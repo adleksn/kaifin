@@ -11,7 +11,6 @@ const links = [{ href: withBase('/loyalty'), label: 'Программа лоял
 <div class="mobile-menu" id="mobile-menu" hidden>
   <div class="mobile-menu__top"><span>Навигация</span><button type="button" class="mobile-menu__close" aria-label="Закрыть меню">×</button></div>
   <nav aria-label="Мобильная навигация">{links.map((link, index) => <a href={link.href}><span>0{index + 1}</span>{link.label}</a>)}</nav>
-  <button type="button" class="mobile-menu__booking restoplace-click-open">Забронировать стол</button>
 </div>
 <script>
   const toggle = document.querySelector<HTMLButtonElement>('.mobile-menu-toggle');
@@ -27,6 +26,6 @@ const links = [{ href: withBase('/loyalty'), label: 'Программа лоял
   };
   toggle?.addEventListener('click', () => setMenuState(toggle.getAttribute('aria-expanded') !== 'true'));
   close?.addEventListener('click', () => setMenuState(false));
-  menu?.querySelectorAll('a, .mobile-menu__booking').forEach((item) => item.addEventListener('click', () => setMenuState(false)));
+  menu?.querySelectorAll('a').forEach((item) => item.addEventListener('click', () => setMenuState(false)));
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMenuState(false); });
 </script>
