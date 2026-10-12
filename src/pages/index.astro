@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LoyaltyModal from '../components/LoyaltyModal.astro';
 import RestaurantBookingCTA from '../components/RestaurantBookingCTA.astro';
+import StickyBookingCTA from '../components/StickyBookingCTA.astro';
 import TeamCarousel from '../components/TeamCarousel.astro';
 import { banquetFloors, generatedImages, withBase } from '../data/site';
 ---
@@ -11,5 +12,5 @@ import { banquetFloors, generatedImages, withBase } from '../data/site';
   <section class="banquet-section banquet-section--full"><div class="section-heading"><p class="eyebrow">Праздники и банкеты</p><h2><span>Большие торжества и камерные встречи — создаём праздники любого формата для самых важных поводов.</span></h2><a href={withBase('/banquet')}>Подробнее о банкетах →</a><a class="section-booking" href={withBase('/banquet')}>Забронировать банкет</a></div><div class="floor-grid">{banquetFloors.map((floor) => <a href={withBase(`/banquet/${floor.slug}`)} class="floor-card" style={`background-image:linear-gradient(#0003,#000a),url('${floor.hero}')`}><strong>{floor.name}</strong><span>{floor.subtitle}</span></a>)}</div></section>
   <section class="service-strip service-strip--two"><a href={withBase('/promotions')}><span>01</span><b>Акции</b><em>Смотреть предложения →</em></a><a href={withBase('/loyalty')}><span>02</span><b>Программа лояльности</b><em>Получить 500 бонусов →</em></a></section>
   <section class="home-team"><div class="home-team__heading"><p class="eyebrow">Команда Кайфына</p><h2>Люди, которые<br />создают вечер</h2><p>За каждым вечером в Кайфыне — команда, которая отвечает за вкус, атмосферу и внимание к деталям.</p><a href={withBase('/team')}>Заполни простую форму и стань частью команды</a></div><TeamCarousel /></section>
-  <LoyaltyModal />
+  <StickyBookingCTA /><LoyaltyModal />
 </BaseLayout>

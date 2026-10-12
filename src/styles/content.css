@@ -890,6 +890,8 @@
 }
 .team-slide__title--empty { visibility: hidden; }
 .team-slide__caption { min-height: 98px; }
+/* The Restoplace script supplies the booking modal; the site owns its one sticky trigger. */
+#restoplace-wrapper-btn { display: none !important; }
 
 @media (max-width: 900px) {
   .site-header { background: rgba(23, 25, 22, .96); }
