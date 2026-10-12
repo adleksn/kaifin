@@ -51,6 +51,7 @@ assert.doesNotMatch(booking, /kaifin-booking-draft/);
 assert.match(bookingCta, /restoplace-click-open/);
 assert.match(baseLayout, /app\.restoplace\.cc\/widget\.js\?h=3bced894eaf00be50d31/);
 assert.match(baseLayout, /#restoplace-wrapper-btn/);
+assert.doesNotMatch(baseLayout, /closest<HTMLElement>|querySelector<HTMLElement>/);
 assert.doesNotMatch(contentStyles, /#restoplace-wrapper-btn\s*\{\s*display:\s*none/);
 assert.match(about, /kids-section__image/);
 assert.match(banquetIndex, /withBase\(`\/banquet\/\$\{floor\.slug\}`\)/);
@@ -105,5 +106,6 @@ assert.match(contentStyles, /\.loyalty-steps--restaurant/);
 assert.match(contentStyles, /\.story-card--kids[\s\S]*background-size: cover/);
 assert.match(contentStyles, /\.loyalty-hero h1[\s\S]*margin-bottom/);
 assert.match(contentStyles, /\.mobile-menu/);
+assert.match(contentStyles, /grid-column:\s*1\s*\/\s*-1/);
 
 console.log('Site contract checks passed.');

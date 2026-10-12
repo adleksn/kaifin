@@ -910,20 +910,21 @@
   .mobile-menu nav a { font-size: clamp(27px, 8.5vw, 34px); }
   .home-hero--structure .hero-actions {
     width: 100%;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
     margin-top: auto;
   }
   .home-hero--structure .hero-actions > * {
     display: grid;
     min-width: 0;
-    min-height: 50px;
-    padding: 10px 4px;
+    min-height: 54px;
+    padding: 14px 12px;
     place-items: center;
-    font-size: 10px;
+    font-size: 13px;
     line-height: 1.15;
     text-align: center;
   }
+  .home-hero--structure .hero-actions > :first-child { grid-column: 1 / -1; }
   .banquet-section--full .section-heading h2 { font-size: clamp(31px, 8.7vw, 38px); line-height: 1.08; }
   .booking-hero h1 { font-size: clamp(38px, 10.5vw, 48px); line-height: 1.04; }
   .booking-hero .action-link + .text-link { display: inline-block; margin: 16px 0 0; }

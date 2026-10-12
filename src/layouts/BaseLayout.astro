@@ -24,9 +24,9 @@ const { title = 'Кайфын — ресторан в Балашихе' } = Astr
       document.addEventListener('click', (event) => {
         const target = event.target;
         if (!(target instanceof Element)) return;
-        const trigger = target.closest<HTMLElement>('.restoplace-click-open');
+        const trigger = target.closest('.restoplace-click-open');
         if (!trigger) return;
-        const launcher = document.querySelector<HTMLElement>('#restoplace-wrapper-btn button, #restoplace-wrapper-btn [role="button"], #restoplace-wrapper-btn');
+        const launcher = document.querySelector('#restoplace-wrapper-btn button, #restoplace-wrapper-btn [role="button"], #restoplace-wrapper-btn');
         if (!launcher || launcher === trigger) return;
         event.preventDefault();
         event.stopImmediatePropagation();
