@@ -110,6 +110,7 @@ assert.match(contentStyles, /\.loyalty-steps--restaurant/);
 assert.match(contentStyles, /\.story-card--kids[\s\S]*background-size: cover/);
 assert.match(contentStyles, /\.loyalty-hero h1[\s\S]*margin-bottom/);
 assert.match(contentStyles, /\.mobile-menu/);
-assert.match(contentStyles, /grid-column:\s*1\s*\/\s*-1/);
+assert.match(contentStyles, /grid-template-columns:\s*repeat\(3, minmax\(0, 1fr\)\)/);
+assert.match(contentStyles, /grid-column:\s*auto/);
 
 console.log('Site contract checks passed.');
