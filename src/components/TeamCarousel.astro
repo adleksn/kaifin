@@ -34,6 +34,25 @@ import { teamRoles } from '../data/site';
     });
     viewport.addEventListener('pointerup', stopDragging);
     viewport.addEventListener('pointercancel', stopDragging);
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchStartScroll = 0;
+    viewport.addEventListener('touchstart', (event) => {
+      const [touch] = event.touches;
+      if (!touch) return;
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+      touchStartScroll = viewport.scrollLeft;
+    }, { passive: true });
+    viewport.addEventListener('touchmove', (event) => {
+      const [touch] = event.touches;
+      if (!touch) return;
+      const movedX = touch.clientX - touchStartX;
+      const movedY = touch.clientY - touchStartY;
+      if (Math.abs(movedX) <= Math.abs(movedY)) return;
+      event.preventDefault();
+      viewport.scrollLeft = touchStartScroll - movedX;
+    }, { passive: false });
   });
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bindTeamCarousels, { once: true });
