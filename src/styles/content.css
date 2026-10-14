@@ -969,7 +969,7 @@
   box-shadow: inset 0 -2px 0 #f0bb70;
 }
 
-/* Mina-inspired team carousel: the active portrait is enlarged between two neighbours. */
+/* Mina-inspired team carousel: round portraits form the recognisable team rhythm. */
 .team-carousel { position: relative; width: min(100% - 48px, 805px); margin: 0 auto; padding: 72px 0 86px; overflow: visible; }
 .team-carousel__viewport { overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; cursor: grab; }
 .team-carousel__viewport::-webkit-scrollbar { display: none; }
@@ -977,12 +977,14 @@
 .team-carousel .team-slide { position: relative; z-index: 1; width: min(25.65vw, 328px); flex: 0 0 min(25.65vw, 328px); margin-right: clamp(-90px, -7vw, -58px); padding-bottom: 66px; text-align: left; scroll-snap-align: center; transform: scale(.92); transform-origin: center; transition: transform .42s ease, opacity .42s ease; opacity: .76; }
 .team-carousel .team-slide:last-child { margin-right: 0; }
 .team-carousel .team-slide.is-active { z-index: 2; transform: scale(1.3); opacity: 1; }
-.team-member-card { position: relative; overflow: hidden; aspect-ratio: 1; border-radius: var(--corner-radius); background: #293026; box-shadow: 0 16px 35px rgba(0, 0, 0, .28); }
-.team-member-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 44%, rgba(0, 0, 0, .7) 100%); pointer-events: none; }
+.team-member-card { position: relative; overflow: hidden; aspect-ratio: 1; border: 1px solid rgba(240, 187, 112, .75); border-radius: 50%; background: #293026; box-shadow: 0 16px 35px rgba(0, 0, 0, .28); }
+.team-member-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 36%, rgba(0, 0, 0, .76) 100%); pointer-events: none; }
 .team-member-card__image { display: block; width: 100%; height: 100%; object-fit: cover; background: #293026; }
-.team-member-card__overlay { position: absolute; z-index: 1; right: 22px; bottom: 20px; left: 22px; color: #fff; }
+.team-member-card__overlay { position: absolute; z-index: 1; right: 13%; bottom: 15%; left: 13%; color: #fff; text-align: center; }
 .team-member-card__name { margin: 0; font: 400 clamp(18px, 1.75vw, 25px)/1.08 Prata, serif; }
-.team-member-card__position { margin: 7px 0 0; font-size: 13px; line-height: 1.25; }
+.team-member-card__position { margin: 7px 0 0; font-size: 11px; line-height: 1.25; letter-spacing: .08em; text-transform: uppercase; }
+.team-member-card__caption { min-height: 74px; margin: 19px 2px 0; color: #d8dbcf; font-size: 14px; line-height: 1.5; }
+.team-slide:not(.is-active) .team-member-card__caption { visibility: hidden; }
 .team-member-card__cta { display: block; margin-top: 20px; color: #ece9e0; font-size: 13px; line-height: 1.35; transform: scale(.92); transform-origin: left top; transition: color .2s ease; }
 .team-member-card__cta span { text-decoration: underline; text-underline-offset: 3px; }
 .team-member-card__cta:hover { color: #f0bb70; }

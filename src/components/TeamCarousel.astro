@@ -9,9 +9,10 @@ import { teamRoles, withBase } from '../data/site';
           <img class="team-member-card__image" src={member.image} alt={member.title || member.role} loading="lazy" style={`object-position:${member.position}`} />
           <div class="team-member-card__overlay">
             <h2 class="team-member-card__name">{member.title || member.role}</h2>
-            <p class="team-member-card__position">{member.role}</p>
+            <p class="team-member-card__position">{[member.role, member.positionTitle].filter(Boolean).join(' · ')}</p>
           </div>
         </div>
+        <p class="team-member-card__caption">{member.caption}</p>
         <a class="team-member-card__cta" href={`${withBase('/team')}#career-form`}><span>Заполни простую форму</span> и стань частью команды</a>
       </article>)}
     </div>
