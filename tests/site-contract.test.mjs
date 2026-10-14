@@ -135,6 +135,7 @@ assert.match(carousel, /is-previous/);
 assert.match(carousel, /pointerdown/);
 assert.match(carousel, /setPointerCapture/);
 assert.match(carousel, /pointerup/);
+assert.match(carousel, /closest\('\[data-team-direction\]'\)/);
 assert.match(contentStyles, /scrollbar-width: none/);
 assert.match(contentStyles, /border-radius: 50%/);
 assert.match(contentStyles, /object-position: var\(--portrait-position/);

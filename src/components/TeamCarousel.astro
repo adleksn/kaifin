@@ -59,6 +59,7 @@ import { teamRoles, withBase } from '../data/site';
     };
     stage.addEventListener('pointerdown', (event) => {
       if (event.pointerType === 'mouse' && event.button !== 0) return;
+      if ((event.target as Element | null)?.closest('[data-team-direction]')) return;
       pointerId = event.pointerId;
       startX = event.clientX;
       stage.setPointerCapture(event.pointerId);
