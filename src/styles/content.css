@@ -148,6 +148,26 @@
     serif;
   font-weight: 400;
 }
+.facts__label {
+  max-width: 270px;
+  margin: 0 0 12px;
+  color: #d7d8cf;
+  font-size: clamp(18px, 1.8vw, 26px);
+  line-height: 1.22;
+}
+.facts__value {
+  margin: 0;
+  font-size: clamp(28px, 2.55vw, 40px) !important;
+  line-height: 1.08;
+}
+.facts__description {
+  display: block;
+  max-width: 280px;
+  margin-top: 10px;
+  color: #c6caba;
+  font-size: clamp(16px, 1.25vw, 20px);
+  line-height: 1.42;
+}
 .booking-hero {
   min-height: 510px;
   padding: 185px 9vw 70px;
@@ -300,6 +320,13 @@
   font-weight: 500;
   letter-spacing: -.05em;
   color: #c8cbbb;
+}
+.section-heading__copy {
+  max-width: 540px;
+  margin: 18px 0 24px;
+  color: #d4d6cc;
+  font-size: clamp(17px, 1.45vw, 21px);
+  line-height: 1.52;
 }
 
 .hall-grid { gap: 18px; }
