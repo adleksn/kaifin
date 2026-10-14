@@ -2,89 +2,72 @@
 import { teamRoles, withBase } from '../data/site';
 ---
 <section class="team-carousel" aria-label="Команда Кайфына">
-  <div class="team-carousel__viewport" data-team-viewport>
-    <div class="team-track">
-      {teamRoles.map((member, index) => <article class:list={['team-slide', index === 1 && 'is-active']} data-team-slide>
-        <div class="team-member-card">
-          <img class="team-member-card__image" src={member.image} alt={member.title || member.role} loading="lazy" style={`object-position:${member.position}`} />
-          <div class="team-member-card__overlay">
-            <h2 class="team-member-card__name">{member.title || member.role}</h2>
-            <p class="team-member-card__position">{[member.role, member.positionTitle].filter(Boolean).join(' · ')}</p>
+  <div class="team-carousel__stage" data-team-stage>
+    <div class="team-carousel__viewport" data-team-viewport>
+      <div class="team-track">
+        {teamRoles.map((member, index) => <article class:list={['team-slide', index === 1 && 'is-active', index === 0 && 'is-previous', index === 2 && 'is-next']} data-team-slide>
+          <div class="team-member-card">
+            <img class="team-member-card__image" src={member.image} alt={member.title || member.role} loading="lazy" style={`object-position:${member.position}`} />
+            <div class="team-member-card__overlay">
+              <h2 class="team-member-card__name">{member.title || member.role}</h2>
+              <p class="team-member-card__position">{[member.role, member.positionTitle].filter(Boolean).join(' · ')}</p>
+            </div>
           </div>
-        </div>
-        <p class="team-member-card__caption">{member.caption}</p>
-        <a class="team-member-card__cta" href={`${withBase('/team')}#career-form`}><span>Заполни простую форму</span> и стань частью команды</a>
-      </article>)}
+        </article>)}
+      </div>
+    </div>
+    <div class="team-carousel__controls">
+      <button type="button" data-team-direction="-1" aria-label="Предыдущая карточка">←</button>
+      <button type="button" data-team-direction="1" aria-label="Следующая карточка">→</button>
     </div>
   </div>
-  <div class="team-carousel__controls">
-    <button type="button" data-team-direction="-1" aria-label="Предыдущая карточка">←</button>
-    <button type="button" data-team-direction="1" aria-label="Следующая карточка">→</button>
-  </div>
+  <a class="team-carousel__cta" href={`${withBase('/team')}#career-form`}><span>Заполни простую форму</span> и стань частью команды</a>
 </section>
 <script>
   const bindTeamCarousels = () => document.querySelectorAll<HTMLElement>('.team-carousel').forEach((carousel) => {
     if (carousel.dataset.controlsBound) return;
     carousel.dataset.controlsBound = 'true';
-    const viewport = carousel.querySelector<HTMLElement>('[data-team-viewport]');
+    const stage = carousel.querySelector<HTMLElement>('[data-team-stage]');
     const slides = [...carousel.querySelectorAll<HTMLElement>('[data-team-slide]')];
-    if (!viewport || !slides.length) return;
+    if (!stage || !slides.length) return;
+
     let activeIndex = Math.min(1, slides.length - 1);
-    const setActive = (index: number, behavior: ScrollBehavior = 'smooth') => {
+    const setActive = (index: number) => {
       activeIndex = (index + slides.length) % slides.length;
-      const activeSlide = slides[activeIndex];
-      slides.forEach((slide, slideIndex) => slide.classList.toggle('is-active', slideIndex === activeIndex));
-      const left = activeSlide.offsetLeft - (viewport.clientWidth - activeSlide.offsetWidth) / 2;
-      if (behavior === 'auto') viewport.scrollTo({ left, behavior: 'auto' });
-      else viewport.scrollTo({ left, behavior: 'smooth' });
+      const previousIndex = (activeIndex - 1 + slides.length) % slides.length;
+      const nextIndex = (activeIndex + 1) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle('is-active', slideIndex === activeIndex);
+        slide.classList.toggle('is-previous', slideIndex === previousIndex);
+        slide.classList.toggle('is-next', slideIndex === nextIndex);
+        slide.classList.toggle('is-hidden', slideIndex !== activeIndex && slideIndex !== previousIndex && slideIndex !== nextIndex);
+      });
     };
+
     carousel.querySelectorAll<HTMLButtonElement>('[data-team-direction]').forEach((button) => button.addEventListener('click', () => setActive(activeIndex + Number(button.dataset.teamDirection))));
+
     let pointerId: number | undefined;
     let startX = 0;
-    let startScroll = 0;
     const stopDragging = (event?: PointerEvent) => {
       if (event && pointerId !== event.pointerId) return;
+      if (event) {
+        const movedX = event.clientX - startX;
+        if (Math.abs(movedX) > 42) setActive(activeIndex + (movedX < 0 ? 1 : -1));
+      }
       pointerId = undefined;
       carousel.classList.remove('is-dragging');
-      const viewportCenter = viewport.scrollLeft + viewport.clientWidth / 2;
-      const nearest = slides.reduce((best, slide, index) => Math.abs(slide.offsetLeft + slide.offsetWidth / 2 - viewportCenter) < Math.abs(slides[best].offsetLeft + slides[best].offsetWidth / 2 - viewportCenter) ? index : best, 0);
-      setActive(nearest);
     };
-    viewport.addEventListener('pointerdown', (event) => {
+    stage.addEventListener('pointerdown', (event) => {
       if (event.pointerType === 'mouse' && event.button !== 0) return;
       pointerId = event.pointerId;
       startX = event.clientX;
-      startScroll = viewport.scrollLeft;
-      viewport.setPointerCapture(event.pointerId);
+      stage.setPointerCapture(event.pointerId);
       carousel.classList.add('is-dragging');
     });
-    viewport.addEventListener('pointermove', (event) => {
-      if (pointerId !== event.pointerId) return;
-      viewport.scrollLeft = startScroll - (event.clientX - startX);
-    });
-    viewport.addEventListener('pointerup', stopDragging);
-    viewport.addEventListener('pointercancel', stopDragging);
-    let touchStartX = 0;
-    let touchStartY = 0;
-    let touchStartScroll = 0;
-    viewport.addEventListener('touchstart', (event) => {
-      const [touch] = event.touches;
-      if (!touch) return;
-      touchStartX = touch.clientX;
-      touchStartY = touch.clientY;
-      touchStartScroll = viewport.scrollLeft;
-    }, { passive: true });
-    viewport.addEventListener('touchmove', (event) => {
-      const [touch] = event.touches;
-      if (!touch) return;
-      const movedX = touch.clientX - touchStartX;
-      const movedY = touch.clientY - touchStartY;
-      if (Math.abs(movedX) <= Math.abs(movedY)) return;
-      event.preventDefault();
-      viewport.scrollLeft = touchStartScroll - movedX;
-    }, { passive: false });
-    window.addEventListener('resize', () => setActive(activeIndex, 'auto'));
-    requestAnimationFrame(() => setActive(activeIndex, 'auto'));
+    stage.addEventListener('pointerup', stopDragging);
+    stage.addEventListener('pointercancel', stopDragging);
+
+    setActive(activeIndex);
   });
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bindTeamCarousels, { once: true });
