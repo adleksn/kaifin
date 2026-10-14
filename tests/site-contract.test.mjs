@@ -20,6 +20,8 @@ const astroConfig = await read('astro.config.mjs');
 const globalStyles = await read('src/styles/global.css');
 const footer = await read('src/components/Footer.astro');
 const restoplaceModal = await read('src/components/RestoplaceModal.astro');
+const promotionsPage = await read('src/pages/promotions.astro');
+const teamPage = await read('src/pages/team.astro');
 
 assert.doesNotMatch(header, /Галерея/);
 assert.match(header, /Программа лояльности/);
@@ -63,6 +65,9 @@ assert.match(restoplaceModal, /data-src=\{widgetUrl\}/);
 assert.match(restoplaceModal, /showModal\(\)/);
 assert.match(restoplaceModal, /restoplace-click-open/);
 assert.match(about, /kids-section__image/);
+assert.match(about, /Место для встреч и важных моментов/);
+assert.match(promotionsPage, /Акции и специальные предложения/);
+assert.match(teamPage, /Люди, которые создают атмосферу/);
 assert.match(banquetIndex, /withBase\(`\/banquet\/\$\{floor\.slug\}`\)/);
 assert.match(banquetIndex, /Праздники и торжества/);
 assert.match(banquetIndex, /Банкеты в ресторане «Кайфын»/);
