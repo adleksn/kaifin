@@ -954,11 +954,13 @@
 .team-member-card__body h2 { margin: 0; font: 28px/1.08 Prata, serif; font-weight: 400; }
 .team-member-card__body > p:not(.eyebrow) { margin: 0; color: #c6caba; line-height: 1.55; }
 .team-member-card__cta { align-self: end; color: #f0bb70; font-size: 12px; line-height: 1.45; }
+.loyalty-tiers { background: #20251f; }.loyalty-tiers h2 { max-width:780px;margin:0;font:clamp(32px,4vw,54px)/1.08 Prata,serif;font-weight:400; }.loyalty-tiers__grid { display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:42px; }.loyalty-tiers__grid article { padding:28px;background:#30372d;border-radius:var(--corner-radius); }.loyalty-tiers__grid b { display:block;font:clamp(68px,10vw,148px)/.8 Prata,serif;font-weight:400;color:#f0bb70; }.loyalty-tiers__grid p { margin:18px 0 0;color:#c6caba; }.loyalty-terms { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 36px;max-width:1000px;margin-top:42px;color:#c6caba;line-height:1.6; }.loyalty-terms p { margin:0; }
 @media (max-width: 900px) {
   .team-carousel { padding: 36px 0 56px; }
   .team-track { padding: 0 20px; }
   .team-carousel .team-slide { width: min(82vw, 340px); flex-basis: min(82vw, 340px); }
 }
+@media (max-width:700px) { .loyalty-tiers__grid,.loyalty-terms { grid-template-columns:1fr; } }
 .restoplace-modal {
   width: min(960px, calc(100vw - 32px));
   height: min(760px, calc(100dvh - 32px));
