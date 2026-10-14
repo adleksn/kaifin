@@ -17,6 +17,7 @@ const loyaltyPage = await read('src/pages/loyalty.astro');
 const firstFloor = await read('src/pages/banquet/first-floor.astro');
 const secondFloor = await read('src/pages/banquet/second-floor.astro');
 const astroConfig = await read('astro.config.mjs');
+const globalStyles = await read('src/styles/global.css');
 const footer = await read('src/components/Footer.astro');
 const restoplaceModal = await read('src/components/RestoplaceModal.astro');
 
@@ -115,5 +116,7 @@ assert.match(contentStyles, /grid-column:\s*auto/);
 assert.match(contentStyles, /\.home-hero--structure\s*\{\s*flex-direction:\s*column;/);
 assert.match(contentStyles, /\.home-hero--structure \.hero-actions\s*\{[\s\S]*align-self:\s*stretch;/);
 assert.match(contentStyles, /\.home-hero--structure \.hero-actions > \*\s*\{[\s\S]*width:\s*100%/);
+assert.match(globalStyles, /--corner-radius:\s*10px/);
+assert.match(contentStyles, /border-radius:\s*var\(--corner-radius\)/);
 
 console.log('Site contract checks passed.');

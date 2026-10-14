@@ -896,6 +896,42 @@
 .team-slide__caption { min-height: 98px; }
 /* Keep Restoplace's modal logic, but use only the restaurant's own booking buttons. */
 #restoplace-wrapper-btn { display: none !important; }
+
+/* One shared corner treatment for rectangular interface elements. */
+:where(
+  .header-book,
+  .hero-actions a,
+  .story-card,
+  .hall-card,
+  .floor-card,
+  .booking-form,
+  .booking-field input,
+  .booking-field select,
+  .booking-field textarea,
+  .time-picker__trigger,
+  .time-picker__popover,
+  .time-picker__slots button,
+  .booking-form__footer button,
+  .section-booking,
+  .action-link,
+  .sticky-booking-cta,
+  .floor-switch a,
+  .map-placeholder a,
+  .demo-form input,
+  .demo-form select,
+  .demo-form textarea,
+  .demo-form button,
+  .loyalty-modal,
+  .loyalty-modal__actions button,
+  .loyalty-page-actions button,
+  .kids-section,
+  .kids-section__booking,
+  .mobile-menu-toggle,
+  .mobile-menu__close,
+  .mobile-menu__booking,
+  .banquet-menu-pages figure,
+  .restoplace-modal
+) { border-radius: var(--corner-radius) !important; }
 .restoplace-modal {
   width: min(960px, calc(100vw - 32px));
   height: min(760px, calc(100dvh - 32px));
