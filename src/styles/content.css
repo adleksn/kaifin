@@ -901,7 +901,9 @@
 :where(
   .header-book,
   .hero-actions a,
+  .hero-actions button,
   .story-card,
+  .intro-grid__visual,
   .hall-card,
   .floor-card,
   .booking-form,
@@ -932,6 +934,13 @@
   .banquet-menu-pages figure,
   .restoplace-modal
 ) { border-radius: var(--corner-radius) !important; }
+
+.home-hero--structure .hero-actions > * { border-radius: var(--corner-radius) !important; }
+
+.site-header__nav a[aria-current='page'] {
+  color: #f0bb70;
+  box-shadow: inset 0 -2px 0 #f0bb70;
+}
 .restoplace-modal {
   width: min(960px, calc(100vw - 32px));
   height: min(760px, calc(100dvh - 32px));

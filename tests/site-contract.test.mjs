@@ -27,6 +27,8 @@ assert.match(header, /Банкет/);
 assert.match(header, /mobile-menu-toggle/);
 assert.match(header, /mobile-menu/);
 assert.match(header, /Escape/);
+assert.match(header, /const currentPath = Astro\.url\.pathname/);
+assert.match(header, /aria-current=\{isCurrent\(link\.href\) \? 'page' : undefined\}/);
 assert.doesNotMatch(header, /mobile-menu__booking/);
 assert.match(data, /restaurantBooking/);
 assert.match(data, /banquetFloors/);
@@ -118,5 +120,6 @@ assert.match(contentStyles, /\.home-hero--structure \.hero-actions\s*\{[\s\S]*al
 assert.match(contentStyles, /\.home-hero--structure \.hero-actions > \*\s*\{[\s\S]*width:\s*100%/);
 assert.match(globalStyles, /--corner-radius:\s*10px/);
 assert.match(contentStyles, /border-radius:\s*var\(--corner-radius\)/);
+assert.match(contentStyles, /\.hero-actions button,[\s\S]*\.intro-grid__visual,[\s\S]*border-radius: var\(--corner-radius\) !important/);
 
 console.log('Site contract checks passed.');
