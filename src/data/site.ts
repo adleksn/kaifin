@@ -23,11 +23,11 @@ export const banquetFloors = [
   { slug: 'second-floor', number: '02', name: '2 этаж — Банкетный зал', subtitle: 'От свадеб и юбилеев до выпускных и корпоративов — отдельный банкетный зал для праздников большого масштаба. Зал рассчитан на 100–200 гостей.', hero: withBase('/images/banquet/second-floor.jpg'), rooms: [{ name: 'Банкетный зал', image: withBase('/images/banquet/second-floor.jpg') }], conditions: ['Вместительность — до 200 человек.', 'Минимальная сумма заказа — 5 500 ₽ с человека.', 'Можно свой алкоголь и торт.'], menuPages: [withBase('/images/banquet/menu-1.jpg'), withBase('/images/banquet/menu-2.jpg')] },
 ] as const;
 export const teamRoles = [
-  { role: 'Кухня', positionTitle: 'Бренд-шеф', title: 'Павел Гранкин', caption: 'Создаёт вкус, соединяя европейские и азиатские мотивы в одном меню.', image: withBase('/images/brief/team-pavel-grankin.png'), position: '50% 14%' },
-  { role: 'Сервис', title: '', caption: 'Делает так, чтобы в Кайфыне было легко, комфортно и приятно возвращаться снова.', image: withBase('/images/brief/team-service-1.png'), position: '50% 14%' },
-  { role: 'Бар', title: '', caption: 'Отвечает за настроение за баром — от знакомой классики до авторских сочетаний.', image: withBase('/images/brief/team-bar.png'), position: '50% 12%' },
-  { role: 'Кухня', title: '', caption: 'За атмосферой, вкусом и тем самым ощущением «здесь хорошо» всегда стоят люди.', image: withBase('/images/brief/team-kitchen-2.png'), position: '50% 14%' },
-  { role: 'Сервис', title: '', caption: 'Тот человек, благодаря которому всё работает незаметно: гости отдыхают, а нужные детали складываются сами собой.', image: withBase('/images/brief/team-service-2.png'), position: '50% 12%' },
+  { role: 'Кухня', positionTitle: 'Бренд-шеф', title: 'Павел Гранкин', showRole: true, caption: 'Создаёт вкус, соединяя европейские и азиатские мотивы в одном меню.', image: withBase('/images/brief/team-pavel-grankin.png'), position: '50% 14%' },
+  { role: 'Сервис', title: '', showRole: false, caption: 'Делает так, чтобы в Кайфыне было легко, комфортно и приятно возвращаться снова.', image: withBase('/images/brief/team-service-1.png'), position: '50% 14%' },
+  { role: 'Бар', title: '', showRole: false, caption: 'Отвечает за настроение за баром — от знакомой классики до авторских сочетаний.', image: withBase('/images/brief/team-bar.png'), position: '50% 12%' },
+  { role: 'Кухня', title: '', showRole: false, caption: 'За атмосферой, вкусом и тем самым ощущением «здесь хорошо» всегда стоят люди.', image: withBase('/images/brief/team-kitchen-2.png'), position: '50% 14%' },
+  { role: 'Сервис', title: '', showRole: false, caption: 'Тот человек, благодаря которому всё работает незаметно: гости отдыхают, а нужные детали складываются сами собой.', image: withBase('/images/brief/team-service-2.png'), position: '50% 12%' },
 ];
 export const menuTypes = ['Основное меню', 'Меню бара', 'Банкетное меню', 'Сезонное меню', 'Паровые коктейли'];
 export const menuPreview = [

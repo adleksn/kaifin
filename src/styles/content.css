@@ -301,6 +301,17 @@
 .header-book:hover,
 .header-book:focus-visible { background: #f5c77f; transform: translateY(-2px); }
 
+.header-phone {
+  margin-left: auto;
+  color: var(--paper);
+  font-weight: 700;
+  letter-spacing: .06em;
+  white-space: nowrap;
+}
+
+.header-phone:hover,
+.header-phone:focus-visible { color: #f0bb70; }
+
 .hero-actions { gap: 12px; }
 .hero-actions a {
   background: rgba(24, 27, 23, .9);
@@ -843,8 +854,13 @@
   }
   .site-header__nav { display: none !important; }
   .wordmark { font-size: 21px; }
-  .header-book {
+  .header-phone {
     margin-left: auto;
+    font-size: 9px;
+    letter-spacing: .03em;
+  }
+  .header-book {
+    margin-left: 0;
     padding: 12px 13px;
     font-size: 10px;
     letter-spacing: .06em;

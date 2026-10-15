@@ -5,12 +5,12 @@ import { teamRoles, withBase } from '../data/site';
   <div class="team-carousel__stage" data-team-stage>
     <div class="team-carousel__viewport" data-team-viewport>
       <div class="team-track">
-        {teamRoles.map((member, index) => <article class:list={['team-slide', index === 1 && 'is-active', index === 0 && 'is-previous', index === 2 && 'is-next']} data-team-slide>
+        {teamRoles.map((member, index) => <article class:list={['team-slide', index === 0 && 'is-active', index === teamRoles.length - 1 && 'is-previous', index === 1 && 'is-next']} data-team-slide>
           <div class="team-member-card">
             <img class="team-member-card__image" src={member.image} alt={member.title || member.role} loading="lazy" style={`object-position:${member.position}`} />
             <div class="team-member-card__overlay">
               <h2 class="team-member-card__name">{member.title || member.role}</h2>
-              <p class="team-member-card__position">{[member.role, member.positionTitle].filter(Boolean).join(' · ')}</p>
+              {member.showRole && <p class="team-member-card__position">{[member.role, member.positionTitle].filter(Boolean).join(' · ')}</p>}
             </div>
           </div>
           <p class="team-member-card__caption">{member.caption}</p>
@@ -32,7 +32,7 @@ import { teamRoles, withBase } from '../data/site';
     const slides = [...carousel.querySelectorAll<HTMLElement>('[data-team-slide]')];
     if (!stage || !slides.length) return;
 
-    let activeIndex = Math.min(1, slides.length - 1);
+    let activeIndex = 0;
     const setActive = (index: number) => {
       activeIndex = (index + slides.length) % slides.length;
       const previousIndex = (activeIndex - 1 + slides.length) % slides.length;
