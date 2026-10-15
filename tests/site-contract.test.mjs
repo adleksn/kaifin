@@ -217,5 +217,6 @@ assert.match(header, /class="site-header__actions"/);
 assert.match(contentStyles, /\.site-header__actions\s*\{[\s\S]*display:\s*flex/);
 assert.match(contentStyles, /@media \(min-width: 901px\)\s*\{\s*\.banquet-section--full \.section-heading\s*\{\s*position:\s*static;/);
 assert.match(contentStyles, /\.header-phone\s*\{[^}]*font-size:\s*13px;/);
+assert.match(contentStyles, /\.story-card strong\s*\{[^}]*font:\s*30px\s*\/\s*1\.05\s*Prata, serif;/);
 
 console.log('Site contract checks passed.');

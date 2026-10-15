@@ -318,6 +318,11 @@
 .header-phone:hover,
 .header-phone:focus-visible { color: #f0bb70; }
 
+.story-card strong {
+  font: 30px / 1.05 Prata, serif;
+  font-weight: 400;
+}
+
 .hero-actions { gap: 12px; }
 .hero-actions a {
   background: rgba(24, 27, 23, .9);
