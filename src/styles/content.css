@@ -970,9 +970,9 @@
 }
 
 /* Mina-inspired team carousel: round portraits form the recognisable team rhythm. */
-.team-carousel { --team-card-size:min(28vw, 430px); --team-offset:min(27vw, 390px); width:min(100% - 48px, 1180px); margin:0 auto; padding:72px 0 86px; overflow:visible; }
+.team-carousel { --team-card-size:min(28vw, 430px); --team-offset:min(27vw, 390px); --team-control-offset:calc(var(--team-card-size) * .74); width:min(100% - 48px, 1180px); margin:0 auto; padding:72px 0 86px; overflow:visible; }
 .team-carousel__stage { position:relative; height:calc(var(--team-card-size) * 1.32); touch-action:pan-y; }
-.team-carousel__viewport { width:100%; height:100%; overflow:hidden; }
+.team-carousel__viewport { width:100%; height:100%; overflow:visible; }
 .team-track { position:relative; width:100%; height:100%; margin:0; padding:0; }
 .team-carousel .team-slide { position:absolute; top:50%; left:50%; z-index:1; width:var(--team-card-size); margin:0; padding:0; text-align:center; opacity:.76; transform:translate(-50%,-50%) scale(.92); transform-origin:center; transition:transform .42s ease, opacity .42s ease; }
 .team-carousel .team-slide.is-active { z-index:2; opacity:1; transform:translate(-50%,-50%) scale(1.3); }
@@ -985,24 +985,28 @@
 .team-member-card__overlay { position: absolute; z-index: 1; right: 13%; bottom: 15%; left: 13%; color: #fff; text-align: center; }
 .team-member-card__name { margin: 0; font: 400 clamp(18px, 1.75vw, 25px)/1.08 Prata, serif; }
 .team-member-card__position { margin: 7px 0 0; font-size: 11px; line-height: 1.25; letter-spacing: .08em; text-transform: uppercase; }
+.team-member-card__caption { visibility:hidden; max-width:34ch; min-height:3.2em; margin:26px auto 0; color:#d8dbcf; font-size:14px; line-height:1.5; text-align:center; }
+.team-carousel .team-slide.is-active .team-member-card__caption { visibility:visible; }
 .team-carousel__cta { display:block; max-width:340px; margin:28px auto 0; color:#ece9e0; font-size:13px; line-height:1.35; text-align:center; transition:color .2s ease; }
 .team-carousel__cta span { text-decoration:underline; text-underline-offset:3px; }
 .team-carousel__cta:hover { color:#f0bb70; }
 .team-carousel__controls { position:absolute; z-index:4; inset:0; margin:0; pointer-events:none; }
 .team-carousel__controls button { display: grid; width: 50px; height: 50px; place-items: center; border: 0; border-radius: 50%; background: #f5f1e9; color: #242820; box-shadow: 0 4px 13px rgba(0, 0, 0, .14); font-size: 28px; line-height: 1; cursor: pointer; pointer-events: auto; transition: transform .2s ease, background .2s ease; }
 .team-carousel__controls button { position:absolute; top:50%; transform:translate(-50%,-50%); }
-.team-carousel__controls button:first-child { left:calc(50% - var(--team-offset)); }
-.team-carousel__controls button:last-child { left:calc(50% + var(--team-offset)); }
+.team-carousel__controls button:first-child { left:calc(50% - var(--team-control-offset)); }
+.team-carousel__controls button:last-child { left:calc(50% + var(--team-control-offset)); }
 .team-carousel__controls button:hover,.team-carousel__controls button:focus-visible { background: #f0bb70; color: #1b1f1a; transform:translate(-50%,-50%) scale(1.06); }
 .loyalty-tiers { background: #20251f; }.loyalty-tiers h2 { max-width:780px;margin:0;font:clamp(32px,4vw,54px)/1.08 Prata,serif;font-weight:400; }.loyalty-tiers__grid { display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:42px; }.loyalty-tiers__grid article { padding:28px;background:#30372d;border-radius:var(--corner-radius); }.loyalty-tiers__grid b { display:block;font:clamp(68px,10vw,148px)/.8 Prata,serif;font-weight:400;color:#f0bb70; }.loyalty-tiers__grid p { margin:18px 0 0;color:#c6caba; }.loyalty-terms { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 36px;max-width:1000px;margin-top:42px;color:#c6caba;line-height:1.6; }.loyalty-terms p { margin:0; }
 @media (max-width: 900px) {
-  .team-carousel { --team-card-size:min(62vw, 312px); --team-offset:min(45vw, 226px); width:100%; padding:44px 0; }
+  .team-carousel { --team-card-size:min(55vw, 280px); --team-offset:min(27vw, 180px); --team-control-offset:calc(var(--team-card-size) * .72); width:100%; padding:44px 0; }
   .team-carousel__stage { height:calc(var(--team-card-size) * 1.2); }
   .team-carousel .team-slide.is-active { transform:translate(-50%,-50%) scale(1.12); }
-  .team-carousel .team-slide.is-previous { transform:translate(calc(-50% - var(--team-offset)),-50%) scale(.8); }
-  .team-carousel .team-slide.is-next { transform:translate(calc(-50% + var(--team-offset)),-50%) scale(.8); }
+  .team-carousel .team-slide.is-previous { transform:translate(calc(-50% - var(--team-offset)),-50%) scale(.62); }
+  .team-carousel .team-slide.is-next { transform:translate(calc(-50% + var(--team-offset)),-50%) scale(.62); }
   .team-member-card__overlay { right: 18px; bottom: 17px; left: 18px; }
-  .team-carousel__controls { display: none; }
+  .team-member-card__caption { max-width:30ch; min-height:4.5em; margin-top:20px; padding:0 18px; font-size:13px; }
+  .team-carousel__controls { display:block; }
+  .team-carousel__controls button { width:42px; height:42px; font-size:24px; }
 }
 @media (max-width:700px) { .loyalty-tiers__grid,.loyalty-terms { grid-template-columns:1fr; } }
 .restoplace-modal {
@@ -1138,7 +1142,7 @@
     width: 100%;
     padding: 44px 0;
   }
-  .team-carousel__stage { height: calc(var(--team-card-size) * 1.2); }
+  .team-carousel__stage { height: calc(var(--team-card-size) * 1.85); }
   .team-carousel .team-slide.is-active { transform: translate(-50%, -50%) scale(1.12); }
   .team-carousel .team-slide.is-previous { transform: translate(calc(-50% - var(--team-offset)), -50%) scale(.62); }
   .team-carousel .team-slide.is-next { transform: translate(calc(-50% + var(--team-offset)), -50%) scale(.62); }
