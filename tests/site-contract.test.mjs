@@ -183,6 +183,9 @@ assert.match(about, /<strong[^>]*>Ждем вас по адресу:<\/strong>/)
 assert.match(about, /<strong[^>]*>г\. Балашиха, микрорайон Ольгино, ул\. Жилгородок, 43 А<\/strong>/);
 assert.match(teamPage, /<h2>Присоединяйтесь…<\/h2>/);
 assert.match(contentStyles, /team-carousel__stage:hover[\s\S]*opacity:\s*1/);
+assert.match(contentStyles, /Mobile rhythm pass/);
+assert.match(contentStyles, /\.inner-hero\s*\{\s*min-height:\s*0/);
+assert.match(contentStyles, /\.inner-hero h1\s*\{[\s\S]*font-size:\s*clamp\(38px, 10\.5vw, 44px\)/);
 assert.match(contentStyles, /\.about-story \.image-block[\s\S]*border-radius:\s*var\(--corner-radius\)/);
 assert.match(contentStyles, /\.site-header\s*\{[\s\S]*position: sticky/);
 assert.doesNotMatch(footer, /generatedImages/);

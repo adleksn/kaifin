@@ -1197,3 +1197,67 @@
   .team-carousel__stage { height: calc(var(--team-card-size) * 1.92); }
   .team-carousel__controls button { opacity: .64; }
 }
+
+/* Mobile rhythm pass: compact the desktop vertical scale for 375–600px viewports. */
+@media (max-width: 600px) {
+  .eyebrow { margin-bottom: 14px; }
+  .inner-hero {
+    min-height: 0;
+    padding: 108px 20px 54px;
+  }
+  .inner-hero h1 {
+    font-size: clamp(38px, 10.5vw, 44px);
+    line-height: 1.04;
+  }
+  .inner-hero .lede {
+    margin-top: 18px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .home-hero {
+    min-height: 100svh;
+    padding: 96px 20px 24px;
+  }
+  .hero-copy h1 {
+    max-width: 300px;
+    font-size: clamp(39px, 10.8vw, 44px);
+    line-height: 1;
+  }
+  .home-hero--structure .hero-actions { gap: 8px; }
+  .home-hero--structure .hero-actions > * {
+    min-height: 50px;
+    padding: 12px 8px;
+    font-size: 12px;
+  }
+  .section-space,
+  .banquet-section--full,
+  .promotion-grid,
+  .team-grid,
+  .flavour-grid,
+  .loyalty-steps,
+  .contact-grid,
+  .menu-preview,
+  .about-story,
+  .delivery-steps { padding: 44px 20px; }
+  .booking-hero {
+    min-height: 0;
+    padding: 108px 20px 48px;
+  }
+  .booking-hero h1 { font-size: clamp(38px, 10.5vw, 44px); }
+  .booking-hero p:not(.eyebrow) { margin: 18px 0; line-height: 1.55; }
+  .banquet-menu-viewer { padding: 48px 20px; }
+  .banquet-menu-viewer__heading { gap: 12px; margin-bottom: 24px; }
+  .banquet-menu-viewer h2 { font-size: clamp(32px, 9.4vw, 40px); }
+  .loyalty-modal { width: calc(100% - 24px); padding: 30px 24px 28px; }
+  .loyalty-modal strong { font-size: 42px; }
+  .loyalty-modal h2 { margin: 6px 0 16px; font-size: 32px; }
+  .loyalty-modal__actions { gap: 8px; margin: 20px 0 12px; }
+  .loyalty-modal__actions button { padding: 12px; }
+  .team-carousel { padding: 30px 0 22px; }
+  .team-carousel__stage { height: calc(var(--team-card-size) * 1.72); }
+  .team-member-card__caption { margin-top: 14px; line-height: 1.42; }
+  .team-carousel__cta { margin-top: 8px; }
+  .career-callout { margin-top: 20px; padding: 48px 20px; }
+  .career-callout h2 { font-size: clamp(32px, 9vw, 40px); }
+  .demo-form { gap: 28px; padding: 52px 20px; }
+}
