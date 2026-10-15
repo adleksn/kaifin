@@ -33,6 +33,16 @@ import { teamRoles, withBase } from '../data/site';
     if (!stage || !slides.length) return;
 
     let activeIndex = Math.min(1, slides.length - 1);
+    let positionTimer: number | undefined;
+    const positionControls = () => {
+      const card = slides[activeIndex]?.querySelector<HTMLElement>('.team-member-card');
+      if (!card) return;
+      const stageRect = stage.getBoundingClientRect();
+      const cardRect = card.getBoundingClientRect();
+      carousel.style.setProperty('--team-control-top', `${cardRect.top + cardRect.height / 2 - stageRect.top}px`);
+      carousel.style.setProperty('--team-control-left', `${cardRect.left - stageRect.left}px`);
+      carousel.style.setProperty('--team-control-right', `${cardRect.right - stageRect.left}px`);
+    };
     const setActive = (index: number) => {
       activeIndex = (index + slides.length) % slides.length;
       const previousIndex = (activeIndex - 1 + slides.length) % slides.length;
@@ -43,6 +53,9 @@ import { teamRoles, withBase } from '../data/site';
         slide.classList.toggle('is-next', slideIndex === nextIndex);
         slide.classList.toggle('is-hidden', slideIndex !== activeIndex && slideIndex !== previousIndex && slideIndex !== nextIndex);
       });
+      requestAnimationFrame(positionControls);
+      window.clearTimeout(positionTimer);
+      positionTimer = window.setTimeout(positionControls, 460);
     };
 
     carousel.querySelectorAll<HTMLButtonElement>('[data-team-direction]').forEach((button) => button.addEventListener('click', () => setActive(activeIndex + Number(button.dataset.teamDirection))));
@@ -68,6 +81,7 @@ import { teamRoles, withBase } from '../data/site';
     });
     stage.addEventListener('pointerup', stopDragging);
     stage.addEventListener('pointercancel', stopDragging);
+    window.addEventListener('resize', positionControls);
 
     setActive(activeIndex);
   });
