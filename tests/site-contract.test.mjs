@@ -215,5 +215,6 @@ assert.match(header, /href="tel:\+79637668800"/);
 assert.match(header, /\+7 963 766-88-00/);
 assert.match(header, /class="site-header__actions"/);
 assert.match(contentStyles, /\.site-header__actions\s*\{[\s\S]*display:\s*flex/);
+assert.match(contentStyles, /@media \(min-width: 901px\)\s*\{\s*\.banquet-section--full \.section-heading\s*\{\s*position:\s*static;/);
 
 console.log('Site contract checks passed.');

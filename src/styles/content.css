@@ -698,6 +698,9 @@
   gap: clamp(30px, 5vw, 84px);
 }
 .banquet-section--full .section-heading { position: sticky; top: 32px; }
+@media (min-width: 901px) {
+  .banquet-section--full .section-heading { position: static; }
+}
 .banquet-section--full .section-heading h2 { max-width: 520px; font-size: clamp(34px, 3.5vw, 56px); }
 .banquet-section--full .floor-grid { gap: clamp(14px, 2vw, 28px); }
 .banquet-section--full .floor-card { min-height: 500px; padding: clamp(22px, 2.5vw, 38px); }
