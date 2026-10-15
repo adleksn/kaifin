@@ -323,6 +323,16 @@
   font-weight: 400;
 }
 
+.hero-copy h1,
+.inner-hero h1,
+.section-heading h2,
+.booking-callout h2 {
+  font: clamp(48px, 5.1vw, 86px) / 1.02 Prata, serif;
+  font-weight: 400;
+  letter-spacing: -.04em;
+  margin: 0;
+}
+
 .hero-actions { gap: 12px; }
 .hero-actions a {
   background: rgba(24, 27, 23, .9);
