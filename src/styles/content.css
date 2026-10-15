@@ -970,7 +970,7 @@
 }
 
 /* Mina-inspired team carousel: round portraits form the recognisable team rhythm. */
-.team-carousel { --team-card-size:min(28vw, 430px); --team-offset:min(27vw, 390px); --team-control-offset:calc(var(--team-card-size) * .74); width:min(100% - 48px, 1180px); margin:0 auto; padding:72px 0 86px; overflow:visible; }
+.team-carousel { --team-card-size:min(28vw, 430px); --team-offset:min(27vw, 390px); --team-control-offset:calc(var(--team-card-size) * .65); --team-control-y-offset:calc(var(--team-card-size) * .145); width:min(100% - 48px, 1180px); margin:0 auto; padding:72px 0 86px; overflow:visible; }
 .team-carousel__stage { position:relative; height:calc(var(--team-card-size) * 1.32); touch-action:pan-y; }
 .team-carousel__viewport { width:100%; height:100%; overflow:visible; }
 .team-track { position:relative; width:100%; height:100%; margin:0; padding:0; }
@@ -992,13 +992,13 @@
 .team-carousel__cta:hover { color:#f0bb70; }
 .team-carousel__controls { position:absolute; z-index:4; inset:0; margin:0; pointer-events:none; }
 .team-carousel__controls button { display: grid; width: 50px; height: 50px; place-items: center; border: 0; border-radius: 50%; background: #f5f1e9; color: #242820; box-shadow: 0 4px 13px rgba(0, 0, 0, .14); font-size: 28px; line-height: 1; cursor: pointer; pointer-events: auto; transition: transform .2s ease, background .2s ease; }
-.team-carousel__controls button { position:absolute; top:var(--team-control-top, 50%); transform:translate(-50%,-50%); }
-.team-carousel__controls button:first-child { left:var(--team-control-left, calc(50% - var(--team-control-offset))); }
-.team-carousel__controls button:last-child { left:var(--team-control-right, calc(50% + var(--team-control-offset))); }
+.team-carousel__controls button { position:absolute; top:calc(50% - var(--team-control-y-offset)); transform:translate(-50%,-50%); }
+.team-carousel__controls button:first-child { left:calc(50% - var(--team-control-offset)); }
+.team-carousel__controls button:last-child { left:calc(50% + var(--team-control-offset)); }
 .team-carousel__controls button:hover,.team-carousel__controls button:focus-visible { background: #f0bb70; color: #1b1f1a; transform:translate(-50%,-50%) scale(1.06); }
 .loyalty-tiers { background: #20251f; }.loyalty-tiers h2 { max-width:780px;margin:0;font:clamp(32px,4vw,54px)/1.08 Prata,serif;font-weight:400; }.loyalty-tiers__grid { display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:42px; }.loyalty-tiers__grid article { padding:28px;background:#30372d;border-radius:var(--corner-radius); }.loyalty-tiers__grid b { display:block;font:clamp(68px,10vw,148px)/.8 Prata,serif;font-weight:400;color:#f0bb70; }.loyalty-tiers__grid p { margin:18px 0 0;color:#c6caba; }.loyalty-terms { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 36px;max-width:1000px;margin-top:42px;color:#c6caba;line-height:1.6; }.loyalty-terms p { margin:0; }
 @media (max-width: 900px) {
-  .team-carousel { --team-card-size:min(55vw, 280px); --team-offset:min(27vw, 180px); --team-control-offset:calc(var(--team-card-size) * .72); width:100%; padding:44px 0; }
+  .team-carousel { --team-card-size:min(55vw, 280px); --team-offset:min(27vw, 180px); --team-control-offset:calc(var(--team-card-size) * .56); --team-control-y-offset:calc(var(--team-card-size) * .2); width:100%; padding:44px 0; }
   .team-carousel__stage { height:calc(var(--team-card-size) * 1.2); }
   .team-carousel .team-slide.is-active { transform:translate(-50%,-50%) scale(1.12); }
   .team-carousel .team-slide.is-previous { transform:translate(calc(-50% - var(--team-offset)),-50%) scale(.62); }
@@ -1179,7 +1179,7 @@
 .facts .facts__description + .facts__description { margin-top: 18px; }
 
 /* Arrows sit inside the focused portrait; they intentionally recede until interaction. */
-.team-carousel { --team-control-offset: calc(var(--team-card-size) * .49); }
+.team-carousel { --team-control-offset: calc(var(--team-card-size) * .65); }
 .team-carousel__stage { height: calc(var(--team-card-size) * 1.72); }
 .team-carousel__controls button { opacity: .18; transition: transform .2s ease, background .2s ease, opacity .2s ease; }
 .team-carousel__stage:hover .team-carousel__controls button, .team-carousel__stage:focus-within .team-carousel__controls button { opacity: 1; }
@@ -1193,7 +1193,7 @@
   .photo-lightbox { width: calc(100vw - 18px); max-height: calc(100dvh - 18px); }
   .photo-lightbox img { max-height: calc(100dvh - 28px); }
   .photo-lightbox__close { top: 12px; right: 12px; }
-  .team-carousel { --team-control-offset: calc(var(--team-card-size) * .43); }
+  .team-carousel { --team-control-offset: calc(var(--team-card-size) * .56); }
   .team-carousel__stage { height: calc(var(--team-card-size) * 1.92); }
   .team-carousel__controls button { opacity: .64; }
 }
