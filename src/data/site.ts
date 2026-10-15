@@ -13,9 +13,14 @@ export const generatedImages = {
   kids: withBase('/images/brief/kids-room.png'),
   food: withBase('/images/brief/home-food.png'),
 };
+export const hallImages = {
+  bar: Array.from({ length: 7 }, (_, index) => withBase(`/images/halls/bar/bar-${String(index + 1).padStart(2, '0')}.jpg`)),
+  aquarium: Array.from({ length: 7 }, (_, index) => withBase(`/images/halls/aquarium/aquarium-${String(index + 1).padStart(2, '0')}.jpg`)),
+  banquet: Array.from({ length: 9 }, (_, index) => withBase(`/images/halls/banquet/banquet-${String(index + 1).padStart(2, '0')}.jpg`)),
+};
 export const banquetFloors = [
-  { slug: 'first-floor', number: '01', name: '1 этаж', subtitle: 'Уютные залы для семейных встреч, ужинов с друзьями и небольших праздников.', hero: withBase('/images/banquet/panoramic.jpg'), rooms: [{ name: 'Панорамный зал «Аквариум»', image: withBase('/images/banquet/panoramic.jpg') }, { name: 'Бар', image: withBase('/images/banquet/bar.jpg') }], conditions: ['При бронировании от 6 человек включается сервисный сбор 10% от суммы чека.', 'Свои напитки и еду приносить нельзя.'], menuPages: [withBase('/images/banquet/menu-1.jpg'), withBase('/images/banquet/menu-2.jpg')] },
-  { slug: 'second-floor', number: '02', name: '2 этаж — банкетный', subtitle: 'Просторный зал для свадеб, юбилеев, корпоративов, выпускных, банкетов и фуршетов до 150 гостей.', hero: withBase('/images/banquet/second-floor.jpg'), rooms: [{ name: 'Банкетный зал', image: withBase('/images/banquet/second-floor.jpg') }], conditions: ['Вместительность — до 150 человек.', 'Минимальная сумма заказа — 5 500 ₽ с человека.', 'Можно свой алкоголь и торт.'], menuPages: [withBase('/images/banquet/menu-1.jpg'), withBase('/images/banquet/menu-2.jpg')] },
+  { slug: 'first-floor', number: '01', name: '1 этаж', subtitle: 'Светлый зал «Аквариум» подойдёт для семейных праздников и уютных встреч, а тёмный зал с барной атмосферой — для компаний и отдыха, в том числе с кальяном.', hero: withBase('/images/banquet/panoramic.jpg'), rooms: [{ name: 'Панорамный зал «Аквариум»', image: withBase('/images/banquet/panoramic.jpg') }, { name: 'Бар', image: withBase('/images/banquet/bar.jpg') }], conditions: ['При бронировании от 6 человек включается сервисный сбор 10% от суммы чека.', 'Свои напитки и еду приносить нельзя.'], menuPages: [withBase('/images/banquet/menu-1.jpg'), withBase('/images/banquet/menu-2.jpg')] },
+  { slug: 'second-floor', number: '02', name: '2 этаж — Банкетный зал', subtitle: 'От свадеб и юбилеев до выпускных и корпоративов — отдельный банкетный зал для праздников большого масштаба. Зал рассчитан на 100–200 гостей.', hero: withBase('/images/banquet/second-floor.jpg'), rooms: [{ name: 'Банкетный зал', image: withBase('/images/banquet/second-floor.jpg') }], conditions: ['Вместительность — до 200 человек.', 'Минимальная сумма заказа — 5 500 ₽ с человека.', 'Можно свой алкоголь и торт.'], menuPages: [withBase('/images/banquet/menu-1.jpg'), withBase('/images/banquet/menu-2.jpg')] },
 ] as const;
 export const teamRoles = [
   { role: 'Кухня', positionTitle: 'Бренд-шеф', title: 'Павел Гранкин', caption: 'Создаёт вкус, соединяя европейские и азиатские мотивы в одном меню.', image: withBase('/images/brief/team-pavel-grankin.png'), position: '50% 14%' },

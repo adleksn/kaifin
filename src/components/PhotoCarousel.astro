@@ -1,0 +1,56 @@
+---
+interface Props {
+  ariaLabel: string;
+  images: readonly string[];
+  className?: string;
+}
+
+const { ariaLabel, images, className = '' } = Astro.props;
+---
+
+<section class:list={['photo-carousel', className]} aria-label={ariaLabel} data-photo-carousel>
+  <div class="photo-carousel__viewport" data-photo-carousel-viewport tabindex="0">
+    <div class="photo-carousel__track">
+      {images.map((image, index) => <button class="photo-carousel__slide" type="button" data-photo-carousel-open data-image={image} aria-label={`${ariaLabel}: открыть фото ${index + 1}`}>
+        <img src={image} alt={`${ariaLabel}, фото ${index + 1}`} loading="lazy" />
+        <span>Открыть фото</span>
+      </button>)}
+    </div>
+  </div>
+  <div class="photo-carousel__controls" aria-label={`Навигация: ${ariaLabel}`}>
+    <button type="button" data-photo-carousel-direction="-1" aria-label="Предыдущее фото">←</button>
+    <button type="button" data-photo-carousel-direction="1" aria-label="Следующее фото">→</button>
+  </div>
+  <dialog class="photo-lightbox" data-photo-carousel-dialog aria-label="Просмотр фотографии">
+    <button class="photo-lightbox__close" type="button" data-photo-carousel-close aria-label="Закрыть">×</button>
+    <img data-photo-carousel-lightbox-image alt="" />
+  </dialog>
+</section>
+
+<script>
+  const bindPhotoCarousels = () => document.querySelectorAll<HTMLElement>('[data-photo-carousel]').forEach((carousel) => {
+    if (carousel.dataset.photoCarouselBound) return;
+    carousel.dataset.photoCarouselBound = 'true';
+    const viewport = carousel.querySelector<HTMLElement>('[data-photo-carousel-viewport]');
+    const dialog = carousel.querySelector<HTMLDialogElement>('[data-photo-carousel-dialog]');
+    const lightboxImage = carousel.querySelector<HTMLImageElement>('[data-photo-carousel-lightbox-image]');
+    if (!viewport || !dialog || !lightboxImage) return;
+
+    carousel.querySelectorAll<HTMLButtonElement>('[data-photo-carousel-direction]').forEach((button) => button.addEventListener('click', () => {
+      viewport.scrollBy({ left: viewport.clientWidth * .82 * Number(button.dataset.photoCarouselDirection), behavior: 'smooth' });
+    }));
+
+    carousel.querySelectorAll<HTMLButtonElement>('[data-photo-carousel-open]').forEach((button) => button.addEventListener('click', () => {
+      const image = button.querySelector('img');
+      lightboxImage.src = button.dataset.image || '';
+      lightboxImage.alt = image?.alt || '';
+      dialog.showModal();
+    }));
+
+    carousel.querySelector<HTMLButtonElement>('[data-photo-carousel-close]')?.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+  });
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bindPhotoCarousels, { once: true });
+  else bindPhotoCarousels();
+</script>
