@@ -76,6 +76,7 @@ assert.match(banquetIndex, /Банкеты в ресторане «Кайфын�
 assert.doesNotMatch(banquetIndex, /\+7 963 766 88 00/);
 assert.doesNotMatch(banquetIndex, /banquet-contact/);
 assert.match(banquetIndex, /id="banquet-halls"/);
+assert.match(banquetIndex, /<button type="button" class="action-link restoplace-click-open">Забронировать мероприятие<\/button>/);
 assert.doesNotMatch(banquetIndex, /href=\{`\/banquet/);
 assert.match(loyaltyModal, /window\.setTimeout\(.*4000\)/);
 assert.match(loyaltyModal, /Дарим/);
