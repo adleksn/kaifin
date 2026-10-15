@@ -213,5 +213,7 @@ assert.match(contentStyles, /border-radius:\s*var\(--corner-radius\)/);
 assert.match(contentStyles, /\.hero-actions button,[\s\S]*\.intro-grid__visual,[\s\S]*border-radius: var\(--corner-radius\) !important/);
 assert.match(header, /href="tel:\+79637668800"/);
 assert.match(header, /\+7 963 766-88-00/);
+assert.match(header, /class="site-header__actions"/);
+assert.match(contentStyles, /\.site-header__actions\s*\{[\s\S]*display:\s*flex/);
 
 console.log('Site contract checks passed.');

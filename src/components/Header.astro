@@ -7,8 +7,10 @@ const isCurrent = (href: string) => currentPath === href.replace(/\/$/, '');
 <header class="site-header">
   <a class="wordmark" href={withBase('/')} aria-label="Кайфын — главная">КАЙФЫН</a>
   <nav class="site-header__nav" aria-label="Основная навигация">{links.map((link) => <a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>{link.label}</a>)}</nav>
-  <a class="header-phone" href="tel:+79637668800">+7 963 766-88-00</a>
-  <button type="button" class="header-book restoplace-click-open">{restaurantBooking.label}</button>
+  <div class="site-header__actions">
+    <a class="header-phone" href="tel:+79637668800">+7 963 766-88-00</a>
+    <button type="button" class="header-book restoplace-click-open">{restaurantBooking.label}</button>
+  </div>
   <button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню"><span></span><span></span></button>
 </header>
 <div class="mobile-menu" id="mobile-menu" hidden>
