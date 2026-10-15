@@ -1215,7 +1215,7 @@
     line-height: 1.55;
   }
   .home-hero {
-    min-height: 100svh;
+    min-height: 65svh;
     padding: 96px 20px 24px;
   }
   .hero-copy h1 {
@@ -1260,4 +1260,21 @@
   .career-callout { margin-top: 20px; padding: 48px 20px; }
   .career-callout h2 { font-size: clamp(32px, 9vw, 40px); }
   .demo-form { gap: 28px; padding: 52px 20px; }
+}
+
+@media (max-width: 900px) {
+  .team-member-card__caption {
+    max-width: 30ch;
+    min-height: 4.5em;
+    height: 7.5em;
+    margin-top: 20px;
+    padding: 0 18px;
+    font-size: 12px;
+    line-height: 1.42;
+  }
+  .team-carousel { --team-control-y-offset: calc(var(--team-card-size) * .36); }
+  .booking-hero .action-link + .text-link {
+    display: inline-block;
+    margin: 16px 0 0 10px;
+  }
 }
