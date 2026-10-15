@@ -168,6 +168,7 @@ assert.match(contentStyles, /\.facts__label[\s\S]*font-size:\s*clamp\(18px, 1\.8
 assert.match(contentStyles, /\.loyalty-hero__gift[\s\S]*margin-bottom:\s*16px/);
 assert.match(contentStyles, /\.floor-card strong[\s\S]*min-height:\s*2em/);
 assert.match(contentStyles, /\.floor-card span[\s\S]*min-height:\s*4\.5em/);
+assert.match(contentStyles, /\.floor-card span[\s\S]*height:\s*6em/);
 assert.match(contentStyles, /\.promotion-grid article[\s\S]*border-radius:\s*var\(--corner-radius\)/);
 assert.match(contentStyles, /\.promotion-grid h2[\s\S]*font-size:\s*clamp\(21px, 2\.1vw, 39px\)/);
 assert.match(contentStyles, /\.hall-gallery/);
