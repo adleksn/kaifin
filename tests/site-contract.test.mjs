@@ -179,7 +179,7 @@ assert.match(contentStyles, /\.footer-meta, \.footer-meta p, \.footer-meta a\s*\
 assert.match(contentStyles, /\.loyalty-square-card p\s*\{[^}]*font-size:18px !important/);
 assert.match(contentStyles, /\.loyalty-faq__answer p\s*\{[^}]*font-size:16px !important/);
 assert.match(contentStyles, /\.section-booking, \.action-link, \.sticky-booking-cta\s*\{[^}]*border-radius:0 !important[^}]*font-size:16px/);
-assert.match(contentStyles, /\.loyalty-program-hero__registration\s*\{[^}]*background:var\(--red\) !important/);
+assert.match(contentStyles, /\.loyalty-program-hero__registration\s*\{[^}]*background:var\(--red\) !important[^}]*border-radius:999px !important/);
 assert.match(contentStyles, /\.home-cuisine__actions \.action-link\s*\{[^}]*border-radius:999px !important/);
 assert.match(contentStyles, /\.hero-actions \.hero-actions__primary\s*\{[^}]*width:min\(240px, 100%\)[^}]*font-size:16px/);
 assert.match(contentStyles, /\.header-book\s*\{[^}]*font-size:16px/);
