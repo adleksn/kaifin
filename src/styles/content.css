@@ -1291,6 +1291,10 @@ body.photoswipe-open { overflow:hidden; }
 .hall-gallery__heading { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 26px; }
 .hall-gallery__heading .eyebrow { margin: 0 0 10px; }
 .hall-gallery__heading h2 { margin: 0; font: 400 clamp(31px, 4.1vw, 58px)/1.05 "Bodoni Moda", Georgia, serif; }
+
+/* Final type scale: applies across every page after component-specific styles. */
+p, .lede, .section-heading__copy { font-size:20px !important; }
+.footer-meta, .footer-meta p, .footer-meta a { font-size:18px !important; }
 .photo-carousel { position: relative; }
 .photo-carousel__viewport { overflow-x: auto; padding-bottom: 10px; scroll-behavior: smooth; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: rgba(240, 187, 112, .7) transparent; }
 .photo-carousel__track { display: flex; gap: 16px; width: max-content; }
