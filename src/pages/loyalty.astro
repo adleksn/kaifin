@@ -6,7 +6,6 @@ import { loyalty, loyaltyProgram } from '../data/site';
 
 <BaseLayout title="Программа лояльности — Кайфын" description="Программа лояльности ресторана Кайфын: бонусы от 5% до 10% с каждого чека.">
   <section class="inner-hero loyalty-program-hero">
-    <p class="eyebrow">Кайфын</p>
     <h1>Программа лояльности</h1>
     <p class="lede">Зарегистрируйтесь в программе и получайте бонусы от 5% до 10% с каждого чека</p>
     {loyaltyProgram.registrationUrl ? <a class="action-link" href={loyaltyProgram.registrationUrl}>Зарегистрироваться</a> : <button class="action-link loyalty-program-hero__registration" type="button" aria-disabled="true" title={loyalty.unavailableNote}>Зарегистрироваться</button>}
