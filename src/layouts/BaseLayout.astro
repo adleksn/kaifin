@@ -4,7 +4,7 @@ import '../styles/content.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import RestoplaceModal from '../components/RestoplaceModal.astro';
-import MenuGalleryModal from '../components/MenuGalleryModal.astro';
+import BanquetMenuLightboxLauncher from '../components/BanquetMenuLightboxLauncher.astro';
 
 interface Props { title?: string; description?: string; }
 const { title = 'Кайфын — ресторан в Балашихе', description = 'Ресторан Кайфын в Балашихе' } = Astro.props;
@@ -22,7 +22,7 @@ const { title = 'Кайфын — ресторан в Балашихе', descrip
     <main><slot /></main>
     <Footer />
     <RestoplaceModal />
-    <MenuGalleryModal />
+    <BanquetMenuLightboxLauncher />
     <script is:inline src="//app.restoplace.cc/widget.js?h=3bced894eaf00be50d31" async></script>
   </body>
 </html>

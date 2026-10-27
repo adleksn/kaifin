@@ -1,0 +1,59 @@
+---
+import 'photoswipe/style.css';
+import { withBase } from '../data/site';
+
+const pages = [
+  { preview: withBase('/images/banquet/menu-1-preview.webp'), full: withBase('/images/banquet/menu-1-full.webp'), alt: 'Банкетное меню, страница 1', page: 1 },
+  { preview: withBase('/images/banquet/menu-2-preview.webp'), full: withBase('/images/banquet/menu-2-full.webp'), alt: 'Банкетное меню, страница 2', page: 2 },
+];
+---
+
+<div class="banquet-menu-pages pswp-gallery" id="banquet-menu-gallery" data-banquet-menu-gallery aria-label="Банкетное меню: две страницы">
+  {pages.map((page) => <a href={page.full} data-pswp-width="2552" data-pswp-height="3579" aria-label={`Открыть банкетное меню, страница ${page.page} из 2`}>
+    <figure>
+      <img src={page.preview} width="760" height="1066" alt={page.alt} loading="lazy" decoding="async" />
+      <span class="banquet-menu-pages__zoom" aria-hidden="true">+</span>
+      <figcaption>Нажмите, чтобы увеличить</figcaption>
+    </figure>
+  </a>)}
+</div>
+
+<script>
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+
+  const gallery = document.querySelector<HTMLElement>('[data-banquet-menu-gallery]');
+
+  if (gallery && !gallery.dataset.photoswipeBound) {
+    gallery.dataset.photoswipeBound = 'true';
+    let opener: HTMLAnchorElement | null = null;
+    let scrollPosition = 0;
+
+    gallery.addEventListener('click', (event) => {
+      opener = (event.target as HTMLElement).closest<HTMLAnchorElement>('a');
+    });
+
+    const lightbox = new PhotoSwipeLightbox({
+      gallery,
+      children: 'a',
+      pswpModule: () => import('photoswipe'),
+      wheelToZoom: true,
+      initialZoomLevel: 'fit',
+      secondaryZoomLevel: 2,
+      maxZoomLevel: 4,
+      paddingFn: () => ({ top: 24, right: 24, bottom: 24, left: 24 }),
+    });
+
+    lightbox.on('beforeOpen', () => {
+      scrollPosition = window.scrollY;
+      document.body.classList.add('photoswipe-open');
+    });
+
+    lightbox.on('destroy', () => {
+      document.body.classList.remove('photoswipe-open');
+      window.scrollTo(0, scrollPosition);
+      opener?.focus();
+    });
+
+    lightbox.init();
+  }
+</script>

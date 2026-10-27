@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BanquetMenuGallery from '../../components/BanquetMenuGallery.astro';
 import DemoForm from '../../components/DemoForm.astro';
 import PhotoCarousel from '../../components/PhotoCarousel.astro';
 import { hallImages } from '../../data/site';
@@ -18,7 +19,8 @@ import { hallImages } from '../../data/site';
   </section>
 
   <section class="banquet-menu-viewer" aria-labelledby="banquet-menu-title">
-    <div class="banquet-menu-viewer__heading"><p class="eyebrow">Меню</p><h2 id="banquet-menu-title">Банкетное меню</h2><p>Двухстраничное банкетное меню будет доступно здесь.</p></div>
+    <div class="banquet-menu-viewer__heading"><p class="eyebrow">Меню</p><h2 id="banquet-menu-title">Банкетное меню</h2></div>
+    <BanquetMenuGallery />
   </section>
 
   <section id="banquet-request" class="banquet-request" aria-label="Заявка на банкет">

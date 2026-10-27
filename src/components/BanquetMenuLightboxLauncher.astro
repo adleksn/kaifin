@@ -1,0 +1,54 @@
+---
+import 'photoswipe/style.css';
+import { withBase } from '../data/site';
+
+const pages = [
+  { full: withBase('/images/banquet/menu-1-full.webp'), alt: 'Банкетное меню, страница 1' },
+  { full: withBase('/images/banquet/menu-2-full.webp'), alt: 'Банкетное меню, страница 2' },
+];
+---
+
+<div class="banquet-menu-lightbox-source" data-banquet-menu-lightbox aria-hidden="true">
+  {pages.map((page) => <a href={page.full} data-pswp-width="2552" data-pswp-height="3579" aria-label={page.alt}></a>)}
+</div>
+
+<script>
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+
+  const source = document.querySelector<HTMLElement>('[data-banquet-menu-lightbox]');
+
+  if (source && !source.dataset.photoswipeBound) {
+    source.dataset.photoswipeBound = 'true';
+    let opener: HTMLElement | null = null;
+    let scrollPosition = 0;
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: source,
+      children: 'a',
+      pswpModule: () => import('photoswipe'),
+      wheelToZoom: true,
+      initialZoomLevel: 'fit',
+      secondaryZoomLevel: 2,
+      maxZoomLevel: 4,
+      showHideAnimationType: 'none',
+      paddingFn: () => ({ top: 24, right: 24, bottom: 24, left: 24 }),
+    });
+
+    lightbox.on('beforeOpen', () => {
+      scrollPosition = window.scrollY;
+      document.body.classList.add('photoswipe-open');
+    });
+
+    lightbox.on('destroy', () => {
+      document.body.classList.remove('photoswipe-open');
+      window.scrollTo(0, scrollPosition);
+      opener?.focus();
+    });
+
+    document.querySelectorAll<HTMLElement>('[data-banquet-menu-open]').forEach((trigger) => trigger.addEventListener('click', () => {
+      opener = trigger;
+      lightbox.loadAndOpen(0);
+    }));
+
+    lightbox.init();
+  }
+</script>
