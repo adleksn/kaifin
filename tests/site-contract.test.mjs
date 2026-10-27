@@ -267,7 +267,7 @@ assert.match(contentStyles, /\.home-hero\s*\{\s*min-height:\s*65svh/);
 assert.match(contentStyles, /\.team-member-card__caption\s*\{[\s\S]*height:\s*7\.5em/);
 assert.match(contentStyles, /\.booking-hero \.action-link \+ \.text-link\s*\{[\s\S]*margin:\s*16px 0 0 10px/);
 assert.match(contentStyles, /\.about-story \.image-block[\s\S]*border-radius:\s*var\(--corner-radius\)/);
-assert.match(contentStyles, /\.site-header\s*\{[\s\S]*position: absolute/);
+assert.match(contentStyles, /\.site-header\s*\{[\s\S]*position: sticky/);
 assert.match(contentStyles, /\.banquet-menu-viewer\s*\{[^}]*background:#130300/);
 assert.match(contentStyles, /\.demo-form__head\s*\{[^}]*margin-bottom:38px/);
 assert.doesNotMatch(footer, /generatedImages/);

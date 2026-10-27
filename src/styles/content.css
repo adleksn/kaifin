@@ -1025,8 +1025,8 @@ body.photoswipe-open { overflow:hidden; }
 
 /* Follow-up layout corrections: booking, team carousel, footer and mobile scale. */
 .site-header {
-  position: absolute;
-  z-index: 3;
+  position: sticky;
+  z-index: 30;
   top: 0;
   width: 100%;
   height: 88px;
