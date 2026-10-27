@@ -3,11 +3,12 @@ import { withBase } from '../data/site';
 const links = [{ href: '#about', label: 'Ресторан' }, { href: withBase('/banquet'), label: 'Банкеты' }, { href: withBase('/loyalty'), label: 'Программа лояльности' }, { href: '#contacts', label: 'Контакты' }];
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || withBase('/');
 const isCurrent = (href: string) => currentPath === href.replace(/\/$/, '');
+const restaurantHref = currentPath === withBase('/') ? '#about' : withBase('/#about');
 const menuHref = currentPath === withBase('/') ? '#cuisine' : withBase('/#cuisine');
 ---
 <header class="site-header">
   <a class="wordmark" href={withBase('/')} aria-label="Кайфын — главная">КАЙФЫН</a>
-  <nav class="site-header__nav" aria-label="Основная навигация"><a href="#about">Ресторан</a><a href={menuHref}>Меню</a>{links.slice(1).map((link) => <a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>{link.label}</a>)}</nav>
+  <nav class="site-header__nav" aria-label="Основная навигация"><a href={restaurantHref}>Ресторан</a><a href={menuHref}>Меню</a>{links.slice(1).map((link) => <a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>{link.label}</a>)}</nav>
   <div class="site-header__actions">
     <button type="button" class="header-book restoplace-click-open">Забронировать</button>
     <a class="header-phone" href="tel:+79637668800">+7 963 766-88-00</a>
@@ -16,7 +17,7 @@ const menuHref = currentPath === withBase('/') ? '#cuisine' : withBase('/#cuisin
 </header>
 <div class="mobile-menu" id="mobile-menu" hidden>
   <div class="mobile-menu__top"><span>Навигация</span><button type="button" class="mobile-menu__close" aria-label="Закрыть меню">×</button></div>
-  <nav aria-label="Мобильная навигация"><a href="#about"><span>01</span>Ресторан</a><a href={menuHref}><span>02</span>Меню</a>{links.slice(1).map((link, index) => <a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}><span>0{index + 3}</span>{link.label}</a>)}</nav>
+  <nav aria-label="Мобильная навигация"><a href={restaurantHref}><span>01</span>Ресторан</a><a href={menuHref}><span>02</span>Меню</a>{links.slice(1).map((link, index) => <a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}><span>0{index + 3}</span>{link.label}</a>)}</nav>
 </div>
 <script>
   const toggle = document.querySelector<HTMLButtonElement>('.mobile-menu-toggle');

@@ -158,7 +158,7 @@ assert.doesNotMatch(globalStyles, /linear-gradient/);
 assert.doesNotMatch(contentStyles, /linear-gradient|radial-gradient/);
 
 assert.match(home, /id="about"/);
-assert.match(header, /href="#about"/);
+assert.match(header, /const restaurantHref = currentPath === withBase\('\/'\) \? '#about' : withBase\('\/#about'\)/);
 assert.doesNotMatch(header, /data-menu-gallery-open/);
 assert.match(header, /href: '#contacts', label: 'Контакты'/);
 assert.match(footer, /id="contacts"/);
