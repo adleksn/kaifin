@@ -147,7 +147,7 @@ assert.match(header, /header-book[\s\S]*header-phone/);
 assert.match(home, /home-cuisine__track/);
 assert.match(contentStyles, /@keyframes home-cuisine-marquee/);
 assert.match(contentStyles, /prefers-reduced-motion: reduce/);
-assert.match(contentStyles, /h1,h2,h3\s*\{[^}]*font-size:20px !important/);
+assert.match(contentStyles, /h1,h2,h3\s*\{[^}]*font-size:45px !important/);
 assert.match(contentStyles, /p, \.lede, \.section-heading__copy\s*\{[^}]*font-size:16px !important/);
 assert.match(globalStyles, /--ink:#130300/);
 assert.match(globalStyles, /\.site-footer\s*\{[^}]*background:var\(--ink\)/);

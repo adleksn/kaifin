@@ -234,7 +234,7 @@
 }
 
 /* Global content scale. */
-h1,h2,h3 { font-size:20px !important; }
+h1,h2,h3 { font-size:45px !important; }
 p, .lede, .section-heading__copy { font-size:16px !important; }
 .site-header, .site-footer { background:#130300 !important; }
 
