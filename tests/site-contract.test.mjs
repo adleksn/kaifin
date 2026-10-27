@@ -274,6 +274,7 @@ assert.match(contentStyles, /\.loyalty-square-grid--levels/);
 assert.match(contentStyles, /\.loyalty-square-grid--bonuses/);
 assert.match(contentStyles, /\.loyalty-square-card\s*\{[^}]*background:#2d1002/);
 assert.match(contentStyles, /\.loyalty-square-card\s*\{[^}]*justify-content:flex-start[^}]*aspect-ratio:2\/1/);
+assert.match(contentStyles, /\.loyalty-square-card--bonus p\s*\{[^}]*margin-top:auto/);
 assert.match(contentStyles, /\.loyalty-square-grid--levels strong\s*\{[^}]*font-size:35px/);
 assert.match(contentStyles, /\.home-cuisine__actions \.action-link\s*\{[^}]*cursor:pointer/);
 assert.match(contentStyles, /\.loyalty-faq/);
