@@ -11,14 +11,14 @@ import { generatedImages, homeCuisine, homeSettings, homeVenue, withBase } from 
     <div class="hero-actions"><RestaurantBookingCTA class="hero-actions__primary" /><a href={withBase('/delivery')}>Доставка</a></div>
   </section>
 
-  <section class="home-story home-section">
+  <section id="about" class="home-story home-section">
     <img src={generatedImages.about} alt="Интерьер ресторана Кайфын" loading="lazy" />
     <div><h2>Кайфын — имя с историей</h2><p>Место для тёплых встреч, семейных ужинов и событий, которые хочется запомнить.</p><p>В меню соединяются китайская и европейская кухня, а в залах легко выбрать настроение для любого повода.</p><a class="text-link" href={withBase('/about')}>О ресторане</a></div>
   </section>
 
   <section class="home-cuisine home-section">
     <div class="home-section__heading"><h2>{homeCuisine.title}</h2><p>{homeCuisine.description}</p></div>
-    <div class="home-cuisine__gallery">{homeCuisine.images.map((image, index) => <a href={withBase('/menu')}><img src={image} alt={`Блюдо из меню, фото ${index + 1}`} loading="lazy" /></a>)}</div>
+    <div class="home-cuisine__gallery"><div class="home-cuisine__track">{[...homeCuisine.images, ...homeCuisine.images].map((image, index) => <a href={withBase('/menu')}><img src={image} alt={`Блюдо из меню, фото ${(index % homeCuisine.images.length) + 1}`} loading="lazy" /></a>)}</div></div>
     <div class="home-cuisine__actions"><a class="action-link" href={withBase('/menu')}>Основное меню</a><a class="action-link" href={withBase('/banquet')}>Банкетное меню</a><a class="action-link" href={withBase('/menu')}>Детское меню</a></div>
   </section>
 
@@ -31,5 +31,5 @@ import { generatedImages, homeCuisine, homeSettings, homeVenue, withBase } from 
 
   {homeSettings.showTeamOnHome && <section class="home-team"><div class="home-team__heading"><h2>Команда Кайфына</h2><p>Люди, которые создают атмосферу ресторана.</p><a class="text-link" href={withBase('/team')}>Познакомиться с командой</a></div><TeamCarousel /></section>}
 
-  <section class="home-contact"><div><h2>Адрес</h2><p>Балашиха, мкр. Ольгино, ул. Жилгородок, 43А</p><p>Пн–Чт, Вс: 12:00–00:00 · Пт–Сб: 12:00–01:00</p></div><div><h2>Контакты</h2><a href="tel:+74955226768">8 495 522-67-68</a><a href="mailto:info@kaifin.ru">info@kaifin.ru</a></div></section>
+  <section id="contacts" class="home-contact"><div><h2>Адрес</h2><p>Балашиха, мкр. Ольгино, ул. Жилгородок, 43А</p><p>Пн–Чт, Вс: 12:00–00:00 · Пт–Сб: 12:00–01:00</p></div><div><h2>Контакты</h2><a href="tel:+74955226768">8 495 522-67-68</a><a href="mailto:info@kaifin.ru">info@kaifin.ru</a></div></section>
 </BaseLayout>

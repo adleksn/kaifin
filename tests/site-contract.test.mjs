@@ -139,6 +139,19 @@ assert.match(contentStyles, /\.home-venue__gallery/);
 assert.doesNotMatch(globalStyles, /linear-gradient/);
 assert.doesNotMatch(contentStyles, /linear-gradient|radial-gradient/);
 
+assert.match(home, /id="about"/);
+assert.match(home, /id="contacts"/);
+assert.match(header, /href="#about"/);
+assert.match(header, /data-menu-gallery-open/);
+assert.match(header, /href: '#contacts'/);
+assert.match(header, /header-book[\s\S]*header-phone/);
+assert.match(home, /home-cuisine__track/);
+assert.match(contentStyles, /@keyframes home-cuisine-marquee/);
+assert.match(contentStyles, /prefers-reduced-motion: reduce/);
+assert.match(globalStyles, /\.hero-copy h1[\s\S]*25px/);
+assert.match(footer, /footer-meta__address/);
+assert.match(footer, /footer-meta__contacts/);
+
 for (const path of ['src/pages/banquet/first-floor.astro', 'src/pages/banquet/second-floor.astro', 'src/components/DemoForm.astro', 'src/components/TeamCarousel.astro']) {
   await read(path);
 }

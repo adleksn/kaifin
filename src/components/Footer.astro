@@ -1,5 +1,5 @@
 ---
-import { site, withBase } from '../data/site';
+import { site } from '../data/site';
 const mapLink = `https://yandex.ru/maps/?text=${encodeURIComponent(site.address)}`;
 ---
 <footer class="site-footer">
@@ -7,9 +7,5 @@ const mapLink = `https://yandex.ru/maps/?text=${encodeURIComponent(site.address)
     <div><span>Кайфын</span><p>{site.address}</p></div>
     <a href={mapLink} target="_blank" rel="noreferrer">Как добраться ↗</a>
   </section>
-  <div class="footer-meta">
-    <div><div class="wordmark">КАЙФЫН</div><p>{site.phone}</p><a href={`mailto:${site.email}`}>{site.email}</a></div>
-    <div><p>{site.hours.join(' · ')}</p><p>{site.address}</p></div>
-    <div><a href={withBase('/privacy')}>Политика конфиденциальности</a><a href={withBase('/contacts')}>Контакты</a></div>
-  </div>
+  <div class="footer-meta"><div class="footer-meta__address"><strong>Адрес</strong><p>{site.address}</p><p>{site.hours.join(' · ')}</p></div><div class="footer-meta__contacts"><strong>Контакты</strong><a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a><a href={`mailto:${site.email}`}>{site.email}</a></div></div>
 </footer>

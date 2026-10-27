@@ -1,0 +1,14 @@
+---
+import { withBase } from '../data/site';
+const pages = [withBase('/images/banquet/menu-1.jpg'), withBase('/images/banquet/menu-2.jpg')];
+---
+<dialog class="menu-gallery-modal" data-menu-gallery aria-label="Меню ресторана">
+  <div class="menu-gallery-modal__bar"><strong>Меню</strong><button type="button" data-menu-gallery-close aria-label="Закрыть меню">×</button></div>
+  <div class="menu-gallery-modal__pages">{pages.map((page, index) => <img src={page} alt={`Меню ресторана, страница ${index + 1}`} />)}</div>
+</dialog>
+<script>
+  const modal = document.querySelector<HTMLDialogElement>('[data-menu-gallery]');
+  document.querySelectorAll<HTMLButtonElement>('[data-menu-gallery-open]').forEach((button) => button.addEventListener('click', () => modal?.showModal()));
+  modal?.querySelector<HTMLButtonElement>('[data-menu-gallery-close]')?.addEventListener('click', () => modal.close());
+  modal?.addEventListener('click', (event) => { if (event.target === modal) modal.close(); });
+</script>
