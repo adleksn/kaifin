@@ -233,6 +233,10 @@
   }
 }
 
+/* Global content scale. */
+h1,h2,h3 { font-size:20px !important; }
+p, .lede, .section-heading__copy { font-size:16px !important; }
+
 /* Desktop-1 home page: one surface colour and compact title/supporting-copy hierarchy. */
 .home-section { padding:clamp(64px,9vw,120px) clamp(22px,9vw,150px); background:var(--ink); }
 .home-section h2, .home-contact h2 { margin:0; font:clamp(32px,3.6vw,52px)/1.08 Prata,serif; font-weight:400; }
