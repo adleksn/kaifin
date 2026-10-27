@@ -46,8 +46,8 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--amber); outline-
 .map-placeholder span { font:30px Prata,serif; }
 .map-placeholder p { max-width:410px; line-height:1.5; }
 .map-placeholder a { padding:14px; border:1px solid var(--paper); }
-.footer-meta { display:grid; grid-template-columns:1fr auto; gap:35px; padding:45px clamp(22px,5vw,76px); color:#b6b9ad; font-size:12px; line-height:1.65; }
-.footer-meta strong { color:var(--paper); font-size:13px; }
+.footer-meta { display:grid; grid-template-columns:1fr auto; gap:35px; padding:45px clamp(22px,5vw,76px); color:#b6b9ad; font-size:13px; line-height:1.65; }
+.footer-meta strong { color:var(--paper); font-size:21px; }
 .footer-meta__contacts { text-align:right; }
 .footer-meta p { margin:9px 0; }
 .footer-meta a { display:block; margin:5px 0; text-decoration:underline; }
