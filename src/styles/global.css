@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 
 @font-face {
   font-family: 'Chinese Restaurant';
@@ -8,7 +8,15 @@
   font-display: swap;
 }
 
-:root { --ink:#130300; --ink-soft:#130300; --paper:#f2eee4; --olive:#130300; --amber:#ce9651; --red:#b92d28; --line:rgba(242,238,228,.25); --corner-radius:10px; font-family:Manrope,Arial,sans-serif; color:var(--paper); background:var(--ink); }
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/kaifin/fonts/CormorantGaramond-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+:root { --ink:#130300; --ink-soft:#130300; --paper:#f2eee4; --olive:#130300; --amber:#ce9651; --red:#b92d28; --line:rgba(242,238,228,.25); --corner-radius:10px; font-family:'Cormorant Garamond', Georgia, serif; color:var(--paper); background:var(--ink); }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { margin:0; background:var(--ink); }

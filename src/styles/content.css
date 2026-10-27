@@ -27,7 +27,7 @@
 .loyalty-faq { max-width:1040px; margin-top:28px; border-top:1px solid var(--line); }
 .loyalty-faq__item { border-bottom:1px solid var(--line); }
 .loyalty-faq h3 { margin:0; }
-.loyalty-faq h3 button { display:flex; width:100%; align-items:center; justify-content:space-between; gap:20px; padding:24px 0; color:var(--paper); background:transparent; border:0; border-radius:0 !important; font:400 20px/1.25 Manrope,sans-serif; text-align:left; cursor:pointer; }
+.loyalty-faq h3 button { display:flex; width:100%; align-items:center; justify-content:space-between; gap:20px; padding:24px 0; color:var(--paper); background:transparent; border:0; border-radius:0 !important; font:400 20px/1.25 "Cormorant Garamond", Georgia, serif; text-align:left; cursor:pointer; }
 .loyalty-faq__indicator { flex:0 0 auto; color:var(--amber); font-size:29px; line-height:1; transition:transform .22s ease; }
 .loyalty-faq h3 button[aria-expanded='true'] .loyalty-faq__indicator { transform:rotate(45deg); }
 .loyalty-faq__answer { display:grid; grid-template-rows:0fr; opacity:0; transition:grid-template-rows .22s ease, opacity .22s ease; }
@@ -320,7 +320,7 @@ button, .action-link { border-radius:999px !important; }
 .floor-card strong { font:clamp(32px,4vw,52px)/1 "Chinese Restaurant", Prata, serif; font-weight:400; }.floor-card span { max-width:290px; color:#e0dfd8; line-height:1.5; }
 .hall-conditions { grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); margin-top:70px; }.hall-conditions span { display:block; color:var(--amber); font-size:10px; letter-spacing:.12em; text-transform:uppercase; }.hall-conditions b { display:block; margin-top:14px; font-size:16px; font-weight:500; }
 .room-gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:70px clamp(22px,9vw,150px); }.room-gallery figure { margin:0; background:#22251f; }.room-gallery img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; }.room-gallery figcaption { padding:16px; font:22px "Chinese Restaurant", Prata, serif; }.menu-download { display:block; width:max-content; max-width:calc(100% - 44px); margin:0 clamp(22px,9vw,150px) 55px; padding:16px 22px; border:1px solid var(--amber); color:#f2c77f; }
-.demo-form { max-width:1080px; margin:0 auto; padding:100px clamp(22px,5vw,76px); }.demo-form h2,.career-callout h2 { margin:0; font:clamp(36px,4.5vw,60px)/1.02 "Chinese Restaurant", Prata, serif; font-weight:400; }.demo-form__head { margin-bottom:38px; }.demo-form__head>p:last-child,.career-callout p:not(.eyebrow) { color:#c6caba; line-height:1.65; }.demo-form__fields { display:grid; grid-template-columns:repeat(2,1fr); gap:15px; }.demo-form label { display:grid; gap:8px; color:#c7cabd; font-size:10px; letter-spacing:.1em; text-transform:uppercase; }.demo-form input,.demo-form select,.demo-form textarea { width:100%; border:1px solid #5e6457; border-radius:0; padding:14px; background:#20231f; color:var(--paper); font:15px Manrope,sans-serif; letter-spacing:0; text-transform:none; }.demo-form textarea { min-height:115px; resize:vertical; }.demo-form__wide { grid-column:1/-1; }.demo-form button,.loyalty-page-actions button { justify-self:start; border:0; padding:16px 20px; background:var(--amber); color:var(--ink); cursor:pointer; }.demo-form button:hover { background:#f0ba70; }.demo-form button:disabled,.loyalty-page-actions button:disabled,.loyalty-modal button:disabled { cursor:not-allowed; opacity:.52; }
+.demo-form { max-width:1080px; margin:0 auto; padding:100px clamp(22px,5vw,76px); }.demo-form h2,.career-callout h2 { margin:0; font:clamp(36px,4.5vw,60px)/1.02 "Chinese Restaurant", Prata, serif; font-weight:400; }.demo-form__head { margin-bottom:38px; }.demo-form__head>p:last-child,.career-callout p:not(.eyebrow) { color:#c6caba; line-height:1.65; }.demo-form__fields { display:grid; grid-template-columns:repeat(2,1fr); gap:15px; }.demo-form label { display:grid; gap:8px; color:#c7cabd; font-size:10px; letter-spacing:.1em; text-transform:uppercase; }.demo-form input,.demo-form select,.demo-form textarea { width:100%; border:1px solid #5e6457; border-radius:0; padding:14px; background:#20231f; color:var(--paper); font:15px "Cormorant Garamond", Georgia, serif; letter-spacing:0; text-transform:none; }.demo-form textarea { min-height:115px; resize:vertical; }.demo-form__wide { grid-column:1/-1; }.demo-form button,.loyalty-page-actions button { justify-self:start; border:0; padding:16px 20px; background:var(--amber); color:var(--ink); cursor:pointer; }.demo-form button:hover { background:#f0ba70; }.demo-form button:disabled,.loyalty-page-actions button:disabled,.loyalty-modal button:disabled { cursor:not-allowed; opacity:.52; }
 .demo-form select { padding-right:44px; }
 .loyalty-modal { width:min(520px,calc(100% - 34px)); padding:46px; border:1px solid #d39c55; background:#1c201b; color:var(--paper); box-shadow:0 25px 90px #0009; }.loyalty-modal::backdrop { background:#080a08bb; backdrop-filter:blur(4px); }.loyalty-modal strong { display:block; color:#f0bc73; font:clamp(48px,7vw,76px) "Chinese Restaurant", Prata, serif; }.loyalty-modal h2 { margin:8px 0 20px; font:42px/1 "Chinese Restaurant", Prata, serif; font-weight:400; }.loyalty-modal p:not(.eyebrow) { color:#d2d3cb; line-height:1.6; }.loyalty-modal__actions,.loyalty-page-actions { display:grid; gap:10px; margin:28px 0 16px; }.loyalty-modal__actions button { padding:15px; border:1px solid #777c6e; background:transparent; color:var(--paper); }.modal-close { position:absolute; top:12px; right:16px; border:0; background:transparent; color:var(--paper); font-size:32px; cursor:pointer; }.loyalty-modal small,.loyalty-hero small { color:#aeb2a3; }
 .team-carousel { width:100%; overflow-x:auto; scroll-snap-type:x mandatory; padding:85px 0 35px; scrollbar-width:thin; }.team-track { display:flex; gap:20px; width:max-content; margin-left:calc(50% - 540px); }.team-slide { width:340px; flex:0 0 340px; scroll-snap-align:center; text-align:center; }.team-slide.is-featured { transform:translateY(-35px); }.team-avatar { display:grid; place-items:center; width:300px; height:300px; margin:0 auto 23px; border-radius:50%; border:1px dashed #c9995f; background:#394136; color:#e4bd7d; font:46px "Chinese Restaurant", Prata, serif; }.team-slide.is-featured .team-avatar { width:370px; height:370px; background:#6b4c2c; }.team-slide h2 { max-width:270px; margin:0 auto; font:24px/1.2 "Chinese Restaurant", Prata, serif; font-weight:400; }.team-carousel__controls { display:flex; justify-content:center; gap:8px; margin:30px auto 0; }.team-carousel__controls button { width:44px; height:44px; border:1px solid #c9995f; border-radius:50%; background:transparent; color:var(--paper); font-size:20px; cursor:pointer; }.career-callout { max-width:850px; margin:40px auto 0; padding:80px clamp(22px,6vw,80px); text-align:center; background:#667158; }.career-callout p:not(.eyebrow) { max-width:500px; margin:23px auto 0; }
@@ -434,7 +434,7 @@ body.photoswipe-open { overflow:hidden; }
 .section-heading h2 > small { display: block; }
 .section-heading h2 > small {
   margin-top: 15px;
-  font: clamp(25px, 2.7vw, 42px) / 1.08 Manrope, sans-serif;
+  font: clamp(25px, 2.7vw, 42px) / 1.08 "Cormorant Garamond", Georgia, serif;
   font-weight: 500;
   letter-spacing: -.05em;
   color: #c8cbbb;
@@ -541,7 +541,7 @@ body.photoswipe-open { overflow:hidden; }
   border-radius: 2px;
   background: #20231f;
   color: var(--paper);
-  font: 15px Manrope, sans-serif;
+  font: 15px "Cormorant Garamond", Georgia, serif;
   letter-spacing: 0;
   text-transform: none;
   outline: none;
@@ -567,7 +567,7 @@ body.photoswipe-open { overflow:hidden; }
 .time-picker__hint { min-height: 19px; margin: 11px 0 0; color: #afb4a2; font-size: 12px; }
 
 .booking-form__footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 4px; }
-.booking-form__footer button { min-height: 58px; padding: 0 28px; border: 1px solid #f1bd73; border-radius: 0; background: var(--amber); color: var(--ink); font: 700 12px Manrope, sans-serif; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; box-shadow: 0 10px 24px rgba(206, 150, 81, .18); transition: transform .2s ease, background .2s ease; }
+.booking-form__footer button { min-height: 58px; padding: 0 28px; border: 1px solid #f1bd73; border-radius: 0; background: var(--amber); color: var(--ink); font: 700 12px "Cormorant Garamond", Georgia, serif; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; box-shadow: 0 10px 24px rgba(206, 150, 81, .18); transition: transform .2s ease, background .2s ease; }
 .booking-form__footer button:hover,
 .booking-form__footer button:focus-visible { background: #f5c77f; transform: translateY(-2px); }
 .checkbox-line { color: #afb4a2; letter-spacing: 0; text-transform: none; }
@@ -608,15 +608,15 @@ body.photoswipe-open { overflow:hidden; }
 
 .time-picker { position: relative; z-index: 2; margin: 0; }
 .time-picker__label { display: block; margin-bottom: 9px; color: #c7cabd; font-size: 11px; letter-spacing: .11em; text-transform: uppercase; }
-.time-picker__trigger { width: 100%; min-height: 62px; padding: 0 18px; display: flex; align-items: center; justify-content: space-between; border: 1px solid #5e6457; border-radius: 14px; background: #20231f; color: var(--paper); font: 16px Manrope, sans-serif; text-align: left; cursor: pointer; transition: border-color .2s ease, background .2s ease; }
+.time-picker__trigger { width: 100%; min-height: 62px; padding: 0 18px; display: flex; align-items: center; justify-content: space-between; border: 1px solid #5e6457; border-radius: 14px; background: #20231f; color: var(--paper); font: 16px "Cormorant Garamond", Georgia, serif; text-align: left; cursor: pointer; transition: border-color .2s ease, background .2s ease; }
 .time-picker__trigger:hover,
 .time-picker__trigger:focus-visible { border-color: var(--amber); background: #262a24; outline: none; }
-.time-picker__trigger b { color: var(--amber); font: 25px / 1 Manrope, sans-serif; font-weight: 400; transition: transform .2s ease; }
+.time-picker__trigger b { color: var(--amber); font: 25px / 1 "Cormorant Garamond", Georgia, serif; font-weight: 400; transition: transform .2s ease; }
 .time-picker__trigger[aria-expanded='true'] b { transform: rotate(180deg); }
 .time-picker__popover { position: absolute; top: calc(100% + 8px); left: 0; right: 0; max-height: 340px; overflow: auto; padding: 18px; border: 1px solid rgba(231, 178, 104, .65); border-radius: 18px; background: #181b17; box-shadow: 0 20px 48px rgba(0, 0, 0, .48); }
 .time-picker__popover[hidden] { display: none; }
 .time-picker__popover-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; color: var(--paper); font: 14px "Chinese Restaurant", Prata, serif; }
-.time-picker__popover-head small { color: #afb4a2; font: 11px Manrope, sans-serif; }
+.time-picker__popover-head small { color: #afb4a2; font: 11px "Cormorant Garamond", Georgia, serif; }
 .time-picker__slots { grid-template-columns: repeat(5, 1fr); gap: 7px; }
 .time-picker__slots button { min-height: 46px; border-radius: 10px; font-size: 15px; }
 
@@ -705,7 +705,7 @@ body.photoswipe-open { overflow:hidden; }
 .loyalty-modal strong span,.loyalty-hero h1 span { display:block; font-size:.56em; letter-spacing:.05em; }
 .loyalty-choice { margin:28px 0 0; }
 .loyalty-modal__actions,.loyalty-page-actions { display:flex; flex-wrap:wrap; gap:8px; }
-.loyalty-modal__actions button,.loyalty-page-actions button { min-width:112px; padding:14px 17px; border:0; border-radius:0; color:#fff; font:700 14px Manrope,sans-serif; opacity:1; }
+.loyalty-modal__actions button,.loyalty-page-actions button { min-width:112px; padding:14px 17px; border:0; border-radius:0; color:#fff; font:700 14px "Cormorant Garamond", Georgia, serif; opacity:1; }
 .loyalty-channel[aria-disabled='true'] { cursor:not-allowed; }
 .loyalty-channel--vk { background:#2787f5 !important; }
 .loyalty-channel--telegram { background:#229ed9 !important; }
@@ -995,10 +995,10 @@ body.photoswipe-open { overflow:hidden; }
   }
   .mobile-menu[hidden] { display: none; }
   .mobile-menu__top { display: flex; align-items: center; justify-content: space-between; color: #e7b268; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
-  .mobile-menu__close { width: 44px; height: 44px; border: 1px solid rgba(242, 238, 228, .4); background: transparent; color: var(--paper); font: 30px/1 Manrope, sans-serif; cursor: pointer; }
+  .mobile-menu__close { width: 44px; height: 44px; border: 1px solid rgba(242, 238, 228, .4); background: transparent; color: var(--paper); font: 30px/1 "Cormorant Garamond", Georgia, serif; cursor: pointer; }
   .mobile-menu nav { display: grid; gap: 0; margin: auto 0; border-top: 1px solid rgba(242, 238, 228, .18); }
   .mobile-menu nav a { display: grid; grid-template-columns: 34px 1fr; gap: 12px; padding: 20px 0; border-bottom: 1px solid rgba(242, 238, 228, .18); font: 30px/1.04 "Chinese Restaurant", Prata, serif; text-transform: none; letter-spacing: -.03em; }
-  .mobile-menu nav a span { padding-top: 4px; color: #e7b268; font: 10px Manrope, sans-serif; letter-spacing: .1em; }
+  .mobile-menu nav a span { padding-top: 4px; color: #e7b268; font: 10px "Cormorant Garamond", Georgia, serif; letter-spacing: .1em; }
   .mobile-menu__booking { width: 100%; min-height: 58px; background: var(--red); color: #fff; font-size: 14px; font-weight: 700; }
   .home-hero { min-height: max(690px, 100svh); padding: 120px 24px 30px; }
   .hero-copy h1 { max-width: 330px; font-size: clamp(45px, 13vw, 60px); line-height: .98; }

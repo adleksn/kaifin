@@ -297,6 +297,8 @@ assert.match(contentStyles, /\.site-header__actions\s*\{[\s\S]*display:\s*flex/)
 assert.match(contentStyles, /@media \(min-width: 901px\)\s*\{\s*\.banquet-section--full \.section-heading\s*\{\s*position:\s*static;/);
 assert.match(contentStyles, /\.header-phone\s*\{[^}]*font-size:\s*13px;/);
 assert.match(globalStyles, /@font-face[\s\S]*font-family: 'Chinese Restaurant'/);
+assert.match(globalStyles, /@font-face[\s\S]*font-family: 'Cormorant Garamond'/);
+assert.match(globalStyles, /font-family:'Cormorant Garamond', Georgia, serif/);
 assert.match(contentStyles, /\.story-card strong\s*\{[^}]*font:\s*30px\s*\/\s*1\.05\s*"Chinese Restaurant", Prata, serif;/);
 assert.match(contentStyles, /\.hero-copy h1,\s*\.inner-hero h1,\s*\.section-heading h2,\s*\.booking-callout h2\s*\{[^}]*font:\s*clamp\(48px, 5\.1vw, 86px\)\s*\/\s*1\.02\s*"Chinese Restaurant", Prata, serif;/);
 
