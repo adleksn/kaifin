@@ -240,6 +240,7 @@ p, .lede, .section-heading__copy { font-size:13px !important; }
 button, .action-link { border-radius:999px !important; }
 .home-hero .hero-actions { gap:40px !important; }
 .home-hero .hero-actions a, .home-hero .hero-actions button { flex-basis:270px !important; min-width:270px !important; padding:12px 28px; border-radius:999px !important; }
+.home-venue__gallery .photo-carousel__slide { border-radius:18px !important; }
 
 /* Desktop-1 home page: one surface colour and compact title/supporting-copy hierarchy. */
 .home-section { padding:clamp(64px,9vw,120px) clamp(22px,9vw,150px); background:var(--ink); }
