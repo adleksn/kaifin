@@ -18,10 +18,10 @@
 .loyalty-square-grid { display:grid; gap:clamp(12px,1.6vw,24px); margin-top:32px; }
 .loyalty-square-grid--levels { grid-template-columns:repeat(3,minmax(0,1fr)); }
 .loyalty-square-grid--bonuses { grid-template-columns:repeat(5,minmax(0,1fr)); }
-.loyalty-square-card { display:flex; flex-direction:column; justify-content:space-between; min-width:0; aspect-ratio:1; padding:clamp(18px,2.2vw,32px); background:#2d1002; border:1px solid var(--line); border-radius:var(--corner-radius); }
+.loyalty-square-card { display:flex; flex-direction:column; justify-content:flex-start; gap:16px; min-width:0; aspect-ratio:2/1; padding:clamp(18px,2.2vw,32px); background:#2d1002; border:1px solid var(--line); border-radius:var(--corner-radius); }
 .loyalty-square-card strong { display:block; overflow-wrap:anywhere; color:var(--paper); font:400 clamp(20px,1.1vw,35px)/1.02 Prata,serif; letter-spacing:-.04em; }
 .loyalty-square-grid--levels strong { color:var(--amber); font-size:35px; }
-.loyalty-square-card p { margin:9px 0 0; overflow-wrap:anywhere; color:#c6caba; font-size:16px !important; line-height:1.45; }
+.loyalty-square-card p { margin:0; overflow-wrap:anywhere; color:#c6caba; font-size:16px !important; line-height:1.45; }
 .loyalty-program-section--faq { padding-bottom:clamp(72px,10vw,140px); }
 .loyalty-faq { max-width:1040px; margin-top:28px; border-top:1px solid var(--line); }
 .loyalty-faq__item { border-bottom:1px solid var(--line); }
@@ -34,7 +34,7 @@
 .loyalty-faq__answer p { margin:0; padding:0 0 24px; color:#c6caba; font-size:16px !important; line-height:1.6; }
 .loyalty-faq__answer[aria-hidden='false'] { grid-template-rows:1fr; opacity:1; }
 @media (max-width:1100px) { .loyalty-square-grid--bonuses { grid-template-columns:repeat(3,minmax(0,1fr)); } }
-@media (max-width:700px) { .loyalty-program-section { padding:52px 20px; }.loyalty-program-section h2 { font-size:45px !important; }.loyalty-square-grid--levels,.loyalty-square-grid--bonuses { grid-template-columns:1fr; }.loyalty-square-card { aspect-ratio:auto; min-height:180px; }.loyalty-square-grid--levels .loyalty-square-card { aspect-ratio:1; }.loyalty-square-card strong,.loyalty-square-grid--levels strong { font-size:35px; }.loyalty-faq h3 button { padding:20px 0; font-size:18px; } }
+@media (max-width:700px) { .loyalty-program-section { padding:52px 20px; }.loyalty-program-section h2 { font-size:45px !important; }.loyalty-square-grid--levels,.loyalty-square-grid--bonuses { grid-template-columns:1fr; }.loyalty-square-card { aspect-ratio:2/1; min-height:0; }.loyalty-square-card strong,.loyalty-square-grid--levels strong { font-size:35px; }.loyalty-faq h3 button { padding:20px 0; font-size:18px; } }
 @media (prefers-reduced-motion:reduce) { .loyalty-faq__answer,.loyalty-faq__indicator { transition:none; } }
 .promotion-grid {
   grid-template-columns: repeat(4, 1fr);
