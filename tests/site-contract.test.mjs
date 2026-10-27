@@ -158,6 +158,7 @@ assert.match(contentStyles, /\.home-cuisine__track a\s*\{[^}]*20vw/);
 assert.match(contentStyles, /\.home-cuisine__gallery img\s*\{[^}]*border-radius:18px/);
 assert.match(contentStyles, /\.home-cuisine__actions\s*\{[^}]*justify-content:center/);
 assert.match(contentStyles, /\.home-story\s*\{[^}]*align-items:start/);
+assert.match(globalStyles, /\.home-hero::before\s*\{[^}]*background:rgba\(19,3,0,\.62\)/);
 assert.match(footer, /footer-meta__address/);
 assert.match(footer, /footer-meta__contacts/);
 
