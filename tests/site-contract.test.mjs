@@ -177,6 +177,8 @@ assert.match(globalStyles, /\.footer-meta strong\s*\{[^}]*font-size:25px/);
 assert.match(globalStyles, /\.footer-meta\s*\{[^}]*font-size:18px/);
 assert.match(contentStyles, /\.footer-meta, \.footer-meta p, \.footer-meta a\s*\{[^}]*font-size:18px !important/);
 assert.match(contentStyles, /\.loyalty-square-card p\s*\{[^}]*font-size:18px !important/);
+assert.match(contentStyles, /\.loyalty-faq__answer p\s*\{[^}]*font-size:16px !important/);
+assert.match(contentStyles, /\.section-booking, \.action-link, \.sticky-booking-cta\s*\{[^}]*border-radius:0 !important[^}]*font-size:16px/);
 assert.match(contentStyles, /\.action-link\s*\{[^}]*padding:13px 17px[^}]*font-size:16px[^}]*cursor:pointer/);
 assert.match(globalStyles, /\.header-book\s*\{[^}]*font-size:11px/);
 assert.match(contentStyles, /button, \.action-link\s*\{[^}]*border-radius:999px !important/);

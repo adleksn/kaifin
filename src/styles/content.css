@@ -1297,6 +1297,8 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
 .footer-meta, .footer-meta p, .footer-meta a { font-size:18px !important; }
 .loyalty-square-card p { font-size:18px !important; }
 .action-link { padding:13px 17px; border:1px solid var(--amber); background:transparent; color:var(--paper); font-size:16px; cursor:pointer; }
+.loyalty-faq__answer p { font-size:16px !important; }
+.section-booking, .action-link, .sticky-booking-cta { border:0; border-radius:0 !important; background:var(--red); color:#fff; font-size:16px; font-weight:700; }
 .photo-carousel { position: relative; }
 .photo-carousel__viewport { overflow-x: auto; padding-bottom: 10px; scroll-behavior: smooth; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: rgba(240, 187, 112, .7) transparent; }
 .photo-carousel__track { display: flex; gap: 16px; width: max-content; }
