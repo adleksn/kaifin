@@ -14,12 +14,12 @@
 .loyalty-program-hero .lede { max-width:630px; }
 .loyalty-program-hero__registration { margin-top:28px; border:0; cursor:not-allowed; }
 .loyalty-program-section { padding:clamp(56px,8vw,112px) clamp(20px,9vw,150px); border-top:1px solid var(--line); background:var(--ink); }
-.loyalty-program-section h2 { margin:0; font:45px/1.08 "Chinese Restaurant", Prata, serif; font-weight:400; }
+.loyalty-program-section h2 { margin:0; font:45px/1.08 "Bodoni Moda", Georgia, serif; font-weight:400; }
 .loyalty-square-grid { display:grid; gap:clamp(12px,1.6vw,24px); margin-top:32px; }
 .loyalty-square-grid--levels { grid-template-columns:repeat(3,minmax(0,1fr)); }
 .loyalty-square-grid--bonuses { grid-template-columns:repeat(5,minmax(0,1fr)); }
 .loyalty-square-card { display:flex; flex-direction:column; justify-content:flex-start; gap:16px; min-width:0; aspect-ratio:2/1; padding:clamp(18px,2.2vw,32px); background:#2d1002; border:1px solid var(--line); border-radius:var(--corner-radius); }
-.loyalty-square-card strong { display:block; overflow-wrap:anywhere; color:var(--paper); font:400 clamp(20px,1.1vw,35px)/1.02 "Chinese Restaurant", Prata, serif; letter-spacing:-.04em; }
+.loyalty-square-card strong { display:block; overflow-wrap:anywhere; color:var(--paper); font:400 clamp(20px,1.1vw,35px)/1.02 "Bodoni Moda", Georgia, serif; letter-spacing:-.04em; }
 .loyalty-square-grid--levels strong { color:var(--amber); font-size:35px; }
 .loyalty-square-card p { margin:0; overflow-wrap:anywhere; color:#c6caba; font-size:16px !important; line-height:1.45; }
 .loyalty-square-card--bonus p { margin-top:auto; }
@@ -63,7 +63,7 @@
 .team-grid h2,
 .menu-preview h2 {
   font:
-    34px "Chinese Restaurant", Prata, serif;
+    34px "Bodoni Moda", Georgia, serif;
   font-weight: 400;
 }
 .promotion-grid p,
@@ -86,7 +86,7 @@
 .loyalty-steps b {
   display: block;
   font:
-    30px "Chinese Restaurant", Prata, serif;
+    30px "Bodoni Moda", Georgia, serif;
   font-weight: 400;
   margin: 22px 0 14px;
 }
@@ -127,7 +127,7 @@
 .contact-grid p {
   display: block;
   font:
-    24px "Chinese Restaurant", Prata, serif;
+    24px "Bodoni Moda", Georgia, serif;
 }
 .contacts-map,
 .kids-section {
@@ -139,7 +139,7 @@
 .about-story h2,
 .kids-section h2 {
   font:
-    42px "Chinese Restaurant", Prata, serif;
+    42px "Bodoni Moda", Georgia, serif;
   font-weight: 400;
 }
 .about-story {
@@ -168,7 +168,7 @@
 .facts b {
   display: block;
   font:
-    38px "Chinese Restaurant", Prata, serif;
+    38px "Bodoni Moda", Georgia, serif;
   font-weight: 400;
 }
 .facts__label {
@@ -197,7 +197,7 @@
   background-position: center;
   background-size: cover;
 }
-.booking-hero h1 { margin: 0; font: clamp(48px, 6.1vw, 86px) / 1.02 "Chinese Restaurant", Prata, serif; font-weight: 400; }
+.booking-hero h1 { margin: 0; font: clamp(48px, 6.1vw, 86px) / 1.02 "Bodoni Moda", Georgia, serif; font-weight: 400; }
 .booking-hero p:not(.eyebrow) { max-width: 580px; margin: 26px 0; color: #d6d7cd; line-height: 1.7; }
 .action-link { display: inline-block; padding: 16px 23px; background: #ce9651; color: #171916; font-size: 13px; }
 .checkbox-line { grid-template-columns: auto 1fr !important; align-items: center; }
@@ -206,15 +206,15 @@
 .form-status { margin: 0; color: #edb86d; line-height: 1.5; }
 .booking-note { display: grid; gap: 7px; padding: 50px 9vw; background: #65705a; }
 .booking-note p { margin: 0; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
-.booking-note a { font: 38px "Chinese Restaurant", Prata, serif; }
+.booking-note a { font: 38px "Bodoni Moda", Georgia, serif; }
 .booking-note span { color: #d6d7cd; font-size: 13px; }
 .delivery-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; padding: 0 9vw 110px; background: #788168; }
 .delivery-steps div { min-height: 260px; padding: 34px; background: #22251f; }
 .delivery-steps b { color: #ce9651; font-size: 11px; }
-.delivery-steps h2 { font: 31px "Chinese Restaurant", Prata, serif; font-weight: 400; }
+.delivery-steps h2 { font: 31px "Bodoni Moda", Georgia, serif; font-weight: 400; }
 .delivery-steps p { color: #c6caba; line-height: 1.65; }
 .legal { max-width: 900px; padding: 80px 9vw 120px; }
-.legal h2 { margin: 48px 0 16px; font: 31px "Chinese Restaurant", Prata, serif; font-weight: 400; }
+.legal h2 { margin: 48px 0 16px; font: 31px "Bodoni Moda", Georgia, serif; font-weight: 400; }
 .legal h2:first-child { margin-top: 0; }
 .legal p { color: #c6caba; line-height: 1.75; }
 .map-embed { height: 440px; margin: 0 9vw 60px; background: #22251f; }
@@ -258,7 +258,7 @@
 
 /* Global content scale. */
 h1,h2,h3 { font-size:45px !important; }
-p, .lede, .section-heading__copy { font-size:16px !important; }
+p, .lede, .section-heading__copy { font-size:20px !important; }
 .site-header, .site-footer { background:#130300 !important; }
 button, .action-link { border-radius:999px !important; }
 .home-hero .hero-actions { gap:40px !important; }
@@ -267,7 +267,7 @@ button, .action-link { border-radius:999px !important; }
 
 /* Desktop-1 home page: one surface colour and compact title/supporting-copy hierarchy. */
 .home-section { padding:clamp(64px,9vw,120px) clamp(22px,9vw,150px); background:var(--ink); }
-.home-section h2, .home-contact h2 { margin:0; font:clamp(32px,3.6vw,52px)/1.08 "Chinese Restaurant", Prata, serif; font-weight:400; }
+.home-section h2, .home-contact h2 { margin:0; font:clamp(32px,3.6vw,52px)/1.08 "Bodoni Moda", Georgia, serif; font-weight:400; }
 .home-section p, .home-contact p { max-width:620px; margin:16px 0 0; color:#c6caba; line-height:1.65; }
 .home-section__heading { margin-bottom:38px; }
 .text-link { display:inline-block; margin-top:24px; color:var(--amber); font-size:13px; }
@@ -286,7 +286,7 @@ button, .action-link { border-radius:999px !important; }
 .home-venue__facts { display:grid; grid-template-columns:repeat(3,1fr); margin-bottom:42px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .home-venue__facts div { padding:28px 20px; text-align:center; }
 .home-venue__facts div + div { border-left:1px solid var(--line); }
-.home-venue__facts strong { display:block; font:clamp(36px,4vw,58px)/1 "Chinese Restaurant", Prata, serif; font-weight:400; }
+.home-venue__facts strong { display:block; font:clamp(36px,4vw,58px)/1 "Bodoni Moda", Georgia, serif; font-weight:400; }
 .home-venue__facts span { display:block; margin-top:9px; color:#c6caba; font-size:14px; }
 .home-venue__gallery { padding:0; }
 .home-venue__gallery .photo-carousel__slide { flex-basis:min(74vw,720px); }
@@ -317,13 +317,13 @@ button, .action-link { border-radius:999px !important; }
 .floor-card { min-height:390px; display:flex; flex-direction:column; justify-content:flex-end; gap:12px; padding:28px; background-color:#30352c; background-size:cover; background-position:center; border-radius:18px; overflow:hidden; transition:transform .2s ease; }
 .floor-card:hover,.floor-card:focus-visible { transform:translateY(-5px); }
 .floor-card em { align-self:flex-start; padding:7px 10px; border:1px solid #ffffff7a; border-radius:999px; font-size:10px; font-style:normal; letter-spacing:.1em; text-transform:uppercase; }
-.floor-card strong { font:clamp(32px,4vw,52px)/1 "Chinese Restaurant", Prata, serif; font-weight:400; }.floor-card span { max-width:290px; color:#e0dfd8; line-height:1.5; }
+.floor-card strong { font:clamp(32px,4vw,52px)/1 "Bodoni Moda", Georgia, serif; font-weight:400; }.floor-card span { max-width:290px; color:#e0dfd8; line-height:1.5; }
 .hall-conditions { grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); margin-top:70px; }.hall-conditions span { display:block; color:var(--amber); font-size:10px; letter-spacing:.12em; text-transform:uppercase; }.hall-conditions b { display:block; margin-top:14px; font-size:16px; font-weight:500; }
-.room-gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:70px clamp(22px,9vw,150px); }.room-gallery figure { margin:0; background:#22251f; }.room-gallery img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; }.room-gallery figcaption { padding:16px; font:22px "Chinese Restaurant", Prata, serif; }.menu-download { display:block; width:max-content; max-width:calc(100% - 44px); margin:0 clamp(22px,9vw,150px) 55px; padding:16px 22px; border:1px solid var(--amber); color:#f2c77f; }
-.demo-form { max-width:1080px; margin:0 auto; padding:100px clamp(22px,5vw,76px); }.demo-form h2,.career-callout h2 { margin:0; font:clamp(36px,4.5vw,60px)/1.02 "Chinese Restaurant", Prata, serif; font-weight:400; }.demo-form__head { margin-bottom:38px; }.demo-form__head>p:last-child,.career-callout p:not(.eyebrow) { color:#c6caba; line-height:1.65; }.demo-form__fields { display:grid; grid-template-columns:repeat(2,1fr); gap:15px; }.demo-form label { display:grid; gap:8px; color:#c7cabd; font-size:10px; letter-spacing:.1em; text-transform:uppercase; }.demo-form input,.demo-form select,.demo-form textarea { width:100%; border:1px solid #5e6457; border-radius:0; padding:14px; background:#20231f; color:var(--paper); font:15px "Cormorant Garamond", Georgia, serif; letter-spacing:0; text-transform:none; }.demo-form textarea { min-height:115px; resize:vertical; }.demo-form__wide { grid-column:1/-1; }.demo-form button,.loyalty-page-actions button { justify-self:start; border:0; padding:16px 20px; background:var(--amber); color:var(--ink); cursor:pointer; }.demo-form button:hover { background:#f0ba70; }.demo-form button:disabled,.loyalty-page-actions button:disabled,.loyalty-modal button:disabled { cursor:not-allowed; opacity:.52; }
+.room-gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:70px clamp(22px,9vw,150px); }.room-gallery figure { margin:0; background:#22251f; }.room-gallery img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; }.room-gallery figcaption { padding:16px; font:22px "Bodoni Moda", Georgia, serif; }.menu-download { display:block; width:max-content; max-width:calc(100% - 44px); margin:0 clamp(22px,9vw,150px) 55px; padding:16px 22px; border:1px solid var(--amber); color:#f2c77f; }
+.demo-form { max-width:1080px; margin:0 auto; padding:100px clamp(22px,5vw,76px); }.demo-form h2,.career-callout h2 { margin:0; font:clamp(36px,4.5vw,60px)/1.02 "Bodoni Moda", Georgia, serif; font-weight:400; }.demo-form__head { margin-bottom:38px; }.demo-form__head>p:last-child,.career-callout p:not(.eyebrow) { color:#c6caba; line-height:1.65; }.demo-form__fields { display:grid; grid-template-columns:repeat(2,1fr); gap:15px; }.demo-form label { display:grid; gap:8px; color:#c7cabd; font-size:10px; letter-spacing:.1em; text-transform:uppercase; }.demo-form input,.demo-form select,.demo-form textarea { width:100%; border:1px solid #5e6457; border-radius:0; padding:14px; background:#20231f; color:var(--paper); font:15px "Cormorant Garamond", Georgia, serif; letter-spacing:0; text-transform:none; }.demo-form textarea { min-height:115px; resize:vertical; }.demo-form__wide { grid-column:1/-1; }.demo-form button,.loyalty-page-actions button { justify-self:start; border:0; padding:16px 20px; background:var(--amber); color:var(--ink); cursor:pointer; }.demo-form button:hover { background:#f0ba70; }.demo-form button:disabled,.loyalty-page-actions button:disabled,.loyalty-modal button:disabled { cursor:not-allowed; opacity:.52; }
 .demo-form select { padding-right:44px; }
-.loyalty-modal { width:min(520px,calc(100% - 34px)); padding:46px; border:1px solid #d39c55; background:#1c201b; color:var(--paper); box-shadow:0 25px 90px #0009; }.loyalty-modal::backdrop { background:#080a08bb; backdrop-filter:blur(4px); }.loyalty-modal strong { display:block; color:#f0bc73; font:clamp(48px,7vw,76px) "Chinese Restaurant", Prata, serif; }.loyalty-modal h2 { margin:8px 0 20px; font:42px/1 "Chinese Restaurant", Prata, serif; font-weight:400; }.loyalty-modal p:not(.eyebrow) { color:#d2d3cb; line-height:1.6; }.loyalty-modal__actions,.loyalty-page-actions { display:grid; gap:10px; margin:28px 0 16px; }.loyalty-modal__actions button { padding:15px; border:1px solid #777c6e; background:transparent; color:var(--paper); }.modal-close { position:absolute; top:12px; right:16px; border:0; background:transparent; color:var(--paper); font-size:32px; cursor:pointer; }.loyalty-modal small,.loyalty-hero small { color:#aeb2a3; }
-.team-carousel { width:100%; overflow-x:auto; scroll-snap-type:x mandatory; padding:85px 0 35px; scrollbar-width:thin; }.team-track { display:flex; gap:20px; width:max-content; margin-left:calc(50% - 540px); }.team-slide { width:340px; flex:0 0 340px; scroll-snap-align:center; text-align:center; }.team-slide.is-featured { transform:translateY(-35px); }.team-avatar { display:grid; place-items:center; width:300px; height:300px; margin:0 auto 23px; border-radius:50%; border:1px dashed #c9995f; background:#394136; color:#e4bd7d; font:46px "Chinese Restaurant", Prata, serif; }.team-slide.is-featured .team-avatar { width:370px; height:370px; background:#6b4c2c; }.team-slide h2 { max-width:270px; margin:0 auto; font:24px/1.2 "Chinese Restaurant", Prata, serif; font-weight:400; }.team-carousel__controls { display:flex; justify-content:center; gap:8px; margin:30px auto 0; }.team-carousel__controls button { width:44px; height:44px; border:1px solid #c9995f; border-radius:50%; background:transparent; color:var(--paper); font-size:20px; cursor:pointer; }.career-callout { max-width:850px; margin:40px auto 0; padding:80px clamp(22px,6vw,80px); text-align:center; background:#667158; }.career-callout p:not(.eyebrow) { max-width:500px; margin:23px auto 0; }
+.loyalty-modal { width:min(520px,calc(100% - 34px)); padding:46px; border:1px solid #d39c55; background:#1c201b; color:var(--paper); box-shadow:0 25px 90px #0009; }.loyalty-modal::backdrop { background:#080a08bb; backdrop-filter:blur(4px); }.loyalty-modal strong { display:block; color:#f0bc73; font:clamp(48px,7vw,76px) "Bodoni Moda", Georgia, serif; }.loyalty-modal h2 { margin:8px 0 20px; font:42px/1 "Bodoni Moda", Georgia, serif; font-weight:400; }.loyalty-modal p:not(.eyebrow) { color:#d2d3cb; line-height:1.6; }.loyalty-modal__actions,.loyalty-page-actions { display:grid; gap:10px; margin:28px 0 16px; }.loyalty-modal__actions button { padding:15px; border:1px solid #777c6e; background:transparent; color:var(--paper); }.modal-close { position:absolute; top:12px; right:16px; border:0; background:transparent; color:var(--paper); font-size:32px; cursor:pointer; }.loyalty-modal small,.loyalty-hero small { color:#aeb2a3; }
+.team-carousel { width:100%; overflow-x:auto; scroll-snap-type:x mandatory; padding:85px 0 35px; scrollbar-width:thin; }.team-track { display:flex; gap:20px; width:max-content; margin-left:calc(50% - 540px); }.team-slide { width:340px; flex:0 0 340px; scroll-snap-align:center; text-align:center; }.team-slide.is-featured { transform:translateY(-35px); }.team-avatar { display:grid; place-items:center; width:300px; height:300px; margin:0 auto 23px; border-radius:50%; border:1px dashed #c9995f; background:#394136; color:#e4bd7d; font:46px "Bodoni Moda", Georgia, serif; }.team-slide.is-featured .team-avatar { width:370px; height:370px; background:#6b4c2c; }.team-slide h2 { max-width:270px; margin:0 auto; font:24px/1.2 "Bodoni Moda", Georgia, serif; font-weight:400; }.team-carousel__controls { display:flex; justify-content:center; gap:8px; margin:30px auto 0; }.team-carousel__controls button { width:44px; height:44px; border:1px solid #c9995f; border-radius:50%; background:transparent; color:var(--paper); font-size:20px; cursor:pointer; }.career-callout { max-width:850px; margin:40px auto 0; padding:80px clamp(22px,6vw,80px); text-align:center; background:#667158; }.career-callout p:not(.eyebrow) { max-width:500px; margin:23px auto 0; }
 @media(max-width:900px) { .floor-grid,.room-gallery { grid-template-columns:1fr; }.floor-grid--page { padding:0 22px 60px; }.room-gallery { margin:45px 22px; }.demo-form { grid-template-columns:1fr; gap:35px; padding:70px 22px; }.demo-form__fields { grid-template-columns:1fr; }.team-track { margin-left:calc(50% - 145px); gap:12px; }.team-slide { width:290px; flex-basis:290px; }.team-slide.is-featured { transform:none; }.team-avatar,.team-slide.is-featured .team-avatar { width:270px; height:270px; }.loyalty-modal { padding:38px 26px; } }
 
 /* Main-page composition from the supplied structure image. */
@@ -335,7 +335,7 @@ button, .action-link { border-radius:999px !important; }
 .intro-grid .story-card { height: auto; min-height: 0; }
 .intro-grid__visual { min-height: 620px; display: flex; flex-direction: column; justify-content: space-between; padding: 28px; background: #444 center / cover; }
 .intro-grid__visual span { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
-.intro-grid__visual strong { font: clamp(34px, 4vw, 56px) / 1 "Chinese Restaurant", Prata, serif; font-weight: 400; }
+.intro-grid__visual strong { font: clamp(34px, 4vw, 56px) / 1 "Bodoni Moda", Georgia, serif; font-weight: 400; }
 .banquet-section--full { padding: clamp(70px, 10vw, 140px) clamp(22px, 5vw, 76px); }
 @media(max-width:900px) { .intro-grid__left { grid-template-rows: repeat(2, 280px); }.intro-grid__visual { min-height:360px; } }
 
@@ -353,7 +353,7 @@ button, .action-link { border-radius:999px !important; }
 
 .banquet-menu-viewer { padding:90px clamp(22px,9vw,150px); background:#130300; }
 .banquet-menu-viewer__heading { display:grid; justify-items:center; gap:18px; margin:0 auto 48px; max-width:1120px; text-align:center; }
-.banquet-menu-viewer h2 { margin:0; font:clamp(38px,4.6vw,62px)/1.02 "Chinese Restaurant", Prata, serif; font-weight:400; }
+.banquet-menu-viewer h2 { margin:0; font:clamp(38px,4.6vw,62px)/1.02 "Bodoni Moda", Georgia, serif; font-weight:400; }
 .banquet-menu-viewer__heading > p:last-child { margin:0; color:#c6caba; line-height:1.65; }
 .banquet-request { scroll-margin-top:110px; }
 .banquet-menu-pages { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; max-width:1120px; margin:auto; }
@@ -398,7 +398,7 @@ body.photoswipe-open { overflow:hidden; }
 .header-phone:focus-visible { color: #f0bb70; }
 
 .story-card strong {
-  font: 30px / 1.05 "Chinese Restaurant", Prata, serif;
+  font: 30px / 1.05 "Bodoni Moda", Georgia, serif;
   font-weight: 400;
 }
 
@@ -406,7 +406,7 @@ body.photoswipe-open { overflow:hidden; }
 .inner-hero h1,
 .section-heading h2,
 .booking-callout h2 {
-  font: clamp(48px, 5.1vw, 86px) / 1.02 "Chinese Restaurant", Prata, serif;
+  font: clamp(48px, 5.1vw, 86px) / 1.02 "Bodoni Moda", Georgia, serif;
   font-weight: 400;
   letter-spacing: -.04em;
   margin: 0;
@@ -503,7 +503,7 @@ body.photoswipe-open { overflow:hidden; }
 }
 
 .hall-card__body span {
-  font: 22px / 1.05 "Chinese Restaurant", Prata, serif;
+  font: 22px / 1.05 "Bodoni Moda", Georgia, serif;
   text-transform: none;
   letter-spacing: -.02em;
 }
@@ -526,7 +526,7 @@ body.photoswipe-open { overflow:hidden; }
 }
 
 .booking-form__head { grid-row: span 4; padding-top: 4px; }
-.booking-form__head h2 { margin: 0; font: clamp(38px, 4.3vw, 58px) / 1.02 "Chinese Restaurant", Prata, serif; font-weight: 400; letter-spacing: -.04em; }
+.booking-form__head h2 { margin: 0; font: clamp(38px, 4.3vw, 58px) / 1.02 "Bodoni Moda", Georgia, serif; font-weight: 400; letter-spacing: -.04em; }
 .booking-form__head span { display: block; max-width: 175px; margin-top: 25px; color: #afb4a2; font-size: 13px; line-height: 1.55; }
 
 .booking-details,
@@ -560,7 +560,7 @@ body.photoswipe-open { overflow:hidden; }
 .time-picker { min-width: 0; margin: 4px 0 8px; padding: 0; border: 0; }
 .time-picker legend { padding: 0; margin-bottom: 12px; color: #c7cabd; font-size: 11px; letter-spacing: .11em; text-transform: uppercase; }
 .time-picker__slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.time-picker__slots button { min-height: 54px; border: 1px solid #5e6457; border-radius: 2px; background: #20231f; color: var(--paper); font: 18px "Chinese Restaurant", Prata, serif; cursor: pointer; transition: transform .2s ease, border-color .2s ease, background .2s ease, color .2s ease; }
+.time-picker__slots button { min-height: 54px; border: 1px solid #5e6457; border-radius: 2px; background: #20231f; color: var(--paper); font: 18px "Bodoni Moda", Georgia, serif; cursor: pointer; transition: transform .2s ease, border-color .2s ease, background .2s ease, color .2s ease; }
 .time-picker__slots button:hover,
 .time-picker__slots button:focus-visible { border-color: #e7b268; transform: translateY(-2px); }
 .time-picker__slots button.is-selected { border-color: var(--amber); background: var(--amber); color: var(--ink); }
@@ -615,7 +615,7 @@ body.photoswipe-open { overflow:hidden; }
 .time-picker__trigger[aria-expanded='true'] b { transform: rotate(180deg); }
 .time-picker__popover { position: absolute; top: calc(100% + 8px); left: 0; right: 0; max-height: 340px; overflow: auto; padding: 18px; border: 1px solid rgba(231, 178, 104, .65); border-radius: 18px; background: #181b17; box-shadow: 0 20px 48px rgba(0, 0, 0, .48); }
 .time-picker__popover[hidden] { display: none; }
-.time-picker__popover-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; color: var(--paper); font: 14px "Chinese Restaurant", Prata, serif; }
+.time-picker__popover-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; color: var(--paper); font: 14px "Bodoni Moda", Georgia, serif; }
 .time-picker__popover-head small { color: #afb4a2; font: 11px "Cormorant Garamond", Georgia, serif; }
 .time-picker__slots { grid-template-columns: repeat(5, 1fr); gap: 7px; }
 .time-picker__slots button { min-height: 46px; border-radius: 10px; font-size: 15px; }
@@ -695,7 +695,7 @@ body.photoswipe-open { overflow:hidden; }
 .service-strip--two a:last-child { border-right:0; }
 .home-team { padding:clamp(70px,9vw,120px) 0; background:#20251f; }
 .home-team__heading { max-width:1080px; margin:0 auto; padding:0 clamp(22px,5vw,76px); }
-.home-team__heading h2 { margin:0; font:clamp(38px,5vw,64px)/1.02 "Chinese Restaurant", Prata, serif; font-weight:400; }
+.home-team__heading h2 { margin:0; font:clamp(38px,5vw,64px)/1.02 "Bodoni Moda", Georgia, serif; font-weight:400; }
 .home-team__heading a { display:inline-block; margin-top:22px; color:#f0bb70; font-size:13px; }
 
 .loyalty-modal { border:0; border-radius:0; }
@@ -997,7 +997,7 @@ body.photoswipe-open { overflow:hidden; }
   .mobile-menu__top { display: flex; align-items: center; justify-content: space-between; color: #e7b268; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
   .mobile-menu__close { width: 44px; height: 44px; border: 1px solid rgba(242, 238, 228, .4); background: transparent; color: var(--paper); font: 30px/1 "Cormorant Garamond", Georgia, serif; cursor: pointer; }
   .mobile-menu nav { display: grid; gap: 0; margin: auto 0; border-top: 1px solid rgba(242, 238, 228, .18); }
-  .mobile-menu nav a { display: grid; grid-template-columns: 34px 1fr; gap: 12px; padding: 20px 0; border-bottom: 1px solid rgba(242, 238, 228, .18); font: 30px/1.04 "Chinese Restaurant", Prata, serif; text-transform: none; letter-spacing: -.03em; }
+  .mobile-menu nav a { display: grid; grid-template-columns: 34px 1fr; gap: 12px; padding: 20px 0; border-bottom: 1px solid rgba(242, 238, 228, .18); font: 30px/1.04 "Bodoni Moda", Georgia, serif; text-transform: none; letter-spacing: -.03em; }
   .mobile-menu nav a span { padding-top: 4px; color: #e7b268; font: 10px "Cormorant Garamond", Georgia, serif; letter-spacing: .1em; }
   .mobile-menu__booking { width: 100%; min-height: 58px; background: var(--red); color: #fff; font-size: 14px; font-weight: 700; }
   .home-hero { min-height: max(690px, 100svh); padding: 120px 24px 30px; }
@@ -1116,7 +1116,7 @@ body.photoswipe-open { overflow:hidden; }
 .team-member-card::after { content: ''; position: absolute; inset: 0; background: rgba(0, 0, 0, .28); pointer-events: none; }
 .team-member-card__image { display: block; width: 100%; height: 100%; object-fit: cover; background: #293026; }
 .team-member-card__overlay { position: absolute; z-index: 1; right: 13%; bottom: 15%; left: 13%; color: #fff; text-align: center; }
-.team-member-card__name { margin: 0; font: 400 clamp(18px, 1.75vw, 25px)/1.08 "Chinese Restaurant", Prata, serif; }
+.team-member-card__name { margin: 0; font: 400 clamp(18px, 1.75vw, 25px)/1.08 "Bodoni Moda", Georgia, serif; }
 .team-member-card__position { margin: 7px 0 0; font-size: 11px; line-height: 1.25; letter-spacing: .08em; text-transform: uppercase; }
 .team-member-card__caption { visibility:hidden; max-width:34ch; min-height:3.2em; margin:26px auto 0; color:#d8dbcf; font-size:14px; line-height:1.5; text-align:center; }
 .team-carousel .team-slide.is-active .team-member-card__caption { visibility:visible; }
@@ -1129,7 +1129,7 @@ body.photoswipe-open { overflow:hidden; }
 .team-carousel__controls button:first-child { left:calc(50% - var(--team-control-offset)); }
 .team-carousel__controls button:last-child { left:calc(50% + var(--team-control-offset)); }
 .team-carousel__controls button:hover,.team-carousel__controls button:focus-visible { background: #f0bb70; color: #1b1f1a; transform:translate(-50%,-50%) scale(1.06); }
-.loyalty-tiers { background: #20251f; }.loyalty-tiers h2 { max-width:780px;margin:0;font:clamp(32px,4vw,54px)/1.08 "Chinese Restaurant", Prata, serif;font-weight:400; }.loyalty-tiers__grid { display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:42px; }.loyalty-tiers__grid article { padding:28px;background:#30372d;border-radius:var(--corner-radius); }.loyalty-tiers__grid b { display:block;font:clamp(68px,10vw,148px)/.8 "Chinese Restaurant", Prata, serif;font-weight:400;color:#f0bb70; }.loyalty-tiers__grid p { margin:18px 0 0;color:#c6caba; }.loyalty-terms { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 36px;max-width:1000px;margin-top:42px;color:#c6caba;line-height:1.6; }.loyalty-terms p { margin:0; }
+.loyalty-tiers { background: #20251f; }.loyalty-tiers h2 { max-width:780px;margin:0;font:clamp(32px,4vw,54px)/1.08 "Bodoni Moda", Georgia, serif;font-weight:400; }.loyalty-tiers__grid { display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:42px; }.loyalty-tiers__grid article { padding:28px;background:#30372d;border-radius:var(--corner-radius); }.loyalty-tiers__grid b { display:block;font:clamp(68px,10vw,148px)/.8 "Bodoni Moda", Georgia, serif;font-weight:400;color:#f0bb70; }.loyalty-tiers__grid p { margin:18px 0 0;color:#c6caba; }.loyalty-terms { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 36px;max-width:1000px;margin-top:42px;color:#c6caba;line-height:1.6; }.loyalty-terms p { margin:0; }
 @media (max-width: 900px) {
   .team-carousel { --team-card-size:min(55vw, 280px); --team-offset:min(27vw, 180px); --team-control-offset:calc(var(--team-card-size) * .56); --team-control-y-offset:calc(var(--team-card-size) * .2); width:100%; padding:44px 0; }
   .team-carousel__stage { height:calc(var(--team-card-size) * 1.2); }
@@ -1288,7 +1288,7 @@ body.photoswipe-open { overflow:hidden; }
 .hall-gallery { padding: 82px 9vw 0; }
 .hall-gallery__heading { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 26px; }
 .hall-gallery__heading .eyebrow { margin: 0 0 10px; }
-.hall-gallery__heading h2 { margin: 0; font: 400 clamp(31px, 4.1vw, 58px)/1.05 "Chinese Restaurant", Prata, serif; }
+.hall-gallery__heading h2 { margin: 0; font: 400 clamp(31px, 4.1vw, 58px)/1.05 "Bodoni Moda", Georgia, serif; }
 .photo-carousel { position: relative; }
 .photo-carousel__viewport { overflow-x: auto; padding-bottom: 10px; scroll-behavior: smooth; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: rgba(240, 187, 112, .7) transparent; }
 .photo-carousel__track { display: flex; gap: 16px; width: max-content; }

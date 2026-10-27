@@ -16,6 +16,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Bodoni Moda';
+  src: url('/kaifin/fonts/BodoniModa-VariableFont_opsz,wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}
+
 :root { --ink:#130300; --ink-soft:#130300; --paper:#f2eee4; --olive:#130300; --amber:#ce9651; --red:#b92d28; --line:rgba(242,238,228,.25); --corner-radius:10px; font-family:'Cormorant Garamond', Georgia, serif; color:var(--paper); background:var(--ink); }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
@@ -35,8 +43,8 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--amber); outline-
 .home-hero { position:relative; min-height:760px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; padding:145px clamp(22px,9vw,150px) 88px; background-color:var(--ink); background-image:var(--hero); background-position:center; background-size:cover; text-align:center; }
 .home-hero::before { content:''; position:absolute; inset:0; background:rgba(19,3,0,.62); }
 .hero-copy { position:relative; z-index:1; max-width:none; padding:0; background:transparent; }
-.hero-copy h1 { margin:0; font:25px/1.02 "Chinese Restaurant", Prata, serif; font-weight:400; letter-spacing:-.04em; white-space:nowrap; }
-.inner-hero h1, .section-heading h2, .booking-callout h2 { margin:0; font:clamp(48px,4.1vw,86px)/1.02 "Chinese Restaurant", Prata, serif; font-weight:400; letter-spacing:-.04em; }
+.hero-copy h1 { margin:0; font:25px/1.02 "Bodoni Moda", Georgia, serif; font-weight:400; letter-spacing:-.04em; white-space:nowrap; }
+.inner-hero h1, .section-heading h2, .booking-callout h2 { margin:0; font:clamp(48px,4.1vw,86px)/1.02 "Bodoni Moda", Georgia, serif; font-weight:400; letter-spacing:-.04em; }
 .hero-copy p { margin:14px 0 0; color:#f2eee4; line-height:1.6; }
 .hero-actions { position:relative; z-index:1; display:flex; flex-wrap:nowrap; justify-content:center; gap:30px; }
 .hero-actions a, .restaurant-booking-cta { flex:0 0 190px; min-width:190px; padding:16px 18px; border:1px solid var(--amber); border-radius:999px; background:var(--amber); color:var(--ink); font:inherit; font-size:13px; text-align:center; cursor:pointer; }
@@ -49,7 +57,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--amber); outline-
 .menu-list a { display:grid; grid-template-columns:70px 1fr auto; gap:15px; align-items:center; padding:30px 0; border-top:1px solid var(--line); }
 .menu-list a:last-child { border-bottom:1px solid var(--line); }
 .menu-list span { color:var(--amber); font-size:12px; }
-.menu-list b { font:clamp(26px,3vw,46px) "Chinese Restaurant", Prata, serif; font-weight:400; }
+.menu-list b { font:clamp(26px,3vw,46px) "Bodoni Moda", Georgia, serif; font-weight:400; }
 .menu-list em { color:#c5c9bb; font-size:12px; font-style:normal; }
 .hall-grid--page { padding:0 clamp(22px,9vw,150px) 100px; }
 .hall-details { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin:0 clamp(22px,9vw,150px); background:var(--ink); color:#c7cbbc; font-size:13px; }
@@ -59,10 +67,10 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--amber); outline-
 
 .site-footer { margin-top:0; background:var(--ink); border-top:1px solid var(--line); }
 .map-placeholder { min-height:250px; display:flex; align-items:end; justify-content:space-between; padding:35px clamp(22px,5vw,76px); background:var(--ink-soft); font-size:13px; }
-.map-placeholder span { font:30px "Chinese Restaurant", Prata, serif; }
+.map-placeholder span { font:30px "Bodoni Moda", Georgia, serif; }
 .map-placeholder p { max-width:410px; line-height:1.5; }
 .map-placeholder a { padding:14px; border:1px solid var(--paper); }
-.footer-meta { display:grid; grid-template-columns:1fr auto; gap:35px; padding:45px clamp(22px,5vw,76px); color:#b6b9ad; font-size:16px; line-height:1.65; }
+.footer-meta { display:grid; grid-template-columns:1fr auto; gap:35px; padding:45px clamp(22px,5vw,76px); color:#b6b9ad; font-size:18px; line-height:1.65; }
 .footer-meta strong { color:var(--paper); font-size:25px; }
 .footer-meta__contacts { text-align:right; }
 .footer-meta p { margin:9px 0; }

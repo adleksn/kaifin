@@ -170,11 +170,11 @@ assert.match(home, /data-menu-open="children"/);
 assert.match(contentStyles, /@keyframes home-cuisine-marquee/);
 assert.match(contentStyles, /prefers-reduced-motion: reduce/);
 assert.match(contentStyles, /h1,h2,h3\s*\{[^}]*font-size:45px !important/);
-assert.match(contentStyles, /p, \.lede, \.section-heading__copy\s*\{[^}]*font-size:16px !important/);
+assert.match(contentStyles, /p, \.lede, \.section-heading__copy\s*\{[^}]*font-size:20px !important/);
 assert.match(globalStyles, /--ink:#130300/);
 assert.match(globalStyles, /\.site-footer\s*\{[^}]*background:var\(--ink\)/);
 assert.match(globalStyles, /\.footer-meta strong\s*\{[^}]*font-size:25px/);
-assert.match(globalStyles, /\.footer-meta\s*\{[^}]*font-size:16px/);
+assert.match(globalStyles, /\.footer-meta\s*\{[^}]*font-size:18px/);
 assert.match(globalStyles, /\.header-book\s*\{[^}]*font-size:11px/);
 assert.match(contentStyles, /button, \.action-link\s*\{[^}]*border-radius:999px !important/);
 assert.match(contentStyles, /\.home-hero \.hero-actions\s*\{[^}]*gap:40px !important/);
@@ -298,8 +298,10 @@ assert.match(contentStyles, /@media \(min-width: 901px\)\s*\{\s*\.banquet-sectio
 assert.match(contentStyles, /\.header-phone\s*\{[^}]*font-size:\s*13px;/);
 assert.match(globalStyles, /@font-face[\s\S]*font-family: 'Chinese Restaurant'/);
 assert.match(globalStyles, /@font-face[\s\S]*font-family: 'Cormorant Garamond'/);
+assert.match(globalStyles, /@font-face[\s\S]*font-family: 'Bodoni Moda'/);
 assert.match(globalStyles, /font-family:'Cormorant Garamond', Georgia, serif/);
-assert.match(contentStyles, /\.story-card strong\s*\{[^}]*font:\s*30px\s*\/\s*1\.05\s*"Chinese Restaurant", Prata, serif;/);
-assert.match(contentStyles, /\.hero-copy h1,\s*\.inner-hero h1,\s*\.section-heading h2,\s*\.booking-callout h2\s*\{[^}]*font:\s*clamp\(48px, 5\.1vw, 86px\)\s*\/\s*1\.02\s*"Chinese Restaurant", Prata, serif;/);
+assert.match(globalStyles, /\.footer-meta\s*\{[^}]*font-size:18px/);
+assert.match(contentStyles, /\.story-card strong\s*\{[^}]*font:\s*30px\s*\/\s*1\.05\s*"Bodoni Moda", Georgia, serif;/);
+assert.match(contentStyles, /\.hero-copy h1,\s*\.inner-hero h1,\s*\.section-heading h2,\s*\.booking-callout h2\s*\{[^}]*font:\s*clamp\(48px, 5\.1vw, 86px\)\s*\/\s*1\.02\s*"Bodoni Moda", Georgia, serif;/);
 
 console.log('Site contract checks passed.');
