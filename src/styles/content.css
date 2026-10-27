@@ -243,9 +243,9 @@
 .home-story { display:grid; grid-template-columns:minmax(0,.9fr) minmax(320px,1fr); gap:clamp(28px,7vw,110px); align-items:center; }
 .home-story img { display:block; width:100%; min-height:480px; object-fit:cover; }
 .home-cuisine { border-top:1px solid var(--line); }
-.home-cuisine__gallery { overflow:hidden; padding-bottom:8px; }
+.home-cuisine__gallery { width:100vw; margin-left:calc(50% - 50vw); overflow:hidden; padding-bottom:8px; }
 .home-cuisine__track { display:flex; width:max-content; gap:12px; animation:home-cuisine-marquee 34s linear infinite; }
-.home-cuisine__track a { flex:0 0 clamp(185px,17vw,280px); }
+.home-cuisine__track a { flex:0 0 clamp(220px,20vw,420px); }
 .home-cuisine__gallery img { display:block; width:100%; aspect-ratio:4/5; object-fit:cover; }
 .home-cuisine__actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
 .home-cuisine__actions .action-link { padding:13px 17px; border:1px solid var(--amber); background:transparent; color:var(--paper); font-size:13px; }

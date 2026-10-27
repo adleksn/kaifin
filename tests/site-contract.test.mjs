@@ -151,6 +151,9 @@ assert.match(contentStyles, /prefers-reduced-motion: reduce/);
 assert.match(globalStyles, /\.hero-copy h1\s*\{[^}]*font:25px\/1\.02 Prata,serif/);
 assert.match(globalStyles, /\.inner-hero h1, \.section-heading h2, \.booking-callout h2\s*\{[^}]*clamp\(48px,4\.1vw,86px\)\/1\.02 Prata,serif/);
 assert.match(globalStyles, /\.hero-actions\s*\{[^}]*flex-wrap:nowrap/);
+assert.match(globalStyles, /\.hero-actions\s*\{[^}]*gap:30px/);
+assert.match(contentStyles, /\.home-cuisine__gallery\s*\{[^}]*width:100vw/);
+assert.match(contentStyles, /\.home-cuisine__track a\s*\{[^}]*20vw/);
 assert.match(footer, /footer-meta__address/);
 assert.match(footer, /footer-meta__contacts/);
 
