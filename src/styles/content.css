@@ -1440,10 +1440,10 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
   .home-hero { min-height:520px; padding:100px 20px 30px; }
   .hero-copy h1 { max-width:100%; white-space:normal; font-size:28px !important; line-height:1.08; }
   .home-hero .hero-actions { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); width:100%; gap:12px !important; }
-  .home-hero .hero-actions > * { width:100%; min-width:0 !important; flex:1 1 0; padding:13px 10px; font-size:16px !important; }
+  .home-hero .hero-actions > *, .home-hero .hero-actions .hero-actions__primary, .home-hero .hero-actions a { width:100% !important; max-width:100%; min-width:0 !important; flex:1 1 0 !important; flex-basis:auto !important; padding:13px 10px; font-size:16px !important; }
   .home-story { grid-template-columns:1fr; gap:24px; }
   .home-story img { min-height:0; aspect-ratio:4/5; }
-  .home-story > div { width:100%; }
+  .home-story > div { order:-1; width:100%; }
   .home-section { padding:48px 20px; }
   .home-section p { margin-top:12px; line-height:1.5; }
   .home-cuisine__actions { gap:14px; }
@@ -1460,4 +1460,5 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
   .demo-form { padding:48px 20px; }
   .demo-form__fields { grid-template-columns:1fr; }
   .footer-meta { padding:34px 20px; gap:24px; }
+  .mobile-menu { background:#130300 !important; }
 }

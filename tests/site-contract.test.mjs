@@ -189,6 +189,9 @@ assert.match(contentStyles, /\.home-hero \.hero-actions\s*\{[^}]*grid-template-c
 assert.match(contentStyles, /\.site-header\s*\{[^}]*height:64px/);
 assert.match(contentStyles, /main h1\s*\{[^}]*font-size:32px !important/);
 assert.match(contentStyles, /\.home-story\s*\{[^}]*grid-template-columns:1fr[^}]*gap:24px/);
+assert.match(contentStyles, /\.home-story > div\s*\{[^}]*order:-1/);
+assert.match(contentStyles, /\.mobile-menu\s*\{[^}]*background:#130300 !important/);
+assert.match(contentStyles, /\.home-hero \.hero-actions > \*, \.home-hero \.hero-actions \.hero-actions__primary[^}]*width:100% !important/);
 assert.match(contentStyles, /\.action-link\s*\{[^}]*padding:13px 17px[^}]*font-size:16px[^}]*cursor:pointer/);
 assert.match(globalStyles, /\.header-book\s*\{[^}]*font-size:11px/);
 assert.match(contentStyles, /button, \.action-link\s*\{[^}]*border-radius:999px !important/);
