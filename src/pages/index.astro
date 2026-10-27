@@ -19,7 +19,7 @@ import { generatedImages, homeCuisine, homeSettings, homeVenue, withBase } from 
   <section id="cuisine" class="home-cuisine home-section">
     <div class="home-section__heading"><h2>{homeCuisine.title}</h2><p>{homeCuisine.description}</p></div>
     <div class="home-cuisine__gallery"><div class="home-cuisine__track">{[...homeCuisine.images, ...homeCuisine.images].map((image, index) => <a href={withBase('/menu')}><img src={image} alt={`Блюдо из меню, фото ${(index % homeCuisine.images.length) + 1}`} loading="lazy" /></a>)}</div></div>
-    <div class="home-cuisine__actions"><a class="action-link" href={withBase('/menu')}>Основное меню</a><button type="button" class="action-link" data-banquet-menu-open>Банкетное меню</button><a class="action-link" href={withBase('/menu')}>Детское меню</a></div>
+    <div class="home-cuisine__actions"><button type="button" class="action-link" data-menu-open="primary">Основное меню</button><button type="button" class="action-link" data-menu-open="banquet" data-banquet-menu-open>Банкетное меню</button><button type="button" class="action-link" data-menu-open="children">Детское меню</button></div>
   </section>
 
   <section class="home-venue home-section">

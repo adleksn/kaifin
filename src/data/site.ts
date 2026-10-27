@@ -84,4 +84,9 @@ export const menuPreview = [
   ['Горячее', 'Мясо, птица, рыба, паста и блюда азиатской кухни.'],
   ['Десерты', 'Классика и сезонные десерты к кофе или бокалу вина.'],
 ];
+export const menuGalleries = {
+  primary: { label: 'Основное меню', pages: [withBase('/images/banquet/menu-1-full.webp'), withBase('/images/banquet/menu-2-full.webp')] },
+  banquet: { label: 'Банкетное меню', pages: [withBase('/images/banquet/menu-1-full.webp'), withBase('/images/banquet/menu-2-full.webp')] },
+  children: { label: 'Детское меню', pages: [withBase('/images/banquet/menu-1-full.webp'), withBase('/images/banquet/menu-2-full.webp')] },
+} as const;
 export const promotions = [{ title: 'Именинникам — скидка 20%', text: 'В день рождения и в течение 5 дней после него на меню ресторана, исключая банкетное и барное меню. Не суммируется с другими акциями и предложениями.' }, { title: '500 бонусов новым гостям', text: 'Зарегистрируйтесь в программе лояльности и получите 500 приветственных бонусов. Копите от 5% до 10% с заказов и используйте бонусы при следующих визитах.' }, { title: 'Скидка 20% на самовывоз', text: 'Заказывайте любимые блюда с собой со скидкой 20%. Не действует на банкетное и барное меню, не суммируется с другими акциями.' }];

@@ -284,7 +284,7 @@ button, .action-link { border-radius:999px !important; }
 .home-cuisine__track a { flex:0 0 clamp(220px,20vw,420px); }
 .home-cuisine__gallery img { display:block; width:100%; aspect-ratio:4/5; border-radius:18px; object-fit:cover; }
 .home-cuisine__actions { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:30px; }
-.home-cuisine__actions .action-link { padding:13px 17px; border:1px solid var(--amber); background:transparent; color:var(--paper); font-size:13px; }
+.home-cuisine__actions .action-link { padding:13px 17px; border:1px solid var(--amber); background:transparent; color:var(--paper); font-size:13px; cursor:pointer; }
 .home-cuisine__actions .action-link:hover, .home-cuisine__actions .action-link:focus-visible { background:var(--amber); color:var(--ink); }
 .home-venue { border-top:1px solid var(--line); }
 .home-venue__facts { display:grid; grid-template-columns:repeat(3,1fr); margin-bottom:42px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }

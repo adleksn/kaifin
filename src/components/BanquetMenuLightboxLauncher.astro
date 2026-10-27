@@ -1,23 +1,23 @@
 ---
 import 'photoswipe/style.css';
-import { withBase } from '../data/site';
-
-const pages = [
-  { full: withBase('/images/banquet/menu-1-full.webp'), alt: 'Банкетное меню, страница 1' },
-  { full: withBase('/images/banquet/menu-2-full.webp'), alt: 'Банкетное меню, страница 2' },
-];
+import { menuGalleries } from '../data/site';
 ---
 
 <div class="banquet-menu-lightbox-source" data-banquet-menu-lightbox aria-hidden="true">
-  {pages.map((page) => <a href={page.full} data-pswp-width="2552" data-pswp-height="3579" aria-label={page.alt}></a>)}
+  {Object.entries(menuGalleries).map(([key, menu]) => (
+    <div data-menu-source={key}>
+      {menu.pages.map((page, index) => <a href={page} data-pswp-width="2552" data-pswp-height="3579" aria-label={`${menu.label}, страница ${index + 1}`}></a>)}
+    </div>
+  ))}
 </div>
 
 <script>
   import PhotoSwipeLightbox from 'photoswipe/lightbox';
 
-  const source = document.querySelector<HTMLElement>('[data-banquet-menu-lightbox]');
+  document.querySelectorAll<HTMLElement>('[data-menu-source]').forEach((source) => {
+    const menuKey = source.dataset.menuSource;
+    if (!menuKey || source.dataset.photoswipeBound) return;
 
-  if (source && !source.dataset.photoswipeBound) {
     source.dataset.photoswipeBound = 'true';
     let opener: HTMLElement | null = null;
     let scrollPosition = 0;
@@ -44,11 +44,11 @@ const pages = [
       opener?.focus();
     });
 
-    document.querySelectorAll<HTMLElement>('[data-banquet-menu-open]').forEach((trigger) => trigger.addEventListener('click', () => {
+    document.querySelectorAll<HTMLElement>(`[data-menu-open="${menuKey}"]`).forEach((trigger) => trigger.addEventListener('click', () => {
       opener = trigger;
       lightbox.loadAndOpen(0);
     }));
 
     lightbox.init();
-  }
+  });
 </script>
