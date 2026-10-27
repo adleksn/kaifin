@@ -1429,6 +1429,14 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
 /* Final mobile home-page layout: prevent fixed desktop widths at 375px. */
 @media (max-width: 700px) {
   html, body { overflow-x:hidden; }
+  .site-header { height:64px; padding:0 16px; }
+  .wordmark { font-size:18px; }
+  .site-header__actions { gap:8px; }
+  .header-book { padding:10px 12px; font-size:14px; }
+  .mobile-menu { inset:64px 0 0; padding:18px 20px 28px; }
+  main h1 { font-size:32px !important; line-height:1.08; }
+  main h2 { font-size:30px !important; line-height:1.12; }
+  main h3 { font-size:24px !important; line-height:1.2; }
   .home-hero { min-height:520px; padding:100px 20px 30px; }
   .hero-copy h1 { max-width:100%; white-space:normal; font-size:28px !important; line-height:1.08; }
   .home-hero .hero-actions { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); width:100%; gap:12px !important; }
@@ -1437,6 +1445,19 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
   .home-story img { min-height:0; aspect-ratio:4/5; }
   .home-story > div { width:100%; }
   .home-section { padding:48px 20px; }
+  .home-section p { margin-top:12px; line-height:1.5; }
   .home-cuisine__actions { gap:14px; }
-  .home-cuisine__actions .action-link { flex:0 1 auto; }
+  .home-cuisine__actions .action-link { flex:1 1 calc(50% - 7px); min-width:0; padding:12px 10px; }
+  .home-venue__facts { margin-bottom:28px; }
+  .home-venue__facts div { padding:20px 14px; }
+  .home-venue__facts strong { font-size:32px; }
+  .home-venue__facts span { font-size:16px; }
+  .inner-hero, .booking-hero, .loyalty-program-hero { min-height:0; padding:100px 20px 52px; }
+  .inner-hero .lede, .booking-hero .lede, .loyalty-program-hero .lede { margin-top:16px; line-height:1.5; }
+  .hall-gallery, .banquet-menu-viewer, .loyalty-program-section { padding-left:20px; padding-right:20px; }
+  .floor-grid, .banquet-menu-pages { grid-template-columns:1fr; }
+  .floor-card { min-height:300px; padding:22px; }
+  .demo-form { padding:48px 20px; }
+  .demo-form__fields { grid-template-columns:1fr; }
+  .footer-meta { padding:34px 20px; gap:24px; }
 }
