@@ -1425,3 +1425,18 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
     margin: 16px 0 0 10px;
   }
 }
+
+/* Final mobile home-page layout: prevent fixed desktop widths at 375px. */
+@media (max-width: 700px) {
+  html, body { overflow-x:hidden; }
+  .home-hero { min-height:520px; padding:100px 20px 30px; }
+  .hero-copy h1 { max-width:100%; white-space:normal; font-size:28px !important; line-height:1.08; }
+  .home-hero .hero-actions { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); width:100%; gap:12px !important; }
+  .home-hero .hero-actions > * { width:100%; min-width:0 !important; flex:1 1 0; padding:13px 10px; font-size:16px !important; }
+  .home-story { grid-template-columns:1fr; gap:24px; }
+  .home-story img { min-height:0; aspect-ratio:4/5; }
+  .home-story > div { width:100%; }
+  .home-section { padding:48px 20px; }
+  .home-cuisine__actions { gap:14px; }
+  .home-cuisine__actions .action-link { flex:0 1 auto; }
+}

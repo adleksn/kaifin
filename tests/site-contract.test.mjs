@@ -183,6 +183,9 @@ assert.match(contentStyles, /\.loyalty-program-hero__registration\s*\{[^}]*backg
 assert.match(contentStyles, /\.home-cuisine__actions \.action-link\s*\{[^}]*border-radius:999px !important/);
 assert.match(contentStyles, /\.hero-actions \.hero-actions__primary\s*\{[^}]*width:min\(240px, 100%\)[^}]*font-size:16px/);
 assert.match(contentStyles, /\.header-book\s*\{[^}]*font-size:16px/);
+assert.match(contentStyles, /Final mobile home-page layout/);
+assert.match(contentStyles, /\.hero-copy h1\s*\{[^}]*white-space:normal[^}]*font-size:28px !important/);
+assert.match(contentStyles, /\.home-hero \.hero-actions\s*\{[^}]*grid-template-columns:repeat\(2, minmax\(0, 1fr\)\)/);
 assert.match(contentStyles, /\.action-link\s*\{[^}]*padding:13px 17px[^}]*font-size:16px[^}]*cursor:pointer/);
 assert.match(globalStyles, /\.header-book\s*\{[^}]*font-size:11px/);
 assert.match(contentStyles, /button, \.action-link\s*\{[^}]*border-radius:999px !important/);
