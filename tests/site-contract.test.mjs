@@ -153,6 +153,8 @@ assert.match(globalStyles, /--ink:#130300/);
 assert.match(globalStyles, /\.site-footer\s*\{[^}]*background:var\(--ink\)/);
 assert.match(globalStyles, /\.footer-meta strong\s*\{[^}]*font-size:21px/);
 assert.match(globalStyles, /\.footer-meta\s*\{[^}]*font-size:13px/);
+assert.match(globalStyles, /\.header-book\s*\{[^}]*font-size:11px/);
+assert.match(contentStyles, /button, \.action-link\s*\{[^}]*border-radius:999px !important/);
 assert.match(globalStyles, /\.hero-actions\s*\{[^}]*flex-wrap:nowrap/);
 assert.match(globalStyles, /\.hero-actions\s*\{[^}]*gap:30px/);
 assert.match(contentStyles, /\.home-cuisine__gallery\s*\{[^}]*width:100vw/);
