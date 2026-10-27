@@ -245,7 +245,7 @@ p, .lede, .section-heading__copy { font-size:16px !important; }
 .home-section__heading { margin-bottom:38px; }
 .text-link { display:inline-block; margin-top:24px; color:var(--amber); font-size:13px; }
 .text-link:hover, .text-link:focus-visible { color:var(--paper); }
-.home-story { display:grid; grid-template-columns:minmax(0,.9fr) minmax(320px,1fr); gap:clamp(28px,7vw,110px); align-items:center; }
+.home-story { display:grid; grid-template-columns:minmax(0,.9fr) minmax(320px,1fr); gap:clamp(28px,7vw,110px); align-items:start; }
 .home-story img { display:block; width:100%; min-height:480px; object-fit:cover; }
 .home-cuisine { border-top:1px solid var(--line); }
 .home-cuisine__gallery { width:100vw; margin-left:calc(50% - 50vw); overflow:hidden; padding-bottom:8px; }
