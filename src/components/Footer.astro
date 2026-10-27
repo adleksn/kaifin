@@ -1,6 +1,6 @@
 ---
 import { site } from '../data/site';
 ---
-<footer class="site-footer">
+<footer id="contacts" class="site-footer">
   <div class="footer-meta"><div class="footer-meta__address"><strong>Адрес</strong><p>{site.address}</p><p>{site.hours.join(' · ')}</p></div><div class="footer-meta__contacts"><strong>Контакты</strong><a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a><a href={`mailto:${site.email}`}>{site.email}</a></div></div>
 </footer>

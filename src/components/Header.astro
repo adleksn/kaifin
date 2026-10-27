@@ -1,6 +1,6 @@
 ---
 import { withBase } from '../data/site';
-const links = [{ href: '#about', label: 'Ресторан' }, { href: withBase('/banquet'), label: 'Банкеты' }, { href: withBase('/loyalty'), label: 'Программа лояльности' }, { href: withBase('/contacts'), label: 'Контакты' }];
+const links = [{ href: '#about', label: 'Ресторан' }, { href: withBase('/banquet'), label: 'Банкеты' }, { href: withBase('/loyalty'), label: 'Программа лояльности' }, { href: '#contacts', label: 'Контакты' }];
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || withBase('/');
 const isCurrent = (href: string) => currentPath === href.replace(/\/$/, '');
 const menuHref = currentPath === withBase('/') ? '#cuisine' : withBase('/#cuisine');
