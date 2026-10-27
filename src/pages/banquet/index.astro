@@ -1,5 +1,27 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { banquetFloors, withBase } from '../../data/site';
+import DemoForm from '../../components/DemoForm.astro';
+import PhotoCarousel from '../../components/PhotoCarousel.astro';
+import { hallImages } from '../../data/site';
 ---
-<BaseLayout title="Банкеты — Кайфын"><section class="inner-hero"><p class="eyebrow">Праздники и торжества</p><h1>Банкеты в ресторане «Кайфын»</h1><p class="lede">Камерный семейный праздник или большое торжество — в Кайфыне есть разные залы для любого формата события.</p><button type="button" class="action-link restoplace-click-open">Забронировать мероприятие</button></section><section class="floor-grid floor-grid--page" id="banquet-halls">{banquetFloors.map((floor) => <a href={withBase(`/banquet/${floor.slug}`)} class="floor-card" style={`background-image:url('${floor.hero}')`}><strong>{floor.name}</strong><span>{floor.subtitle}</span></a>)}</section></BaseLayout>
+<BaseLayout title="Банкеты — Кайфын" description="Банкеты в ресторане Кайфын: отдельный зал второго этажа для свадеб, юбилеев, дней рождения и корпоративов.">
+  <section class="inner-hero">
+    <p class="eyebrow">Банкеты</p>
+    <h1>Праздничные мероприятия в ресторане Кайфын</h1>
+    <p class="lede">Проведите свадьбу, юбилей, день рождения или корпоратив в отдельном банкетном зале. Поможем подобрать формат, меню и детали вашего события.</p>
+    <a class="action-link" href="#banquet-request">Забронировать мероприятие</a>
+  </section>
+
+  <section class="hall-gallery" aria-labelledby="banquet-gallery-title">
+    <div class="hall-gallery__heading"><div><p class="eyebrow">2 этаж</p><h2 id="banquet-gallery-title">Банкетный зал</h2></div></div>
+    <PhotoCarousel ariaLabel="Фотографии банкетного зала" images={hallImages.banquet} />
+  </section>
+
+  <section class="banquet-menu-viewer" aria-labelledby="banquet-menu-title">
+    <div class="banquet-menu-viewer__heading"><p class="eyebrow">Меню</p><h2 id="banquet-menu-title">Банкетное меню</h2><p>Двухстраничное банкетное меню будет доступно здесь.</p></div>
+  </section>
+
+  <section id="banquet-request" class="banquet-request" aria-label="Заявка на банкет">
+    <DemoForm kind="banquet" heading="Оставьте заявку на ваше событие" />
+  </section>
+</BaseLayout>

@@ -330,6 +330,8 @@ button, .action-link { border-radius:999px !important; }
 .banquet-menu-viewer { padding:90px clamp(22px,9vw,150px); background:#20251f; }
 .banquet-menu-viewer__heading { display:grid; justify-items:center; gap:18px; margin:0 auto 48px; max-width:1120px; text-align:center; }
 .banquet-menu-viewer h2 { margin:0; font:clamp(38px,4.6vw,62px)/1.02 Prata,serif; font-weight:400; }
+.banquet-menu-viewer__heading > p:last-child { margin:0; color:#c6caba; line-height:1.65; }
+.banquet-request { scroll-margin-top:110px; }
 .banquet-menu-pages { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; max-width:1120px; margin:auto; }
 .banquet-menu-pages figure { margin:0; padding:12px; background:#ece5d9; box-shadow:0 20px 45px #0005; }.banquet-menu-pages img { display:block; width:100%; height:auto; }.banquet-menu-pages figcaption { padding:12px 3px 0; color:#4c493f; font-size:11px; letter-spacing:.12em; text-transform:uppercase; }
 @media(max-width:900px) { .banquet-menu-viewer { padding:65px 22px; }.banquet-menu-pages { grid-template-columns:1fr; }.banquet-menu-viewer__heading { margin-bottom:30px; } }

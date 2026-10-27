@@ -6,15 +6,15 @@ import Footer from '../components/Footer.astro';
 import RestoplaceModal from '../components/RestoplaceModal.astro';
 import MenuGalleryModal from '../components/MenuGalleryModal.astro';
 
-interface Props { title?: string; }
-const { title = 'Кайфын — ресторан в Балашихе' } = Astro.props;
+interface Props { title?: string; description?: string; }
+const { title = 'Кайфын — ресторан в Балашихе', description = 'Ресторан Кайфын в Балашихе' } = Astro.props;
 ---
 <!doctype html>
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Ресторан Кайфын в Балашихе" />
+    <meta name="description" content={description} />
     <title>{title}</title>
   </head>
   <body>
