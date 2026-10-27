@@ -277,7 +277,7 @@ button, .action-link { border-radius:999px !important; }
 .menu-gallery-modal::backdrop { background:rgba(0,0,0,.7); }
 .menu-gallery-modal__bar { position:sticky; top:0; display:flex; justify-content:space-between; align-items:center; padding:16px 20px; background:var(--ink); }
 .menu-gallery-modal__bar button { border:0; background:transparent; color:var(--paper); font-size:30px; cursor:pointer; }
-.menu-gallery-modal__pages { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; padding:0 20px 20px; }
+.menu-gallery-modal__pages { --menu-zoom:1; display:grid; grid-template-columns:repeat(2,1fr); gap:14px; padding:0 20px 20px; transform:scale(var(--menu-zoom)); transform-origin:top center; }
 .menu-gallery-modal__pages img { width:100%; height:auto; }
 @media (max-width:700px) { .menu-gallery-modal__pages { grid-template-columns:1fr; } }
 
