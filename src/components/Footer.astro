@@ -1,11 +1,6 @@
 ---
 import { site } from '../data/site';
-const mapLink = `https://yandex.ru/maps/?text=${encodeURIComponent(site.address)}`;
 ---
 <footer class="site-footer">
-  <section class="map-placeholder" aria-label="Карта расположения ресторана">
-    <div><span>Кайфын</span><p>{site.address}</p></div>
-    <a href={mapLink} target="_blank" rel="noreferrer">Как добраться ↗</a>
-  </section>
   <div class="footer-meta"><div class="footer-meta__address"><strong>Адрес</strong><p>{site.address}</p><p>{site.hours.join(' · ')}</p></div><div class="footer-meta__contacts"><strong>Контакты</strong><a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a><a href={`mailto:${site.email}`}>{site.email}</a></div></div>
 </footer>
