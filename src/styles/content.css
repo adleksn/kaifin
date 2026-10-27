@@ -1461,4 +1461,7 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
   .demo-form__fields { grid-template-columns:1fr; }
   .footer-meta { padding:34px 20px; gap:24px; }
   .mobile-menu { background:#130300 !important; }
+  .loyalty-square-card strong, .loyalty-square-grid--levels strong { font-size:25px; }
+  .loyalty-program-section h2 { font-size:35px !important; }
+  .inner-hero .action-link { border-radius:999px !important; }
 }

@@ -192,6 +192,9 @@ assert.match(contentStyles, /\.home-story\s*\{[^}]*grid-template-columns:1fr[^}]
 assert.match(contentStyles, /\.home-story > div\s*\{[^}]*order:-1/);
 assert.match(contentStyles, /\.mobile-menu\s*\{[^}]*background:#130300 !important/);
 assert.match(contentStyles, /\.home-hero \.hero-actions > \*, \.home-hero \.hero-actions \.hero-actions__primary[^}]*width:100% !important/);
+assert.match(contentStyles, /\.loyalty-square-card strong, \.loyalty-square-grid--levels strong\s*\{[^}]*font-size:25px/);
+assert.match(contentStyles, /\.loyalty-program-section h2\s*\{[^}]*font-size:35px !important/);
+assert.match(contentStyles, /\.inner-hero \.action-link\s*\{[^}]*border-radius:999px !important/);
 assert.match(contentStyles, /\.action-link\s*\{[^}]*padding:13px 17px[^}]*font-size:16px[^}]*cursor:pointer/);
 assert.match(globalStyles, /\.header-book\s*\{[^}]*font-size:11px/);
 assert.match(contentStyles, /button, \.action-link\s*\{[^}]*border-radius:999px !important/);
