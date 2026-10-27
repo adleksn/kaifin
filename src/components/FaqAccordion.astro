@@ -1,0 +1,24 @@
+---
+interface Props { items: readonly { question: string; answer: string }[]; }
+const { items } = Astro.props;
+---
+
+<div class="loyalty-faq" data-faq-accordion>
+  {items.map((item, index) => {
+    const buttonId = `loyalty-faq-button-${index + 1}`;
+    const answerId = `loyalty-faq-answer-${index + 1}`;
+    return <article class="loyalty-faq__item">
+      <h3><button id={buttonId} type="button" aria-expanded="false" aria-controls={answerId} data-faq-trigger><span>{item.question}</span><span class="loyalty-faq__indicator" aria-hidden="true">+</span></button></h3>
+      <div id={answerId} class="loyalty-faq__answer" role="region" aria-labelledby={buttonId} aria-hidden="true"><div><p>{item.answer}</p></div></div>
+    </article>;
+  })}
+</div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-faq-trigger]').forEach((trigger) => trigger.addEventListener('click', () => {
+    const expanded = trigger.getAttribute('aria-expanded') === 'true';
+    const answer = document.getElementById(trigger.getAttribute('aria-controls') || '');
+    trigger.setAttribute('aria-expanded', String(!expanded));
+    answer?.setAttribute('aria-hidden', String(expanded));
+  }));
+</script>

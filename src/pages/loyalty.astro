@@ -1,5 +1,29 @@
 ---
+import FaqAccordion from '../components/FaqAccordion.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { generatedImages, loyalty } from '../data/site';
+import { loyalty, loyaltyProgram } from '../data/site';
 ---
-<BaseLayout title="Лояльность — Кайфын"><section class="inner-hero loyalty-hero"><p class="eyebrow">Программа лояльности</p><p class="loyalty-hero__gift">Дарим</p><h1>500 <span>БОНУСОВ</span></h1><p class="lede">за регистрацию в программе лояльности</p><p class="loyalty-choice">Выберите удобный способ регистрации:</p><div class="loyalty-page-actions"><button class="loyalty-channel loyalty-channel--vk" type="button" aria-disabled="true" title={loyalty.unavailableNote}>VK</button><button class="loyalty-channel loyalty-channel--telegram" type="button" aria-disabled="true" title={loyalty.unavailableNote}>Telegram</button><button class="loyalty-channel loyalty-channel--max" type="button" aria-disabled="true" title={loyalty.unavailableNote}>MAX</button></div></section><section class="loyalty-steps loyalty-steps--restaurant" style={`--loyalty-image:url('${generatedImages.hero}')`}><div><span>01</span><b>Зарегистрируйтесь</b><p>Выберите удобный мессенджер для регистрации и станьте участником программы.</p></div><div><span>02</span><b>Копите бонусы</b><p>Покажите официанту QR-код из чат-бота, в котором вы зарегистрировались. В чат-боте вы также сможете <strong>проверять баланс бонусов и узнавать об актуальных акциях</strong>.</p></div><div><span>03</span><b>Используйте бонусы</b><p><strong>Оплачивайте бонусами до 100% заказа в ресторане и до 50% заказа на доставку</strong>.</p></div></section><section class="loyalty-tiers section-space"><p class="eyebrow">Уровни программы</p><h2>Ваш уровень зависит от общей суммы заказов. Чем чаще вы с нами — тем больше бонусов.</h2><div class="loyalty-tiers__grid"><article><b>5%</b><p>с первого заказа</p></article><article><b>7%</b><p>от 30 000 ₽</p></article><article><b>10%</b><p>от 80 000 ₽</p></article></div><div class="loyalty-terms"><p>В ресторане бонусами можно оплатить до 100% заказа. При заказе доставки — до 50% стоимости заказа. На банкеты программа лояльности не распространяется.</p><p>1 бонус = 1 ₽</p><p>Каждый начисленный бонус действует 12 месяцев. Используйте накопленные бонусы в течение года с момента их начисления.</p><p><b>500 приветственных бонусов</b><br />Начисляются после регистрации и действуют 14 дней с момента начисления.</p></div></section></BaseLayout>
+
+<BaseLayout title="Программа лояльности — Кайфын" description="Программа лояльности ресторана Кайфын: бонусы от 5% до 10% с каждого чека.">
+  <section class="inner-hero loyalty-program-hero">
+    <p class="eyebrow">Кайфын</p>
+    <h1>Программа лояльности</h1>
+    <p class="lede">Зарегистрируйтесь в программе и получайте бонусы от 5% до 10% с каждого чека</p>
+    {loyaltyProgram.registrationUrl ? <a class="action-link" href={loyaltyProgram.registrationUrl}>Зарегистрироваться</a> : <button class="action-link loyalty-program-hero__registration" type="button" aria-disabled="true" title={loyalty.unavailableNote}>Зарегистрироваться</button>}
+  </section>
+
+  <section class="loyalty-program-section" aria-labelledby="loyalty-levels-title">
+    <h2 id="loyalty-levels-title">Уровни</h2>
+    <div class="loyalty-square-grid loyalty-square-grid--levels">{loyaltyProgram.levels.map((level) => <article class="loyalty-square-card"><strong>{level.value}</strong><p>{level.description}</p></article>)}</div>
+  </section>
+
+  <section class="loyalty-program-section" aria-labelledby="loyalty-bonuses-title">
+    <h2 id="loyalty-bonuses-title">Про бонусы</h2>
+    <div class="loyalty-square-grid loyalty-square-grid--bonuses">{loyaltyProgram.bonuses.map((bonus) => <article class="loyalty-square-card"><strong>{bonus.value}</strong>{bonus.note && <p>{bonus.note}</p>}</article>)}</div>
+  </section>
+
+  <section class="loyalty-program-section loyalty-program-section--faq" aria-labelledby="loyalty-faq-title">
+    <h2 id="loyalty-faq-title">Частые вопросы</h2>
+    <FaqAccordion items={loyaltyProgram.faq} />
+  </section>
+</BaseLayout>

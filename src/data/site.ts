@@ -7,6 +7,27 @@ export const site = {
 };
 export const restaurantBooking = { href: 'tel:84955226768', label: 'Бронь стола', note: 'Онлайн-бронирование доступно через RestoPlace.' };
 export const loyalty = { bonus: '500 бонусов', vkUrl: '', telegramUrl: '', unavailableNote: 'Ссылка на регистрацию будет добавлена после подключения канала.' };
+export const loyaltyProgram = {
+  registrationUrl: '',
+  levels: [
+    { value: '5%', description: 'Сразу после регистрации и первого заказа' },
+    { value: '7%', description: 'При общей сумме заказов от 30 000 ₽' },
+    { value: '10%', description: 'При общей сумме заказов от 80 000 ₽' },
+  ],
+  bonuses: [
+    { value: '1 бонус = 1 ₽', note: '' },
+    { value: '500 бонусов за регистрацию', note: 'Действует 14 дней' },
+    { value: 'Тратьте до 100%', note: 'При заказе с доставкой' },
+    { value: 'Тратьте до 50%', note: 'При оплате чека в ресторане' },
+    { value: '1 год', note: 'Срок действия бонусов' },
+  ],
+  faq: [
+    { question: 'Как зарегистрироваться?', answer: 'Регистрация будет доступна по ссылке в этом блоке после подключения программы лояльности.' },
+    { question: 'Когда начисляются бонусы?', answer: 'Временный текст: правила начисления будут добавлены перед запуском программы.' },
+    { question: 'Как использовать бонусы?', answer: 'Временный текст: подробные условия использования бонусов будут опубликованы здесь.' },
+    { question: 'Где проверить баланс?', answer: 'Временный текст: способ проверки баланса будет указан после подключения программы.' },
+  ],
+} as const;
 export const generatedImages = {
   hero: withBase('/images/brief/home-hero.png'),
   about: withBase('/images/old-site/restaurant-interior-3.jpg'),
