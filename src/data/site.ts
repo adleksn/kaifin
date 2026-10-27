@@ -13,6 +13,33 @@ export const generatedImages = {
   kids: withBase('/images/brief/kids-room.png'),
   food: withBase('/images/brief/home-food.png'),
 };
+export const homeSettings = { showTeamOnHome: false } as const;
+export const homeCuisine = {
+  title: 'Кухня',
+  description: 'Китайская и европейская кухня для спокойного обеда, семейного ужина и большого повода.',
+  images: [
+    withBase('/images/brief/home-food.png'),
+    withBase('/images/gallery/photo-18.jpg'),
+    withBase('/images/gallery/photo-24.jpg'),
+    withBase('/images/gallery/photo-19.jpg'),
+    withBase('/images/gallery/photo-21.jpg'),
+  ],
+} as const;
+export const homeVenue = {
+  title: 'Пространство',
+  description: 'Ресторан и банкетные залы для встреч любого масштаба.',
+  facts: [
+    { value: '200', label: 'квадратных метров' },
+    { value: '500', label: 'посадочных мест' },
+    { value: '2', label: 'банкетных зала' },
+  ],
+  images: [
+    withBase('/images/halls/aquarium/aquarium-01.jpg'),
+    withBase('/images/halls/bar/bar-01.jpg'),
+    withBase('/images/halls/banquet/banquet-01.jpg'),
+    withBase('/images/halls/aquarium/aquarium-03.jpg'),
+  ],
+} as const;
 export const hallImages = {
   bar: Array.from({ length: 7 }, (_, index) => withBase(`/images/halls/bar/bar-${String(index + 1).padStart(2, '0')}.jpg`)),
   aquarium: Array.from({ length: 7 }, (_, index) => withBase(`/images/halls/aquarium/aquarium-${String(index + 1).padStart(2, '0')}.jpg`)),

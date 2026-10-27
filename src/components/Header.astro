@@ -1,6 +1,6 @@
 ---
 import { restaurantBooking, withBase } from '../data/site';
-const links = [{ href: withBase('/loyalty'), label: 'Программа лояльности' }, { href: withBase('/banquet'), label: 'Банкет' }, { href: withBase('/about'), label: 'О нас' }, { href: withBase('/promotions'), label: 'Акции' }, { href: withBase('/team'), label: 'Команда' }];
+const links = [{ href: withBase('/about'), label: 'Ресторан' }, { href: withBase('/menu'), label: 'Меню' }, { href: withBase('/banquet'), label: 'Банкеты' }, { href: withBase('/loyalty'), label: 'Программа лояльности' }, { href: withBase('/contacts'), label: 'Контакты' }];
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || withBase('/');
 const isCurrent = (href: string) => currentPath === href.replace(/\/$/, '');
 ---
