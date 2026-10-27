@@ -1300,6 +1300,7 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
 .loyalty-faq__answer p { font-size:16px !important; }
 .section-booking, .action-link, .sticky-booking-cta { border:0; border-radius:0 !important; background:var(--red); color:#fff; font-size:16px; font-weight:700; }
 .loyalty-program-hero__registration { background:var(--red) !important; color:#fff !important; opacity:1; }
+.home-cuisine__actions .action-link { border-radius:999px !important; }
 .photo-carousel { position: relative; }
 .photo-carousel__viewport { overflow-x: auto; padding-bottom: 10px; scroll-behavior: smooth; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: rgba(240, 187, 112, .7) transparent; }
 .photo-carousel__track { display: flex; gap: 16px; width: max-content; }
