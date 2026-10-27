@@ -300,6 +300,7 @@ assert.match(globalStyles, /@font-face[\s\S]*font-family: 'Chinese Restaurant'/)
 assert.match(globalStyles, /@font-face[\s\S]*font-family: 'Cormorant Garamond'/);
 assert.match(globalStyles, /@font-face[\s\S]*font-family: 'Bodoni Moda'/);
 assert.match(globalStyles, /font-family:'Cormorant Garamond', Georgia, serif/);
+assert.match(globalStyles, /body, button, input, select, textarea, option\s*\{[^}]*font-family:'Cormorant Garamond', Georgia, serif/);
 assert.match(globalStyles, /h1, h2, h3, h4, h5, h6\s*\{\s*font-family:'Bodoni Moda', Georgia, serif !important/);
 assert.match(globalStyles, /\.footer-meta\s*\{[^}]*font-size:18px/);
 assert.match(contentStyles, /\.story-card strong\s*\{[^}]*font:\s*30px\s*\/\s*1\.05\s*"Bodoni Moda", Georgia, serif;/);
