@@ -390,7 +390,7 @@ body.photoswipe-open { overflow:hidden; }
 
 .header-phone {
   color: var(--paper);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: .06em;
   white-space: nowrap;
