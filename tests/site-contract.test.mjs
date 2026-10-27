@@ -148,7 +148,8 @@ assert.match(header, /header-book[\s\S]*header-phone/);
 assert.match(home, /home-cuisine__track/);
 assert.match(contentStyles, /@keyframes home-cuisine-marquee/);
 assert.match(contentStyles, /prefers-reduced-motion: reduce/);
-assert.match(globalStyles, /\.hero-copy h1[\s\S]*25px/);
+assert.match(globalStyles, /\.hero-copy h1[\s\S]*clamp\(26px,5\.1vw,60px\)\/1\.02 Prata,serif/);
+assert.match(globalStyles, /\.hero-actions\s*\{[^}]*flex-wrap:nowrap/);
 assert.match(footer, /footer-meta__address/);
 assert.match(footer, /footer-meta__contacts/);
 
