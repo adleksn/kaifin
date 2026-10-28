@@ -1302,6 +1302,7 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
 .loyalty-program-hero__registration { background:var(--red) !important; color:#fff !important; border-radius:999px !important; opacity:1; }
 .home-cuisine__actions .action-link { border-radius:999px !important; }
 .hero-actions .hero-actions__primary { width:min(240px, 100%); min-width:0; border:0; border-radius:0; box-shadow:none; font-size:16px; font-weight:600; }
+.hero-actions a, .hero-actions .hero-actions__primary { width:min(240px, 100%); min-width:0; border:0; border-radius:0; box-shadow:none; font-size:16px; font-weight:600; }
 .header-book { font-size:16px; }
 .photo-carousel { position: relative; }
 .photo-carousel__viewport { overflow-x: auto; padding-bottom: 10px; scroll-behavior: smooth; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: rgba(240, 187, 112, .7) transparent; }

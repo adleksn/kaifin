@@ -3,7 +3,7 @@ export const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\
 export const site = {
   name: 'Кайфын', city: 'Балашиха', phone: '8 495 522-67-68', email: 'info@kaifin.ru',
   address: 'Московская область, г. Балашиха, мкр. Ольгино, ул. Жилгородок, 43А',
-  hours: ['Пн–Чт: 12:00–24:00', 'Пт–Сб: 12:00–01:00', 'Вс: 12:00–24:00'],
+  hours: ['Вс–Чт: 12.00–00.00, Пт–Сб: 12.00–01.00'],
 };
 export const restaurantBooking = { href: 'tel:84955226768', label: 'Бронь стола', note: 'Онлайн-бронирование доступно через RestoPlace.' };
 export const loyalty = { bonus: '500 бонусов', vkUrl: '', telegramUrl: '', unavailableNote: 'Ссылка на регистрацию будет добавлена после подключения канала.' };
