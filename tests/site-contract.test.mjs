@@ -177,7 +177,7 @@ assert.match(globalStyles, /\.footer-meta strong\s*\{[^}]*font-size:25px/);
 assert.match(globalStyles, /\.footer-meta\s*\{[^}]*font-size:18px/);
 assert.match(contentStyles, /\.footer-meta, \.footer-meta p, \.footer-meta a\s*\{[^}]*font-size:18px !important/);
 assert.match(contentStyles, /\.loyalty-square-card p\s*\{[^}]*font-size:18px !important/);
-assert.match(contentStyles, /\.loyalty-faq__answer p\s*\{[^}]*font-size:16px !important/);
+assert.match(contentStyles, /\.loyalty-faq__answer p\s*\{[^}]*font-size:20px !important/);
 assert.match(contentStyles, /\.section-booking, \.action-link, \.sticky-booking-cta\s*\{[^}]*border-radius:0 !important[^}]*font-size:16px/);
 assert.match(contentStyles, /\.loyalty-program-hero__registration\s*\{[^}]*background:var\(--red\) !important[^}]*border-radius:999px !important/);
 assert.match(contentStyles, /\.home-cuisine__actions \.action-link\s*\{[^}]*border-radius:999px !important/);
