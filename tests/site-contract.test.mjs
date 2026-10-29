@@ -10,6 +10,7 @@ const modal = await read('src/components/LoyaltyModal.astro');
 const menu = await read('src/pages/menu.astro');
 const styles = await read('src/styles/content.css');
 const globalStyles = await read('src/styles/global.css');
+const header = await read('src/components/Header.astro');
 
 assert.match(data, /Kaifyn_fasad_7728x4248\.jpg/);
 assert.match(data, /01-pasta\.jpg/);
@@ -44,5 +45,7 @@ assert.match(styles, /\.loyalty-modal__offer\s*\{[^}]*font:22px\/1\.45/);
 assert.match(styles, /\.loyalty-register\.primary-button\s*\{/);
 assert.match(styles, /\.loyalty-modal \.modal-close\s*\{[^}]*display:grid[^}]*padding:0[^}]*place-items:center/s);
 assert.match(styles, /\.home-hero \.hero-actions\s*\{[^}]*margin-top:28px/);
+assert.match(header, /withBase\('\/banquet'\)/);
+assert.match(header, /item\.addEventListener\('click', \(\) => setMenuState\(false, false\)\)/);
 
 console.log('Site contract checks passed.');

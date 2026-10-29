@@ -23,16 +23,16 @@ const menuHref = currentPath === withBase('/') ? '#cuisine' : withBase('/#cuisin
   const toggle = document.querySelector<HTMLButtonElement>('.mobile-menu-toggle');
   const menu = document.querySelector<HTMLElement>('.mobile-menu');
   const close = menu?.querySelector<HTMLButtonElement>('.mobile-menu__close');
-  const setMenuState = (isOpen: boolean) => {
+  const setMenuState = (isOpen: boolean, restoreFocus = true) => {
     if (!menu || !toggle) return;
     menu.hidden = !isOpen;
     toggle.setAttribute('aria-expanded', String(isOpen));
     document.body.classList.toggle('menu-open', isOpen);
     if (isOpen) menu.querySelector<HTMLAnchorElement>('a')?.focus();
-    else toggle.focus();
+    else if (restoreFocus) toggle.focus();
   };
   toggle?.addEventListener('click', () => setMenuState(toggle.getAttribute('aria-expanded') !== 'true'));
   close?.addEventListener('click', () => setMenuState(false));
-  menu?.querySelectorAll('a').forEach((item) => item.addEventListener('click', () => setMenuState(false)));
+  menu?.querySelectorAll('a').forEach((item) => item.addEventListener('click', () => setMenuState(false, false)));
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMenuState(false); });
 </script>
