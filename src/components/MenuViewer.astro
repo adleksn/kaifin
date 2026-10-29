@@ -1,0 +1,37 @@
+---
+interface Props {
+  label: string;
+  file: string;
+  className?: string;
+}
+
+const { label, file, className = '' } = Astro.props;
+---
+
+<div class:list={['menu-viewer', className]} data-menu-viewer>
+  <button type="button" class="menu-viewer__trigger" data-menu-viewer-open>{label}</button>
+  <dialog class="menu-viewer__dialog" data-menu-viewer-dialog aria-label={label}>
+    <div class="menu-viewer__bar">
+      <span>{label}</span>
+      <div>
+        <a href={file} target="_blank" rel="noopener">Открыть PDF</a>
+        <button type="button" data-menu-viewer-close aria-label={`Закрыть ${label}`}>×</button>
+      </div>
+    </div>
+    <iframe src={file} title={label}></iframe>
+  </dialog>
+</div>
+
+<script>
+  const bindMenuViewers = () => document.querySelectorAll<HTMLElement>('[data-menu-viewer]').forEach((viewer) => {
+    if (viewer.dataset.menuViewerBound) return;
+    viewer.dataset.menuViewerBound = 'true';
+    const dialog = viewer.querySelector<HTMLDialogElement>('[data-menu-viewer-dialog]');
+    viewer.querySelector<HTMLButtonElement>('[data-menu-viewer-open]')?.addEventListener('click', () => dialog?.showModal());
+    viewer.querySelector<HTMLButtonElement>('[data-menu-viewer-close]')?.addEventListener('click', () => dialog?.close());
+    dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+  });
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bindMenuViewers, { once: true });
+  else bindMenuViewers();
+</script>

@@ -6,9 +6,9 @@ export const site = {
   hours: ['Вс–Чт: 12.00–00.00, Пт–Сб: 12.00–01.00'],
 };
 export const restaurantBooking = { href: 'tel:84955226768', label: 'Бронь стола', note: 'Онлайн-бронирование доступно через RestoPlace.' };
-export const loyalty = { bonus: '500 бонусов', vkUrl: '', telegramUrl: '', unavailableNote: 'Ссылка на регистрацию будет добавлена после подключения канала.' };
+export const loyalty = { bonus: '500 бонусов', registrationUrl: 'https://bti.xyz/wDEeWR' };
 export const loyaltyProgram = {
-  registrationUrl: '',
+  registrationUrl: 'https://bti.xyz/wDEeWR',
   levels: [
     { value: '5%', description: 'Сразу после регистрации и первого заказа' },
     { value: '7%', description: 'При общей сумме заказов от 30 000 ₽' },
@@ -17,8 +17,8 @@ export const loyaltyProgram = {
   bonuses: [
     { value: '1 бонус = 1 ₽', note: '' },
     { value: '500 бонусов за регистрацию', note: 'Действует 14 дней' },
-    { value: 'Тратьте до 100%', note: 'При заказе с доставкой' },
-    { value: 'Тратьте до 50%', note: 'При оплате чека в ресторане' },
+    { value: 'Списание до 100%', note: 'В ресторане' },
+    { value: 'Списание до 50%', note: 'При оформлении доставки или самовывоза' },
     { value: '1 год', note: 'Срок действия бонусов' },
   ],
   faq: [
@@ -29,7 +29,7 @@ export const loyaltyProgram = {
   ],
 } as const;
 export const generatedImages = {
-  hero: withBase('/images/brief/home-hero.png'),
+  hero: withBase('/images/Kaifyn_fasad_7728x4248.jpg'),
   about: withBase('/images/old-site/restaurant-interior-3.jpg'),
   kids: withBase('/images/brief/kids-room.png'),
   food: withBase('/images/brief/home-food.png'),
@@ -39,11 +39,11 @@ export const homeCuisine = {
   title: 'Кухня',
   description: 'Китайская и европейская кухня для спокойного обеда, семейного ужина и большого повода.',
   images: [
-    withBase('/images/brief/home-food.png'),
-    withBase('/images/gallery/photo-18.jpg'),
-    withBase('/images/gallery/photo-24.jpg'),
-    withBase('/images/gallery/photo-19.jpg'),
-    withBase('/images/gallery/photo-21.jpg'),
+    withBase('/images/kitchen/01-pasta.jpg'), withBase('/images/kitchen/02-syrniki.png'),
+    withBase('/images/kitchen/03-pasta-carbonara.png'), withBase('/images/kitchen/04-burger.png'),
+    withBase('/images/kitchen/05-salad.png'), withBase('/images/kitchen/06-snacks.png'),
+    withBase('/images/kitchen/07-chicken.png'), withBase('/images/kitchen/08-noodles.png'),
+    withBase('/images/kitchen/09-beef.png'), withBase('/images/kitchen/10-sushi.png'),
   ],
 } as const;
 export const homeVenue = {
@@ -88,5 +88,11 @@ export const menuGalleries = {
   primary: { label: 'Основное меню', pages: [withBase('/images/banquet/menu-1-full.webp'), withBase('/images/banquet/menu-2-full.webp')] },
   banquet: { label: 'Банкетное меню', pages: [withBase('/images/banquet/menu-1-full.webp'), withBase('/images/banquet/menu-2-full.webp')] },
   children: { label: 'Детское меню', pages: [withBase('/images/banquet/menu-1-full.webp'), withBase('/images/banquet/menu-2-full.webp')] },
+} as const;
+export const menuFiles = {
+  main: { label: 'Основное меню', file: withBase('/menus/Основное меню.pdf') },
+  kids: { label: 'Детское меню', file: withBase('/menus/Детское меню.pdf') },
+  hookah: { label: 'Кальянное меню', file: withBase('/menus/меню кальянов копия 7.pdf') },
+  banquet: { label: 'Банкетное меню', file: withBase('/images/banquet/banquet-menu.pdf') },
 } as const;
 export const promotions = [{ title: 'Именинникам — скидка 20%', text: 'В день рождения и в течение 5 дней после него на меню ресторана, исключая банкетное и барное меню. Не суммируется с другими акциями и предложениями.' }, { title: '500 бонусов новым гостям', text: 'Зарегистрируйтесь в программе лояльности и получите 500 приветственных бонусов. Копите от 5% до 10% с заказов и используйте бонусы при следующих визитах.' }, { title: 'Скидка 20% на самовывоз', text: 'Заказывайте любимые блюда с собой со скидкой 20%. Не действует на банкетное и барное меню, не суммируется с другими акциями.' }];

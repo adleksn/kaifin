@@ -1,14 +1,13 @@
 ---
-import FaqAccordion from '../components/FaqAccordion.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { loyalty, loyaltyProgram } from '../data/site';
+import { loyaltyProgram } from '../data/site';
 ---
 
 <BaseLayout title="Программа лояльности — Кайфын" description="Программа лояльности ресторана Кайфын: бонусы от 5% до 10% с каждого чека.">
   <section class="inner-hero loyalty-program-hero">
     <h1>Программа лояльности</h1>
-    <p class="lede">Зарегистрируйтесь в программе и получайте бонусы от 5% до 10% с каждого чека</p>
-    {loyaltyProgram.registrationUrl ? <a class="action-link" href={loyaltyProgram.registrationUrl}>Зарегистрироваться</a> : <button class="action-link loyalty-program-hero__registration" type="button" aria-disabled="true" title={loyalty.unavailableNote}>Зарегистрироваться</button>}
+    <p class="loyalty-hero__gift">Дарим 500 бонусов за регистрацию в программе лояльности.</p>
+    <a class="action-link" href={loyaltyProgram.registrationUrl}>Зарегистрироваться</a>
   </section>
 
   <section class="loyalty-program-section" aria-labelledby="loyalty-levels-title">
@@ -21,8 +20,4 @@ import { loyalty, loyaltyProgram } from '../data/site';
     <div class="loyalty-square-grid loyalty-square-grid--bonuses">{loyaltyProgram.bonuses.map((bonus) => <article class="loyalty-square-card loyalty-square-card--bonus"><strong>{bonus.value}</strong>{bonus.note && <p>{bonus.note}</p>}</article>)}</div>
   </section>
 
-  <section class="loyalty-program-section loyalty-program-section--faq" aria-labelledby="loyalty-faq-title">
-    <h2 id="loyalty-faq-title">Частые вопросы</h2>
-    <FaqAccordion items={loyaltyProgram.faq} />
-  </section>
 </BaseLayout>
