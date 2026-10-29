@@ -9,6 +9,7 @@ const loyalty = await read('src/pages/loyalty.astro');
 const modal = await read('src/components/LoyaltyModal.astro');
 const menu = await read('src/pages/menu.astro');
 const styles = await read('src/styles/content.css');
+const globalStyles = await read('src/styles/global.css');
 
 assert.match(data, /Kaifyn_fasad_7728x4248\.jpg/);
 assert.match(data, /01-pasta\.jpg/);
@@ -21,11 +22,19 @@ assert.match(home, /https:\/\/kaifin-delivery\.ru\//);
 assert.match(home, /LoyaltyModal/);
 assert.match(delivery, /Astro\.redirect\('https:\/\/kaifin-delivery\.ru\//);
 assert.match(menu, /MenuViewer/);
-assert.match(loyalty, /Дарим 500 бонусов за регистрацию/);
+assert.match(loyalty, /За регистрацию в программе лояльности/);
 assert.match(data, /Списание до 100%/);
 assert.match(data, /Списание до 50%/);
 assert.doesNotMatch(loyalty, /FaqAccordion/);
 assert.match(modal, /Зарегистрироваться/);
 assert.match(styles, /menu-viewer__dialog/);
+
+assert.match(modal, /Дарим\s*<strong>500 БОНУСОВ<\/strong>/);
+assert.match(modal, /class="loyalty-register primary-button"/);
+assert.match(globalStyles, /\.home-hero::before\s*\{[^}]*display:none/);
+assert.match(globalStyles, /\.home-hero\s*\{[^}]*background-position:center 42%/);
+assert.match(styles, /\.home-cuisine__actions \.menu-viewer__trigger\s*\{[^}]*border-radius:999px[^}]*background:var\(--red\)/s);
+assert.match(styles, /\.loyalty-modal__offer\s*\{[^}]*white-space:nowrap/);
+assert.match(styles, /\.loyalty-register\.primary-button\s*\{/);
 
 console.log('Site contract checks passed.');

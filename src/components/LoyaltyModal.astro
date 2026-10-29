@@ -1,7 +1,7 @@
 ---
 import { loyalty, withBase } from '../data/site';
 ---
-<dialog class="loyalty-modal" id="loyalty-modal" aria-labelledby="loyalty-title"><button class="modal-close" type="button" aria-label="Закрыть окно">×</button><a class="loyalty-modal__label eyebrow" href={withBase('/loyalty')}>Программа лояльности</a><p class="loyalty-modal__gift">Дарим</p><strong>500 <span>БОНУСОВ</span></strong><h2 id="loyalty-title">за регистрацию<br />в программе лояльности</h2><a class="loyalty-register" href={loyalty.registrationUrl}>Зарегистрироваться</a></dialog>
+<dialog class="loyalty-modal" id="loyalty-modal" aria-labelledby="loyalty-title"><button class="modal-close" type="button" aria-label="Закрыть окно">×</button><a class="loyalty-modal__label eyebrow" href={withBase('/loyalty')}>Программа лояльности</a><p class="loyalty-modal__offer">Дарим <strong>500 БОНУСОВ</strong></p><h2 id="loyalty-title">За регистрацию в программе лояльности</h2><a class="loyalty-register primary-button" href={loyalty.registrationUrl}>Зарегистрироваться</a></dialog>
 <script>
   const dialog = document.querySelector<HTMLDialogElement>('#loyalty-modal'); const close = dialog?.querySelector<HTMLButtonElement>('.modal-close');
   let timeout: number | undefined;
