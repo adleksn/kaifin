@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6 { font-family:'Bodoni Moda', Georgia, serif !important; }
 .header-phone { font-size:16px; }
 .header-book { padding:16px 28px; border:1px solid var(--amber); border-radius:999px; background:var(--amber); color:var(--ink); font-size:11px; font-weight:700; }
 
-.home-hero { position:relative; min-height:760px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; padding:145px clamp(22px,9vw,150px) 88px; background-color:var(--ink); background-image:var(--hero); background-position:center 42%; background-size:cover; text-align:center; }
+.home-hero { position:relative; min-height:760px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; padding:145px clamp(22px,9vw,150px) 88px; background-color:var(--ink); background-image:var(--hero); background-position:center 52%; background-size:cover; text-align:center; }
 .home-hero::before { content:''; position:absolute; inset:0; display:none; }
 .hero-copy { position:relative; z-index:1; max-width:none; padding:0; background:transparent; }
 .hero-copy h1 { margin:0; font:25px/1.02 "Bodoni Moda", Georgia, serif; font-weight:400; letter-spacing:-.04em; white-space:nowrap; }

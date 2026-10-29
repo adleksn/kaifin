@@ -12,7 +12,7 @@
 
 ## Global Constraints
 
-- Preserve the existing burgundy, cream, amber, and red palette.
+- Preserve the existing burgundy, cream, amber, and red palette; use the amber outline with transparent fill for menu actions.
 - Do not redesign unrelated UI or change registration/PDF-menu destinations.
 - Keep “За регистрацию в программе лояльности” and “Дарим 500 БОНУСОВ” exact.
 - Test desktop, tablet, and phone CSS breakpoints; avoid horizontal overflow.

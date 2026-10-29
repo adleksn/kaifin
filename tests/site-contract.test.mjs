@@ -32,9 +32,11 @@ assert.match(styles, /menu-viewer__dialog/);
 assert.match(modal, /Дарим\s*<strong>500 БОНУСОВ<\/strong>/);
 assert.match(modal, /class="loyalty-register primary-button"/);
 assert.match(globalStyles, /\.home-hero::before\s*\{[^}]*display:none/);
-assert.match(globalStyles, /\.home-hero\s*\{[^}]*background-position:center 42%/);
-assert.match(styles, /\.home-cuisine__actions \.menu-viewer__trigger\s*\{[^}]*border-radius:999px[^}]*background:var\(--red\)/s);
+assert.match(globalStyles, /\.home-hero\s*\{[^}]*background-position:center 52%/);
+assert.match(styles, /\.home-cuisine__actions \.menu-viewer__trigger\s*\{[^}]*border:1px solid var\(--amber\)[^}]*border-radius:999px[^}]*background:transparent/s);
 assert.match(styles, /\.loyalty-modal__offer\s*\{[^}]*white-space:nowrap/);
 assert.match(styles, /\.loyalty-register\.primary-button\s*\{/);
+assert.match(styles, /\.loyalty-modal \.modal-close\s*\{[^}]*display:grid[^}]*padding:0[^}]*place-items:center/s);
+assert.match(styles, /\.home-hero \.hero-actions\s*\{[^}]*margin-top:28px/);
 
 console.log('Site contract checks passed.');
