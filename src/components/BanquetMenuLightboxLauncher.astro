@@ -6,7 +6,7 @@ import { menuGalleries } from '../data/site';
 <div class="banquet-menu-lightbox-source" data-banquet-menu-lightbox aria-hidden="true">
   {Object.entries(menuGalleries).map(([key, menu]) => (
     <div data-menu-source={key}>
-      {menu.pages.map((page, index) => <a href={page} data-pswp-width="2552" data-pswp-height="3579" aria-label={`${menu.label}, страница ${index + 1}`}></a>)}
+      {menu.pages.map((page, index) => <a href={page.src} data-pswp-width={page.width} data-pswp-height={page.height} aria-label={`${menu.label}, страница ${index + 1}`}></a>)}
     </div>
   ))}
 </div>

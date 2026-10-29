@@ -1,35 +1,136 @@
 ---
-interface Props {
-  label: string;
-  file: string;
-  className?: string;
-}
+import { menuGalleries, type MenuGalleryKey } from '../data/site';
+import 'photoswipe/style.css';
 
-const { label, file, className = '' } = Astro.props;
+interface Props { menuKey: MenuGalleryKey; className?: string; }
+
+const { menuKey, className = '' } = Astro.props;
+const menu = menuGalleries[menuKey];
 ---
 
 <div class:list={['menu-viewer', className]} data-menu-viewer>
-  <button type="button" class="menu-viewer__trigger" data-menu-viewer-open>{label}</button>
-  <dialog class="menu-viewer__dialog" data-menu-viewer-dialog aria-label={label}>
-    <div class="menu-viewer__bar">
-      <span>{label}</span>
-      <div>
-        <a href={file} target="_blank" rel="noopener">Открыть PDF</a>
-        <button type="button" data-menu-viewer-close aria-label={`Закрыть ${label}`}>×</button>
-      </div>
-    </div>
-    <iframe src={file} title={label}></iframe>
-  </dialog>
+  <button type="button" class="menu-viewer__trigger" data-menu-viewer-open>{menu.label}</button>
+  <div class="menu-viewer__source" data-menu-viewer-source aria-hidden="true">
+    {menu.pages.map((page, index) => <a href={page.src} data-pswp-width={page.width} data-pswp-height={page.height} aria-label={`${menu.label}, страница ${index + 1}`}></a>)}
+  </div>
 </div>
 
 <script>
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+
   const bindMenuViewers = () => document.querySelectorAll<HTMLElement>('[data-menu-viewer]').forEach((viewer) => {
     if (viewer.dataset.menuViewerBound) return;
     viewer.dataset.menuViewerBound = 'true';
-    const dialog = viewer.querySelector<HTMLDialogElement>('[data-menu-viewer-dialog]');
-    viewer.querySelector<HTMLButtonElement>('[data-menu-viewer-open]')?.addEventListener('click', () => dialog?.showModal());
-    viewer.querySelector<HTMLButtonElement>('[data-menu-viewer-close]')?.addEventListener('click', () => dialog?.close());
-    dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+    const source = viewer.querySelector<HTMLElement>('[data-menu-viewer-source]');
+    const trigger = viewer.querySelector<HTMLButtonElement>('[data-menu-viewer-open]');
+    if (!source || !trigger) return;
+
+    let opener: HTMLButtonElement | null = null;
+    let scrollPosition = 0;
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: source,
+      children: 'a',
+      pswpModule: () => import('photoswipe'),
+      wheelToZoom: true,
+      initialZoomLevel: 'fit',
+      secondaryZoomLevel: 2,
+      maxZoomLevel: 4,
+      showHideAnimationType: 'none',
+      paddingFn: () => ({ top: 72, right: 24, bottom: 72, left: 24 }),
+    });
+
+    lightbox.on('beforeOpen', () => {
+      scrollPosition = window.scrollY;
+      document.body.classList.add('photoswipe-open');
+    });
+
+    lightbox.on('uiRegister', () => {
+      const pswp = lightbox.pswp;
+      if (!pswp?.ui) return;
+
+      pswp.ui.registerElement({
+        name: 'menu-page-indicator',
+        order: 8,
+        isButton: true,
+        tagName: 'button',
+        className: 'pswp__button pswp__menu-page-indicator',
+        ariaLabel: 'Перейти к странице меню',
+        onInit: (element, instance) => {
+          const update = () => { element.textContent = `${instance.currIndex + 1} / ${instance.getNumItems()}`; };
+          instance.on('change', update);
+          update();
+          element.addEventListener('click', () => instance.element?.querySelector<HTMLFormElement>('[data-menu-page-jump]')?.removeAttribute('hidden'));
+        },
+      });
+
+      pswp.ui.registerElement({
+        name: 'menu-zoom-out',
+        order: 7,
+        isButton: true,
+        tagName: 'button',
+        className: 'pswp__button pswp__menu-zoom-out',
+        ariaLabel: 'Уменьшить масштаб',
+        html: '−',
+        onInit: (element, instance) => element.addEventListener('click', () => {
+          const slide = instance.currSlide;
+          if (slide) slide.zoomTo(Math.max(slide.zoomLevels.initial, slide.currZoomLevel - .5));
+        }),
+      });
+
+      pswp.ui.registerElement({
+        name: 'menu-zoom-in',
+        order: 7,
+        isButton: true,
+        tagName: 'button',
+        className: 'pswp__button pswp__menu-zoom-in',
+        ariaLabel: 'Увеличить масштаб',
+        html: '+',
+        onInit: (element, instance) => element.addEventListener('click', () => {
+          const slide = instance.currSlide;
+          if (slide) slide.zoomTo(Math.min(slide.zoomLevels.max, slide.currZoomLevel + .5));
+        }),
+      });
+    });
+
+    lightbox.on('afterInit', () => {
+      const pswp = lightbox.pswp;
+      if (!pswp?.element) return;
+      const jumpPanel = document.createElement('form');
+      jumpPanel.className = 'pswp__menu-page-jump';
+      jumpPanel.dataset.menuPageJump = '';
+      jumpPanel.hidden = true;
+      jumpPanel.innerHTML = '<label>Страница <input inputmode="numeric" type="number" min="1" step="1" required aria-label="Номер страницы" /></label><button type="submit">Перейти</button><button type="button" aria-label="Закрыть выбор страницы">×</button>';
+      const input = jumpPanel.querySelector<HTMLInputElement>('input');
+      const close = jumpPanel.querySelector<HTMLButtonElement>('button[type="button"]');
+      close?.addEventListener('click', () => { jumpPanel.hidden = true; });
+      jumpPanel.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const page = Number(input?.value);
+        const count = pswp.getNumItems();
+        if (!Number.isInteger(page) || page < 1 || page > count || !input) {
+          input?.setCustomValidity(`Введите число от 1 до ${count}`);
+          input?.reportValidity();
+          return;
+        }
+        input.setCustomValidity('');
+        pswp.goTo(page - 1);
+        requestAnimationFrame(() => pswp.currSlide?.zoomTo(pswp.currSlide.zoomLevels.initial, { x: 0, y: 0 }));
+        jumpPanel.hidden = true;
+      });
+      pswp.element.append(jumpPanel);
+    });
+
+    lightbox.on('destroy', () => {
+      document.body.classList.remove('photoswipe-open');
+      window.scrollTo(0, scrollPosition);
+      opener?.focus();
+    });
+
+    trigger.addEventListener('click', () => {
+      opener = trigger;
+      lightbox.loadAndOpen(0);
+    });
+    lightbox.init();
   });
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bindMenuViewers, { once: true });

@@ -1482,16 +1482,8 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
 .kitchen-showcase__carousel .photo-carousel__viewport::-webkit-scrollbar-track { background:#2d1002; }
 .kitchen-showcase__carousel .photo-carousel__viewport::-webkit-scrollbar-thumb { background:#d7a65a; }
 .home-cuisine__actions .menu-viewer__trigger { border:0; border-radius:999px; background:var(--red); color:#fff4df; cursor:pointer; }
-.menu-viewer__dialog { width:min(1100px, calc(100vw - 28px)); height:min(88dvh, 900px); padding:0; overflow:hidden; border:1px solid #d7a65a; background:#130300; color:var(--paper); }
-.menu-viewer__dialog::backdrop { background:rgba(19,3,0,.86); backdrop-filter:blur(5px); }
-.menu-viewer__bar { display:flex; align-items:center; justify-content:space-between; min-height:62px; padding:0 14px 0 22px; border-bottom:1px solid rgba(255,244,223,.18); }
-.menu-viewer__bar div { display:flex; align-items:center; gap:15px; }
-.menu-viewer__bar a { color:#f4d49c; font-size:13px; }
-.menu-viewer__bar button { width:38px; height:38px; border:0; border-radius:50%; background:#fff4df; color:#130300; font-size:25px; cursor:pointer; }
-.menu-viewer__dialog iframe { display:block; width:100%; height:calc(100% - 62px); border:0; background:#fff; }
 .banquet-menu-viewer__actions { display:flex; justify-content:center; margin-top:24px; }
 .banquet-menu-viewer__actions .menu-viewer__trigger { padding:13px 20px; border:0; border-radius:999px; background:var(--red); color:#fff4df; cursor:pointer; }
-@media (max-width:700px) { .menu-viewer__dialog { width:calc(100vw - 16px); height:calc(100dvh - 16px); } .menu-viewer__bar a { display:none; } }
 
 /* Screenshot corrections: retain the established restaurant controls and modal palette. */
 .home-cuisine__actions .menu-viewer { flex:0 0 auto; }
@@ -1526,3 +1518,23 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
 }
 
 .home-hero .hero-actions { margin-top:28px; }
+
+/* Full-screen PhotoSwipe menu viewer. */
+.menu-viewer__source { position:fixed; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); pointer-events:none; }
+.pswp { --pswp-bg:var(--ink); --pswp-icon-color:var(--paper); --pswp-icon-stroke-color:var(--ink); --pswp-icon-stroke-width:1.5px; }
+.pswp__top-bar { padding:12px; }
+.pswp__button { border:1px solid color-mix(in srgb, var(--amber) 85%, transparent); border-radius:50%; background:rgba(19,3,0,.78); }
+.pswp__button:hover, .pswp__button:focus-visible { background:var(--amber); color:var(--ink); }
+.pswp__button--arrow--prev, .pswp__button--arrow--next { margin:0 16px; }
+.pswp__counter { display:none; }
+.pswp .pswp__menu-page-indicator { position:fixed !important; top:auto !important; right:50%; bottom:16px !important; min-width:74px; height:38px; padding:0 13px; transform:translateX(50%); border-radius:999px; color:var(--paper); font:700 15px/1 "Cormorant Garamond", Georgia, serif; white-space:nowrap; }
+.pswp__menu-zoom-out, .pswp__menu-zoom-in { display:grid; width:38px; height:38px; place-items:center; color:var(--paper); font:25px/1 sans-serif; }
+.pswp__menu-zoom-out { margin-right:6px; }
+.pswp__menu-page-jump { position:absolute; z-index:3; right:50%; bottom:64px; display:flex; align-items:center; gap:8px; padding:10px; transform:translateX(50%); border:1px solid var(--amber); border-radius:var(--corner-radius); background:var(--ink); box-shadow:0 12px 36px rgba(0,0,0,.4); color:var(--paper); }
+.pswp__menu-page-jump[hidden] { display:none; }
+.pswp__menu-page-jump label { display:flex; align-items:center; gap:7px; font-size:14px; }
+.pswp__menu-page-jump input { width:68px; min-height:38px; border:1px solid rgba(242,238,228,.45); border-radius:6px; background:#210802; color:var(--paper); font:16px "Cormorant Garamond", Georgia, serif; text-align:center; }
+.pswp__menu-page-jump button { min-height:38px; padding:0 13px; border:1px solid var(--amber); border-radius:999px; background:transparent; color:var(--paper); font:700 14px "Cormorant Garamond", Georgia, serif; cursor:pointer; }
+.pswp__menu-page-jump button:hover, .pswp__menu-page-jump button:focus-visible { background:var(--amber); color:var(--ink); }
+.pswp__menu-page-jump button[type='button'] { width:38px; padding:0; border-radius:50%; font-size:20px; }
+@media (max-width:700px) { .pswp__top-bar { padding:calc(env(safe-area-inset-top) + 8px) 8px 8px; }.pswp__button--arrow--prev, .pswp__button--arrow--next { margin:0 4px; }.pswp__menu-page-indicator { bottom:calc(env(safe-area-inset-bottom) + 12px); }.pswp__menu-page-jump { bottom:calc(env(safe-area-inset-bottom) + 60px); width:calc(100% - 32px); justify-content:center; }.pswp__menu-page-jump label { flex:1; justify-content:space-between; }.pswp__menu-page-jump input { width:64px; } }

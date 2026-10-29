@@ -84,11 +84,22 @@ export const menuPreview = [
   ['Горячее', 'Мясо, птица, рыба, паста и блюда азиатской кухни.'],
   ['Десерты', 'Классика и сезонные десерты к кофе или бокалу вина.'],
 ];
+const menuPages = (directory: string, count: number, width: number, height: number) => Array.from({ length: count }, (_, index) => ({
+  src: withBase(`/images/menus/${directory}/page-${String(index + 1).padStart(2, '0')}.webp`),
+  width,
+  height,
+}));
+
 export const menuGalleries = {
-  primary: { label: 'Основное меню', pages: [withBase('/images/banquet/menu-1-full.webp'), withBase('/images/banquet/menu-2-full.webp')] },
-  banquet: { label: 'Банкетное меню', pages: [withBase('/images/banquet/menu-1-full.webp'), withBase('/images/banquet/menu-2-full.webp')] },
-  children: { label: 'Детское меню', pages: [withBase('/images/banquet/menu-1-full.webp'), withBase('/images/banquet/menu-2-full.webp')] },
+  main: { label: 'Основное меню', pages: menuPages('main', 45, 2688, 3803) },
+  kids: { label: 'Детское меню', pages: menuPages('kids', 6, 2688, 3803) },
+  hookah: { label: 'Кальянное меню', pages: menuPages('hookah', 8, 1973, 2765) },
+  banquet: { label: 'Банкетное меню', pages: [
+    { src: withBase('/images/banquet/menu-1-full.webp'), width: 2552, height: 3579 },
+    { src: withBase('/images/banquet/menu-2-full.webp'), width: 2552, height: 3579 },
+  ] },
 } as const;
+export type MenuGalleryKey = keyof typeof menuGalleries;
 export const menuFiles = {
   main: { label: 'Основное меню', file: withBase('/menus/Основное меню.pdf') },
   kids: { label: 'Детское меню', file: withBase('/menus/Детское меню.pdf') },

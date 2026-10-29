@@ -1,14 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MenuViewer from '../components/MenuViewer.astro';
-import { menuFiles } from '../data/site';
 ---
 <BaseLayout title="Меню — Кайфын">
   <section class="inner-hero"><p class="eyebrow">Кухня и бар</p><h1>Меню</h1><p class="lede">Откройте нужное меню и листайте его прямо на сайте.</p></section>
   <section class="menu-list menu-list--documents">
-    <article><span>01</span><b>Основное меню</b><MenuViewer label={menuFiles.main.label} file={menuFiles.main.file} /></article>
-    <article><span>02</span><b>Детское меню</b><MenuViewer label={menuFiles.kids.label} file={menuFiles.kids.file} /></article>
-    <article><span>03</span><b>Кальянное меню</b><MenuViewer label={menuFiles.hookah.label} file={menuFiles.hookah.file} /></article>
-    <article><span>04</span><b>Банкетное меню</b><MenuViewer label={menuFiles.banquet.label} file={menuFiles.banquet.file} /></article>
+    <article><span>01</span><b>Основное меню</b><MenuViewer menuKey="main" /></article>
+    <article><span>02</span><b>Детское меню</b><MenuViewer menuKey="kids" /></article>
+    <article><span>03</span><b>Кальянное меню</b><MenuViewer menuKey="hookah" /></article>
+    <article><span>04</span><b>Банкетное меню</b><MenuViewer menuKey="banquet" /></article>
   </section>
 </BaseLayout>

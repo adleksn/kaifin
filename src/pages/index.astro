@@ -5,7 +5,7 @@ import LoyaltyModal from '../components/LoyaltyModal.astro';
 import MenuViewer from '../components/MenuViewer.astro';
 import RestaurantBookingCTA from '../components/RestaurantBookingCTA.astro';
 import TeamCarousel from '../components/TeamCarousel.astro';
-import { generatedImages, homeCuisine, homeSettings, homeVenue, menuFiles, withBase } from '../data/site';
+import { generatedImages, homeCuisine, homeSettings, homeVenue, withBase } from '../data/site';
 ---
 <BaseLayout>
   <section class="home-hero" style={`--hero:url('${generatedImages.hero}')`}>
@@ -21,7 +21,7 @@ import { generatedImages, homeCuisine, homeSettings, homeVenue, menuFiles, withB
   <section id="cuisine" class="home-cuisine home-section">
     <div class="home-section__heading"><h2>{homeCuisine.title}</h2><p>{homeCuisine.description}</p></div>
     <PhotoCarousel ariaLabel="Кухня Кайфына" images={homeCuisine.images} className="home-venue__gallery kitchen-showcase__carousel" />
-    <div class="home-cuisine__actions"><MenuViewer label={menuFiles.main.label} file={menuFiles.main.file} /><MenuViewer label={menuFiles.kids.label} file={menuFiles.kids.file} /><MenuViewer label={menuFiles.hookah.label} file={menuFiles.hookah.file} /><MenuViewer label={menuFiles.banquet.label} file={menuFiles.banquet.file} /></div>
+    <div class="home-cuisine__actions"><MenuViewer menuKey="main" /><MenuViewer menuKey="kids" /><MenuViewer menuKey="hookah" /><MenuViewer menuKey="banquet" /></div>
   </section>
 
   <section class="home-venue home-section">
