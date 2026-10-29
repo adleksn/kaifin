@@ -35,12 +35,12 @@ assert.match(styles, /pswp__menu-page-indicator/);
 assert.match(data, /menuPages\('main', 45/);
 assert.match(data, /menuPages\('hookah', 8/);
 
-assert.match(modal, /Дарим\s*<strong>500 БОНУСОВ<\/strong>/);
+assert.match(modal, /<h2 id="loyalty-title">Дарим 500 БОНУСОВ<\/h2>/);
+assert.match(modal, /За регистрацию в программе лояльности\./);
 assert.match(modal, /class="loyalty-register primary-button"/);
-assert.match(globalStyles, /\.home-hero::before\s*\{[^}]*display:none/);
-assert.match(globalStyles, /\.home-hero\s*\{[^}]*background-position:center 52%/);
+assert.match(globalStyles, /\.home-hero::before\s*\{[^}]*background:var\(--hero\) center \/ contain no-repeat[^}]*filter:brightness\(1\.18\)/);
 assert.match(styles, /\.home-cuisine__actions \.menu-viewer__trigger\s*\{[^}]*border:1px solid var\(--amber\)[^}]*border-radius:999px[^}]*background:transparent/s);
-assert.match(styles, /\.loyalty-modal__offer\s*\{[^}]*white-space:nowrap/);
+assert.match(styles, /\.loyalty-modal__offer\s*\{[^}]*font:22px\/1\.45/);
 assert.match(styles, /\.loyalty-register\.primary-button\s*\{/);
 assert.match(styles, /\.loyalty-modal \.modal-close\s*\{[^}]*display:grid[^}]*padding:0[^}]*place-items:center/s);
 assert.match(styles, /\.home-hero \.hero-actions\s*\{[^}]*margin-top:28px/);
