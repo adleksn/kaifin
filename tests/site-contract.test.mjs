@@ -9,7 +9,6 @@ const loyalty = await read('src/pages/loyalty.astro');
 const modal = await read('src/components/LoyaltyModal.astro');
 const menu = await read('src/pages/menu.astro');
 const styles = await read('src/styles/content.css');
-const globalStyles = await read('src/styles/global.css');
 const header = await read('src/components/Header.astro');
 
 assert.match(data, /Kaifyn_fasad_7728x4248\.jpg/);
@@ -19,6 +18,7 @@ assert.match(data, /https:\/\/bti\.xyz\/wDEeWR/);
 assert.match(data, /Детское меню\.pdf/);
 assert.match(data, /меню кальянов копия 7\.pdf/);
 assert.match(home, /PhotoCarousel ariaLabel="Кухня Кайфына"/);
+assert.match(home, /class="hero-artwork" aria-hidden="true"/);
 assert.match(home, /https:\/\/kaifin-delivery\.ru\//);
 assert.match(home, /LoyaltyModal/);
 assert.match(delivery, /Astro\.redirect\('https:\/\/kaifin-delivery\.ru\//);
@@ -38,13 +38,16 @@ assert.match(data, /menuPages\('hookah', 8/);
 
 assert.match(modal, /<h2 id="loyalty-title">Дарим 500 БОНУСОВ<\/h2>/);
 assert.match(modal, /За регистрацию в программе лояльности\./);
+assert.match(modal, /<svg viewBox="0 0 24 24" aria-hidden="true">/);
 assert.match(modal, /class="loyalty-register primary-button"/);
-assert.match(globalStyles, /\.home-hero::before\s*\{[^}]*background:var\(--hero\) center \/ contain no-repeat[^}]*filter:brightness\(1\.18\)/);
+assert.match(styles, /\.home-hero\s*\{[^}]*grid-template-rows:auto minmax\(0, 1fr\) auto/);
+assert.match(styles, /\.hero-artwork\s*\{[^}]*background:var\(--hero\) center \/ contain no-repeat/);
 assert.match(styles, /\.home-cuisine__actions \.menu-viewer__trigger\s*\{[^}]*border:1px solid var\(--amber\)[^}]*border-radius:999px[^}]*background:transparent/s);
 assert.match(styles, /\.loyalty-modal__offer\s*\{[^}]*font:22px\/1\.45/);
 assert.match(styles, /\.loyalty-register\.primary-button\s*\{/);
 assert.match(styles, /\.loyalty-modal \.modal-close\s*\{[^}]*display:grid[^}]*padding:0[^}]*place-items:center/s);
-assert.match(styles, /\.home-hero \.hero-actions\s*\{[^}]*margin-top:28px/);
+assert.match(styles, /\.loyalty-modal \.modal-close svg\s*\{[^}]*width:18px[^}]*height:18px/);
+assert.match(styles, /\.home-hero \.hero-actions\s*\{[^}]*margin:0 !important/);
 assert.match(header, /withBase\('\/banquet'\)/);
 assert.match(header, /item\.addEventListener\('click', \(\) => setMenuState\(false, false\)\)/);
 

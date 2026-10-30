@@ -1504,6 +1504,7 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
 .loyalty-modal h2 { max-width:none; margin:28px 0 0; color:var(--amber); font:clamp(34px,4.2vw,48px)/1.05 "Bodoni Moda", Georgia, serif; font-weight:400; }
 .loyalty-register.primary-button { min-width:210px; }
 .loyalty-modal .modal-close { display:grid; width:44px; height:44px; padding:0; place-items:center; top:18px; right:18px; border:1px solid var(--amber); border-radius:50%; color:var(--paper); background:transparent; font-size:28px; line-height:1; }
+.loyalty-modal .modal-close svg { display:block; width:18px; height:18px; fill:none; stroke:currentColor; stroke-linecap:round; stroke-width:2; }
 .loyalty-modal .modal-close:hover, .loyalty-modal .modal-close:focus-visible { color:var(--ink); background:var(--amber); }
 
 @media (max-width:700px) {
@@ -1516,19 +1517,31 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
   .loyalty-register.primary-button { width:100%; }
 }
 
-.home-hero .hero-actions { margin-top:28px; }
+/* Home hero: copy, supplied photo and actions always keep the same order. */
+.home-hero { display:grid; grid-template-rows:auto minmax(0, 1fr) auto; justify-items:center; align-items:center; gap:clamp(12px, 2vw, 24px); min-height:calc(100svh - 88px); padding:clamp(34px, 6vh, 72px) clamp(20px, 5vw, 88px) clamp(30px, 5vh, 52px); background:#130300; }
+.home-hero::before { display:none !important; }
+.hero-copy { width:min(100%, 1120px); }
+.hero-copy h1 { max-width:100%; white-space:normal; }
+.hero-copy p { margin-top:8px; }
+.hero-artwork { display:block; width:min(100%, calc(52svh * 1.84)); aspect-ratio:7728 / 4200; align-self:center; background:var(--hero) center / contain no-repeat; filter:brightness(1.18); }
+.home-hero .hero-actions { display:flex; flex-wrap:nowrap; width:min(100%, 560px); margin:0 !important; gap:clamp(8px, 2vw, 18px) !important; }
+.home-hero .hero-actions > *,
+.home-hero .hero-actions .hero-actions__primary,
+.home-hero .hero-actions a { flex:1 1 0 !important; width:auto !important; min-width:0 !important; max-width:none; padding:13px 14px; font-size:16px; }
 
-/* Keep the entire supplied facade and its built-in mark visible above the fold. */
-@media (min-width:901px) {
-  .home-hero { min-height:calc(100svh - 88px); }
-}
 @media (max-width:900px) {
-  .home-hero { min-height:calc(100svh - 72px); }
+  .home-hero { min-height:calc(100svh - 72px); padding:34px 20px 30px; }
   .hero-copy h1 { max-width:min(680px, 100%); white-space:normal; }
+  .hero-artwork { width:min(100%, calc(48svh * 1.84)); }
 }
 @media (max-width:600px) {
-  .home-hero { min-height:520px; }
-  .home-hero::before { background-size:contain; background-position:center bottom; }
+  .home-hero { min-height:0; gap:14px; padding:30px 20px 28px; }
+  .hero-copy h1 { font-size:clamp(25px, 7.8vw, 32px) !important; line-height:1.08; }
+  .hero-copy p { margin-top:8px; font-size:17px !important; line-height:1.35; }
+  .hero-artwork { width:100%; }
+  .home-hero .hero-actions > *,
+  .home-hero .hero-actions .hero-actions__primary,
+  .home-hero .hero-actions a { padding:12px 8px; font-size:14px !important; }
 }
 
 /* Full-screen PhotoSwipe menu viewer. */
