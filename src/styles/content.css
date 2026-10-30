@@ -1518,9 +1518,9 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
 }
 
 /* Home hero: copy sits in the clear area of the supplied full-width artwork. */
-.home-hero { display:block; min-height:0; padding:88px 0 0; background:#130300; }
+.home-hero { display:block; min-height:0; padding:0; background:#130300; }
 .home-hero::before { display:none !important; }
-.hero-copy { position:absolute; z-index:1; top:clamp(86px, 18%, 180px); left:50%; width:min(100% - 40px, 1120px); padding:0; transform:translateX(-50%); }
+.hero-copy { position:absolute; z-index:1; top:clamp(146px, 26%, 230px); left:50%; width:min(100% - 40px, 1120px); padding:0; transform:translateX(-50%); }
 .hero-copy h1 { max-width:100%; white-space:normal; }
 .hero-copy p { margin-top:8px; }
 .hero-artwork { display:block; width:100%; height:min(760px, 54.35vw); min-height:420px; aspect-ratio:auto; align-self:stretch; background:var(--hero) center 52% / cover no-repeat; filter:brightness(1.18); }
@@ -1530,14 +1530,14 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
 .home-hero .hero-actions a { flex:1 1 0 !important; width:auto !important; min-width:0 !important; max-width:none; padding:13px 14px; font-size:16px; }
 
 @media (max-width:900px) {
-  .home-hero { min-height:0; padding:70px 0 0; }
+  .home-hero { min-height:0; padding:0; }
   .hero-copy { top:clamp(24px, 8vw, 62px); width:min(100% - 32px, 680px); }
   .hero-copy h1 { max-width:min(680px, 100%); white-space:normal; font-size:clamp(25px, 4vw, 34px) !important; }
   .hero-copy p { font-size:17px !important; }
   .hero-artwork { width:100%; height:auto; min-height:0; aspect-ratio:7728 / 4200; background-size:100% 100%; background-position:center; }
 }
 @media (max-width:600px) {
-  .home-hero { min-height:0; padding:64px 0 0; }
+  .home-hero { min-height:0; padding:0; }
   .hero-copy { top:clamp(18px, 7.5vw, 30px); width:calc(100% - 24px); }
   .hero-copy h1 { font-size:clamp(17px, 5.4vw, 22px) !important; line-height:1.08; }
   .hero-copy p { margin-top:5px; font-size:clamp(11px, 3.35vw, 14px) !important; line-height:1.2; }
