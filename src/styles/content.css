@@ -1517,10 +1517,10 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
   .loyalty-register.primary-button { width:100%; }
 }
 
-/* Home hero: use the supplied full-width artwork without cropping its built-in lettering. */
-.home-hero { display:flex; flex-direction:column; align-items:center; gap:clamp(12px, 2vw, 24px); min-height:0; padding:clamp(116px, 10vh, 145px) 0 0; background:#130300; }
+/* Home hero: copy sits in the clear area of the supplied full-width artwork. */
+.home-hero { display:block; min-height:0; padding:88px 0 0; background:#130300; }
 .home-hero::before { display:none !important; }
-.hero-copy { width:min(100%, 1120px); padding:0 20px; }
+.hero-copy { position:absolute; z-index:1; top:clamp(86px, 18%, 180px); left:50%; width:min(100% - 40px, 1120px); padding:0; transform:translateX(-50%); }
 .hero-copy h1 { max-width:100%; white-space:normal; }
 .hero-copy p { margin-top:8px; }
 .hero-artwork { display:block; width:100%; height:min(760px, 54.35vw); min-height:420px; aspect-ratio:auto; align-self:stretch; background:var(--hero) center 52% / cover no-repeat; filter:brightness(1.18); }
@@ -1530,19 +1530,28 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
 .home-hero .hero-actions a { flex:1 1 0 !important; width:auto !important; min-width:0 !important; max-width:none; padding:13px 14px; font-size:16px; }
 
 @media (max-width:900px) {
-  .home-hero { min-height:0; padding:96px 0 0; }
-  .hero-copy h1 { max-width:min(680px, 100%); white-space:normal; }
+  .home-hero { min-height:0; padding:70px 0 0; }
+  .hero-copy { top:clamp(24px, 8vw, 62px); width:min(100% - 32px, 680px); }
+  .hero-copy h1 { max-width:min(680px, 100%); white-space:normal; font-size:clamp(25px, 4vw, 34px) !important; }
+  .hero-copy p { font-size:17px !important; }
   .hero-artwork { width:100%; height:auto; min-height:0; aspect-ratio:7728 / 4200; background-size:100% 100%; background-position:center; }
 }
 @media (max-width:600px) {
-  .home-hero { min-height:0; gap:14px; padding:82px 0 0; }
-  .hero-copy h1 { font-size:clamp(25px, 7.8vw, 32px) !important; line-height:1.08; }
-  .hero-copy p { margin-top:8px; font-size:17px !important; line-height:1.35; }
+  .home-hero { min-height:0; padding:64px 0 0; }
+  .hero-copy { top:clamp(18px, 7.5vw, 30px); width:calc(100% - 24px); }
+  .hero-copy h1 { font-size:clamp(17px, 5.4vw, 22px) !important; line-height:1.08; }
+  .hero-copy p { margin-top:5px; font-size:clamp(11px, 3.35vw, 14px) !important; line-height:1.2; }
   .hero-artwork { width:100%; min-height:0; }
   .home-hero .hero-actions > *,
   .home-hero .hero-actions .hero-actions__primary,
   .home-hero .hero-actions a { padding:10px 8px; font-size:14px !important; }
 }
+
+/* Restore the established booking-button interaction without affecting delivery. */
+.home-hero .restaurant-booking-cta { transition:background .2s ease, color .2s ease, transform .2s ease; }
+.home-hero .restaurant-booking-cta:hover,
+.home-hero .restaurant-booking-cta:focus-visible { background:transparent; color:var(--paper); transform:translateY(-2px); }
+.home-hero .restaurant-booking-cta:active { transform:translateY(0); }
 
 /* Full-screen PhotoSwipe menu viewer. */
 .menu-viewer__source { position:fixed; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); pointer-events:none; }

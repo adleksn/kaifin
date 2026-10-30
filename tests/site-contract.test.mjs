@@ -18,7 +18,7 @@ assert.match(data, /https:\/\/bti\.xyz\/wDEeWR/);
 assert.match(data, /Детское меню\.pdf/);
 assert.match(data, /меню кальянов копия 7\.pdf/);
 assert.match(home, /PhotoCarousel ariaLabel="Кухня Кайфына"/);
-assert.match(home, /class="hero-artwork">\s*<div class="hero-actions"/s);
+assert.match(home, /class="hero-artwork">\s*<div class="hero-copy">[\s\S]*?<div class="hero-actions"/);
 assert.match(home, /https:\/\/kaifin-delivery\.ru\//);
 assert.match(home, /LoyaltyModal/);
 assert.match(delivery, /Astro\.redirect\('https:\/\/kaifin-delivery\.ru\//);
@@ -47,6 +47,8 @@ assert.match(styles, /\.loyalty-register\.primary-button\s*\{/);
 assert.match(styles, /\.loyalty-modal \.modal-close\s*\{[^}]*display:grid[^}]*padding:0[^}]*place-items:center/s);
 assert.match(styles, /\.loyalty-modal \.modal-close svg\s*\{[^}]*width:18px[^}]*height:18px/);
 assert.match(styles, /\.home-hero \.hero-actions\s*\{[^}]*position:absolute[^}]*top:74%[^}]*margin:0 !important/s);
+assert.match(styles, /\.hero-copy\s*\{[^}]*position:absolute[^}]*top:clamp\(86px, 18%, 180px\)/s);
+assert.match(styles, /\.home-hero \.restaurant-booking-cta:hover,[\s\S]*?background:transparent[\s\S]*?transform:translateY\(-2px\)/);
 assert.match(header, /withBase\('\/banquet'\)/);
 assert.match(header, /item\.addEventListener\('click', \(\) => setMenuState\(false, false\)\)/);
 
