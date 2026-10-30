@@ -48,7 +48,7 @@ assert.match(styles, /\.loyalty-modal \.modal-close\s*\{[^}]*display:grid[^}]*pa
 assert.match(styles, /\.loyalty-modal \.modal-close svg\s*\{[^}]*width:18px[^}]*height:18px/);
 assert.match(styles, /\.home-hero \.hero-actions\s*\{[^}]*position:absolute[^}]*top:74%[^}]*margin:0 !important/s);
 assert.match(styles, /\.home-hero\s*\{[^}]*padding:0[^}]*background:#130300/s);
-assert.match(styles, /\.hero-copy\s*\{[^}]*position:absolute[^}]*top:clamp\(146px, 26%, 230px\)/s);
+assert.match(styles, /\.hero-copy\s*\{[^}]*position:absolute[^}]*top:clamp\(196px, 32%, 280px\)/s);
 assert.match(styles, /\.home-hero \.restaurant-booking-cta:hover,[\s\S]*?background:transparent[\s\S]*?transform:translateY\(-2px\)/);
 assert.match(header, /withBase\('\/banquet'\)/);
 assert.match(header, /item\.addEventListener\('click', \(\) => setMenuState\(false, false\)\)/);

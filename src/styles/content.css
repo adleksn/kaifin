@@ -1520,7 +1520,7 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
 /* Home hero: copy sits in the clear area of the supplied full-width artwork. */
 .home-hero { display:block; min-height:0; padding:0; background:#130300; }
 .home-hero::before { display:none !important; }
-.hero-copy { position:absolute; z-index:1; top:clamp(146px, 26%, 230px); left:50%; width:min(100% - 40px, 1120px); padding:0; transform:translateX(-50%); }
+.hero-copy { position:absolute; z-index:1; top:clamp(196px, 32%, 280px); left:50%; width:min(100% - 40px, 1120px); padding:0; transform:translateX(-50%); }
 .hero-copy h1 { max-width:100%; white-space:normal; }
 .hero-copy p { margin-top:8px; }
 .hero-artwork { display:block; width:100%; height:min(760px, 54.35vw); min-height:420px; aspect-ratio:auto; align-self:stretch; background:var(--hero) center 52% / cover no-repeat; filter:brightness(1.18); }
