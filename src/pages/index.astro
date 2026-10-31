@@ -8,6 +8,7 @@ import TeamCarousel from '../components/TeamCarousel.astro';
 import { generatedImages, homeCuisine, homeSettings, homeVenue, withBase } from '../data/site';
 ---
 <BaseLayout>
+  <LoyaltyModal />
   <section class="home-hero" style={`--hero:url('${generatedImages.hero}')`}>
     <div class="hero-artwork">
       <div class="hero-copy"><h1>Ресторан китайской и европейской кухни</h1><p>Балашиха, мкр. Ольгино, ул. Жилгородок, 43А</p></div>
@@ -33,6 +34,4 @@ import { generatedImages, homeCuisine, homeSettings, homeVenue, withBase } from 
   </section>
 
   {homeSettings.showTeamOnHome && <section class="home-team"><div class="home-team__heading"><h2>Команда Кайфына</h2><p>Люди, которые создают атмосферу ресторана.</p><a class="text-link" href={withBase('/team')}>Познакомиться с командой</a></div><TeamCarousel /></section>}
-  <LoyaltyModal />
-
 </BaseLayout>
