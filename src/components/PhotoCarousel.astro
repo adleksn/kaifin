@@ -22,7 +22,7 @@ const { ariaLabel, images, className = '' } = Astro.props;
     <button type="button" data-photo-carousel-direction="1" aria-label="Следующее фото">→</button>
   </div>
   <dialog class="photo-lightbox" data-photo-carousel-dialog aria-label="Просмотр фотографии">
-    <button class="photo-lightbox__close" type="button" data-photo-carousel-close aria-label="Закрыть">×</button>
+    <button class="photo-lightbox__close" type="button" data-photo-carousel-close aria-label="Закрыть"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg></button>
     <img data-photo-carousel-lightbox-image alt="" />
   </dialog>
 </section>

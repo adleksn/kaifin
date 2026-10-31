@@ -99,7 +99,7 @@ const menu = menuGalleries[menuKey];
       jumpPanel.className = 'pswp__menu-page-jump';
       jumpPanel.dataset.menuPageJump = '';
       jumpPanel.hidden = true;
-      jumpPanel.innerHTML = '<label>Страница <input inputmode="numeric" type="number" min="1" step="1" required aria-label="Номер страницы" /></label><button type="submit">Перейти</button><button type="button" aria-label="Закрыть выбор страницы">×</button>';
+      jumpPanel.innerHTML = '<label>Страница <input inputmode="numeric" type="number" min="1" step="1" required aria-label="Номер страницы" /></label><button type="submit">Перейти</button><button type="button" aria-label="Закрыть выбор страницы"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg></button>';
       const input = jumpPanel.querySelector<HTMLInputElement>('input');
       const close = jumpPanel.querySelector<HTMLButtonElement>('button[type="button"]');
       close?.addEventListener('click', () => { jumpPanel.hidden = true; });

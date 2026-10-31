@@ -1555,6 +1555,18 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
 .home-hero .restaurant-booking-cta:focus-visible { background:transparent; color:var(--paper); transform:translateY(-2px); }
 .home-hero .restaurant-booking-cta:active { transform:translateY(0); }
 
+/* Keep native date controls within the mobile form grid. */
+.demo-form label { min-width:0; }
+.demo-form input[type='date'] { min-width:0; max-width:100%; }
+@media (max-width:600px) { .demo-form input[type='date'] { padding-inline:12px; font-size:16px; } }
+
+/* Close controls use the same centred SVG cross in every viewer. */
+.photo-lightbox__close { display:grid; place-items:center; }
+.photo-lightbox__close svg,
+.pswp__menu-page-jump button[type='button'] svg { display:block; width:20px; height:20px; fill:none; stroke:currentColor; stroke-linecap:round; stroke-width:2; }
+.pswp__button--close { display:grid; width:44px; height:44px; padding:0; margin:0 8px 0 0; place-items:center; }
+.pswp__button--close .pswp__icn { position:static; width:20px; height:20px; margin:0; }
+
 /* Full-screen PhotoSwipe menu viewer. */
 .menu-viewer__source { position:fixed; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); pointer-events:none; }
 .pswp { --pswp-bg:var(--ink); --pswp-icon-color:var(--paper); --pswp-icon-stroke-color:var(--ink); --pswp-icon-stroke-width:1.5px; }
@@ -1572,5 +1584,5 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
 .pswp__menu-page-jump input { width:68px; min-height:38px; border:1px solid rgba(242,238,228,.45); border-radius:6px; background:#210802; color:var(--paper); font:16px "Cormorant Garamond", Georgia, serif; text-align:center; }
 .pswp__menu-page-jump button { min-height:38px; padding:0 13px; border:1px solid var(--amber); border-radius:999px; background:transparent; color:var(--paper); font:700 14px "Cormorant Garamond", Georgia, serif; cursor:pointer; }
 .pswp__menu-page-jump button:hover, .pswp__menu-page-jump button:focus-visible { background:var(--amber); color:var(--ink); }
-.pswp__menu-page-jump button[type='button'] { width:38px; padding:0; border-radius:50%; font-size:20px; }
+.pswp__menu-page-jump button[type='button'] { display:grid; width:38px; padding:0; place-items:center; border-radius:50%; font-size:20px; }
 @media (max-width:700px) { .pswp__top-bar { padding:calc(env(safe-area-inset-top) + 8px) 8px 8px; }.pswp__button--arrow--prev, .pswp__button--arrow--next { margin:0 4px; }.pswp__menu-page-indicator { bottom:calc(env(safe-area-inset-bottom) + 12px); }.pswp__menu-page-jump { bottom:calc(env(safe-area-inset-bottom) + 60px); width:calc(100% - 32px); justify-content:center; }.pswp__menu-page-jump label { flex:1; justify-content:space-between; }.pswp__menu-page-jump input { width:64px; } }

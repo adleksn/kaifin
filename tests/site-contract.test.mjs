@@ -8,6 +8,7 @@ const delivery = await read('src/pages/delivery.astro');
 const loyalty = await read('src/pages/loyalty.astro');
 const modal = await read('src/components/LoyaltyModal.astro');
 const menu = await read('src/pages/menu.astro');
+const menuViewer = await read('src/components/MenuViewer.astro');
 const styles = await read('src/styles/content.css');
 const header = await read('src/components/Header.astro');
 
@@ -41,12 +42,16 @@ assert.match(modal, /<h2 id="loyalty-title">Дарим 500 БОНУСОВ<\/h2>/
 assert.match(modal, /За регистрацию в программе лояльности\./);
 assert.match(modal, /<svg viewBox="0 0 24 24" aria-hidden="true">/);
 assert.match(modal, /class="loyalty-register primary-button"/);
+assert.match(await read('src\/components\/PhotoCarousel.astro'), /class="photo-lightbox__close"[\s\S]*?<svg viewBox="0 0 24 24"/);
+assert.match(menuViewer, /aria-label="Закрыть выбор страницы"><svg viewBox="0 0 24 24"/);
 assert.match(styles, /\.hero-artwork\s*\{[^}]*width:100%[^}]*background:var\(--hero\) center 52% \/ cover no-repeat/s);
 assert.match(styles, /\.home-cuisine__actions \.menu-viewer__trigger\s*\{[^}]*border:1px solid var\(--amber\)[^}]*border-radius:999px[^}]*background:transparent/s);
 assert.match(styles, /\.loyalty-modal__offer\s*\{[^}]*font:22px\/1\.45/);
 assert.match(styles, /\.loyalty-register\.primary-button\s*\{/);
 assert.match(styles, /\.loyalty-modal \.modal-close\s*\{[^}]*display:grid[^}]*padding:0[^}]*place-items:center/s);
 assert.match(styles, /\.loyalty-modal \.modal-close svg\s*\{[^}]*width:18px[^}]*height:18px/);
+assert.match(styles, /\.demo-form input\[type='date'\]\s*\{[^}]*min-width:0[^}]*max-width:100%/);
+assert.match(styles, /\.pswp__button--close\s*\{[^}]*display:grid[^}]*place-items:center/);
 assert.match(styles, /\.home-hero \.hero-actions\s*\{[^}]*position:absolute[^}]*top:84%[^}]*margin:0 !important/s);
 assert.match(styles, /\.home-hero\s*\{[^}]*padding:0[^}]*background:#130300/s);
 assert.match(styles, /\.hero-copy\s*\{[^}]*position:absolute[^}]*top:70%/s);
