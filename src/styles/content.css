@@ -1567,6 +1567,40 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
 .pswp__button--close { display:grid; width:44px; height:44px; padding:0; margin:0 8px 0 0; place-items:center; }
 .pswp__button--close .pswp__icn { position:static; width:20px; height:20px; margin:0; }
 
+/* Brandbook 2026: digital palette, compact typography and contrast. */
+body { background:var(--brand-red); }
+.site-header,
+.site-footer,
+.home-hero,
+.home-hero__content,
+.inner-hero,
+.loyalty-program-visual,
+.home-section,
+.home-venue,
+.banquet-menu-viewer { background:var(--brand-red) !important; }
+h1, h2, h3, h4, h5, h6,
+.hero-copy h1,
+.inner-hero h1,
+.home-section h2,
+.loyalty-modal h2 { font-family:Inter, Arial, sans-serif !important; font-weight:700; letter-spacing:-.045em; }
+p, button, input, select, textarea, .action-link, .primary-button,
+.site-header, .site-footer { font-family:Inter, Arial, sans-serif; }
+.site-header nav { letter-spacing:.025em; }
+.wordmark { color:var(--brand-cream); }
+.header-book,
+.primary-button,
+.home-hero .hero-actions .hero-actions__primary { background:var(--brand-cream) !important; color:var(--brand-red) !important; }
+.header-book:hover,
+.header-book:focus-visible,
+.primary-button:hover,
+.primary-button:focus-visible,
+.home-hero .hero-actions .hero-actions__primary:hover,
+.home-hero .hero-actions .hero-actions__primary:focus-visible { background:var(--brand-olive) !important; color:var(--brand-cream) !important; }
+.home-hero .hero-actions a { background:var(--brand-olive) !important; color:var(--brand-cream) !important; border-color:var(--brand-olive) !important; }
+.home-hero .hero-actions a:hover,
+.home-hero .hero-actions a:focus-visible { background:transparent !important; color:var(--brand-cream) !important; border-color:var(--brand-cream) !important; }
+.loyalty-program-visual { background:var(--brand-cream) !important; }
+
 /* Supplied homepage and loyalty artwork: keep the artwork free from UI overlays. */
 .home-hero {
   display:block;

@@ -14,6 +14,10 @@ const header = await read('src/components/Header.astro');
 
 assert.match(data, /images\/brand\/home-banner\.jpg/);
 assert.match(data, /images\/brand\/loyalty-program\.jpg/);
+assert.match(await read('src/styles/global.css'), /--brand-cream:#eee0c5/);
+assert.match(await read('src/styles/global.css'), /--brand-red:#883323/);
+assert.match(await read('src/styles/global.css'), /--brand-olive:#7a664c/);
+assert.match(await read('src/styles/global.css'), /font-family:Inter, Arial, sans-serif/);
 assert.match(data, /01-pasta\.jpg/);
 assert.match(data, /10-sushi\.png/);
 assert.match(data, /https:\/\/bti\.xyz\/wDEeWR/);
@@ -62,6 +66,7 @@ assert.match(styles, /\.home-hero \.hero-actions\s*\{[^}]*position:static[^}]*tr
 assert.match(styles, /\.home-hero\s*\{[^}]*padding:0[^}]*background:#130300/s);
 assert.match(styles, /\.hero-copy\s*\{[^}]*position:static[^}]*transform:none/s);
 assert.match(styles, /\.home-hero \.restaurant-booking-cta:hover,[\s\S]*?background:transparent[\s\S]*?transform:translateY\(-2px\)/);
+assert.match(styles, /\/\* Brandbook 2026: digital palette, compact typography and contrast\. \*\//);
 assert.match(header, /withBase\('\/banquet'\)/);
 assert.doesNotMatch(header, /label: 'Контакты'/);
 assert.match(header, /item\.addEventListener\('click', \(\) => setMenuState\(false, false\)\)/);

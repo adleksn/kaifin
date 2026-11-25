@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 @font-face {
   font-family: 'Chinese Restaurant';
@@ -24,18 +24,18 @@
   font-display: swap;
 }
 
-:root { --ink:#130300; --ink-soft:#130300; --paper:#f2eee4; --olive:#130300; --amber:#ce9651; --red:#b92d28; --line:rgba(242,238,228,.25); --corner-radius:10px; font-family:'Cormorant Garamond', Georgia, serif; color:var(--paper); background:var(--ink); }
+:root { --brand-cream:#eee0c5; --brand-red:#883323; --brand-olive:#7a664c; --ink:var(--brand-red); --ink-soft:var(--brand-red); --paper:var(--brand-cream); --olive:var(--brand-olive); --amber:var(--brand-cream); --red:var(--brand-red); --line:rgb(238 224 197 / .36); --corner-radius:10px; font-family:Inter, Arial, sans-serif; color:var(--paper); background:var(--ink); }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { margin:0; background:var(--ink); }
-body, button, input, select, textarea, option { font-family:'Cormorant Garamond', Georgia, serif; }
+body, button, input, select, textarea, option { font-family:Inter, Arial, sans-serif; }
 a { color:inherit; text-decoration:none; }
 a:focus-visible, button:focus-visible { outline:2px solid var(--amber); outline-offset:3px; }
-h1, h2, h3, h4, h5, h6 { font-family:'Bodoni Moda', Georgia, serif !important; }
+h1, h2, h3, h4, h5, h6 { font-family:Inter, Arial, sans-serif !important; font-weight:700; }
 
-.site-header { position:absolute; z-index:3; top:0; width:100%; height:88px; display:flex; align-items:center; justify-content:space-between; padding:0 clamp(22px,4.6vw,72px); border-bottom:1px solid var(--line); text-transform:uppercase; letter-spacing:.08em; font-size:11px; }
-.wordmark { font:24px "Chinese Restaurant", Prata, serif; letter-spacing:.08em; }
-.site-header nav { display:flex; gap:clamp(13px,1.9vw,30px); font-family:'Cormorant Garamond', Georgia, serif; }
+.site-header { position:absolute; z-index:3; top:0; width:100%; height:88px; display:flex; align-items:center; justify-content:space-between; padding:0 clamp(22px,4.6vw,72px); border-bottom:1px solid var(--line); text-transform:uppercase; letter-spacing:.025em; font-size:11px; }
+.wordmark { font:800 24px/1 Inter, Arial, sans-serif; letter-spacing:-.055em; }
+.site-header nav { display:flex; gap:clamp(13px,1.9vw,30px); font-family:Inter, Arial, sans-serif; }
 .site-header nav button { border:0; padding:0; background:transparent; color:inherit; font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; }
 .site-header nav a:hover, .site-header nav a:focus-visible { color:var(--amber); }
 .site-header__actions { display:flex; align-items:center; gap:16px; }
