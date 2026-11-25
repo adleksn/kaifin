@@ -29,7 +29,8 @@ export const loyaltyProgram = {
   ],
 } as const;
 export const generatedImages = {
-  hero: withBase('/images/Kaifyn_fasad_7728x4248.jpg'),
+  hero: withBase('/images/brand/home-banner.jpg'),
+  loyaltyProgram: withBase('/images/brand/loyalty-program.jpg'),
   about: withBase('/images/old-site/restaurant-interior-3.jpg'),
   kids: withBase('/images/brief/kids-room.png'),
   food: withBase('/images/brief/home-food.png'),

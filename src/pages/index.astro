@@ -10,7 +10,8 @@ import { generatedImages, homeCuisine, homeSettings, homeVenue, withBase } from 
 <BaseLayout>
   <LoyaltyModal />
   <section class="home-hero" style={`--hero:url('${generatedImages.hero}')`}>
-    <div class="hero-artwork">
+    <div class="hero-artwork" role="img" aria-label="Кайфын — место встречи"></div>
+    <div class="home-hero__content">
       <div class="hero-copy"><h1>Ресторан китайской и европейской кухни</h1><p>Балашиха, мкр. Ольгино, ул. Жилгородок, 43А</p></div>
       <div class="hero-actions"><RestaurantBookingCTA class="hero-actions__primary" /><a href="https://kaifin-delivery.ru/">Доставка</a></div>
     </div>
@@ -18,7 +19,7 @@ import { generatedImages, homeCuisine, homeSettings, homeVenue, withBase } from 
 
   <section id="about" class="home-story home-section">
     <img src={generatedImages.about} alt="Интерьер ресторана Кайфын" loading="lazy" />
-    <div><h2>Кайфын — имя с историей</h2><p>Место для тёплых встреч, семейных ужинов и событий, которые хочется запомнить.</p><p>В меню соединяются китайская и европейская кухня, а в залах легко выбрать настроение для любого повода.</p></div>
+    <div><h2>Ресторан «Кайфын» — место встречи</h2><p>В основе визуального языка — образ Шёлкового пути, который веками соединял Восток и Запад, разные культуры, традиции и вкусы.</p><p>Эта идея отражается и в интерьере, и в фирменном стиле, и в кухне ресторана. Плавные линии, природные фактуры и образы маршрутов символизируют движение и соединение разных культур.</p><p>«Кайфын» — это место, где Восток и Запад встречаются за одним столом, а знакомые вкусы открываются по-новому.</p></div>
   </section>
 
   <section id="cuisine" class="home-cuisine home-section">

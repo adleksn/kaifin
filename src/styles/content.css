@@ -1567,6 +1567,117 @@ p, .lede, .section-heading__copy { font-size:20px !important; }
 .pswp__button--close { display:grid; width:44px; height:44px; padding:0; margin:0 8px 0 0; place-items:center; }
 .pswp__button--close .pswp__icn { position:static; width:20px; height:20px; margin:0; }
 
+/* Supplied homepage and loyalty artwork: keep the artwork free from UI overlays. */
+.home-hero {
+  display:block;
+  min-height:0;
+  padding:0;
+  background:#130300;
+}
+.hero-artwork {
+  display:block;
+  width:100%;
+  min-height:0;
+  height:auto;
+  aspect-ratio:16 / 9;
+  background:var(--hero) center / cover no-repeat;
+  filter:none;
+}
+.home-hero__content {
+  display:grid;
+  justify-items:center;
+  gap:28px;
+  padding:clamp(42px,5vw,78px) 20px clamp(56px,7vw,104px);
+  text-align:center;
+}
+.home-hero .hero-copy {
+  position:static;
+  z-index:auto;
+  width:min(100%, 880px);
+  padding:0;
+  transform:none;
+}
+.home-hero .hero-copy h1 {
+  margin:0;
+  max-width:none;
+  color:var(--paper);
+  font-size:clamp(32px,4vw,56px) !important;
+  line-height:1.05;
+  white-space:normal;
+}
+.home-hero .hero-copy p {
+  margin:14px 0 0;
+  color:#d2d3cb;
+  font-size:clamp(17px,1.7vw,21px) !important;
+  line-height:1.45;
+}
+.home-hero .hero-actions {
+  position:static;
+  left:auto;
+  top:auto;
+  display:flex;
+  flex-wrap:nowrap;
+  width:min(100%, 560px);
+  margin:0 !important;
+  gap:18px !important;
+  transform:none;
+}
+.home-hero .hero-actions > *,
+.home-hero .hero-actions .hero-actions__primary,
+.home-hero .hero-actions a {
+  flex:1 1 0 !important;
+  width:auto !important;
+  min-width:0 !important;
+  max-width:none;
+  padding:14px 16px;
+}
+
+/* A smaller visual leaves the restaurant story to carry the section. */
+.home-story {
+  grid-template-columns:minmax(260px, 420px) minmax(0, 1fr);
+  align-items:center;
+}
+.home-story img {
+  min-height:0;
+  max-width:420px;
+  aspect-ratio:4 / 3;
+  object-fit:cover;
+}
+
+/* The approved loyalty layout is a single responsive image rather than recreated cards. */
+.loyalty-program-visual {
+  padding:clamp(48px,7vw,110px) clamp(20px,6vw,120px);
+  background:#130300;
+}
+.loyalty-program-visual img {
+  display:block;
+  width:100%;
+  max-width:1600px;
+  height:auto;
+  margin:0 auto;
+}
+
+/* Banquet headings and gallery now use a single shared page inset. */
+.hall-gallery,
+.banquet-menu-viewer {
+  padding-left:clamp(22px, 9vw, 150px);
+  padding-right:clamp(22px, 9vw, 150px);
+}
+
+@media (max-width:700px) {
+  .hero-artwork { aspect-ratio:16 / 9; }
+  .home-hero__content { gap:22px; padding:36px 20px 56px; }
+  .home-hero .hero-copy h1 { font-size:clamp(28px,8.2vw,38px) !important; }
+  .home-hero .hero-copy p { margin-top:10px; font-size:17px !important; }
+  .home-hero .hero-actions { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:10px !important; }
+  .home-hero .hero-actions > *,
+  .home-hero .hero-actions .hero-actions__primary,
+  .home-hero .hero-actions a { padding:13px 8px; font-size:14px !important; }
+  .home-story { grid-template-columns:1fr; gap:30px; }
+  .home-story img { width:min(100%, 360px); margin:0 auto; aspect-ratio:4 / 3; }
+  .loyalty-program-visual { padding:36px 12px; }
+}
+
 /* Full-screen PhotoSwipe menu viewer. */
 .menu-viewer__source { position:fixed; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); pointer-events:none; }
 .pswp { --pswp-bg:var(--ink); --pswp-icon-color:var(--paper); --pswp-icon-stroke-color:var(--ink); --pswp-icon-stroke-width:1.5px; }

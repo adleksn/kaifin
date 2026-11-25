@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { loyaltyProgram } from '../data/site';
+import { generatedImages, loyaltyProgram } from '../data/site';
 ---
 
 <BaseLayout title="Программа лояльности — Кайфын" description="Программа лояльности ресторана Кайфын: бонусы от 5% до 10% с каждого чека.">
@@ -10,14 +10,8 @@ import { loyaltyProgram } from '../data/site';
     <a class="action-link primary-button" href={loyaltyProgram.registrationUrl}>Зарегистрироваться</a>
   </section>
 
-  <section class="loyalty-program-section" aria-labelledby="loyalty-levels-title">
-    <h2 id="loyalty-levels-title">Уровни</h2>
-    <div class="loyalty-square-grid loyalty-square-grid--levels">{loyaltyProgram.levels.map((level) => <article class="loyalty-square-card"><strong>{level.value}</strong><p>{level.description}</p></article>)}</div>
-  </section>
-
-  <section class="loyalty-program-section" aria-labelledby="loyalty-bonuses-title">
-    <h2 id="loyalty-bonuses-title">Про бонусы</h2>
-    <div class="loyalty-square-grid loyalty-square-grid--bonuses">{loyaltyProgram.bonuses.map((bonus) => <article class="loyalty-square-card loyalty-square-card--bonus"><strong>{bonus.value}</strong>{bonus.note && <p>{bonus.note}</p>}</article>)}</div>
+  <section class="loyalty-program-visual" aria-label="Уровни и бонусы программы лояльности">
+    <img src={generatedImages.loyaltyProgram} alt="Уровни программы лояльности: 5%, 7%, 10%; бонусы за регистрацию и оплату" loading="lazy" />
   </section>
 
 </BaseLayout>
