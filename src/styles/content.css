@@ -1603,6 +1603,30 @@ p, button, input, select, textarea, .action-link, .primary-button,
 .home-hero .hero-actions a:focus-visible { background:transparent !important; color:var(--brand-cream) !important; border-color:var(--brand-cream) !important; }
 .loyalty-program-visual { background:var(--brand-cream) !important; }
 
+/* The banquet CTA is the same primary booking action as the header control. */
+.banquet-booking-cta {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  padding:15px 24px;
+  border:0 !important;
+  border-radius:999px !important;
+  background:var(--brand-cream) !important;
+  color:var(--brand-red) !important;
+  font-weight:700;
+  line-height:1.15;
+  text-align:center;
+  transition:background .2s ease, color .2s ease, transform .2s ease;
+}
+.banquet-booking-cta:hover,
+.banquet-booking-cta:focus-visible {
+  background:var(--brand-olive) !important;
+  color:var(--brand-cream) !important;
+  transform:translateY(-2px);
+}
+.banquet-booking-cta:active { transform:translateY(0); }
+
 /* Supplied homepage and loyalty artwork: keep the artwork free from UI overlays. */
 .home-hero {
   display:block;
