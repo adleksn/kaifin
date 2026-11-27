@@ -2329,11 +2329,12 @@ p, button, input, select, textarea, .action-link, .primary-button,
   /* The decorative element sits above the dialog colour but beneath its
      content. A negative stack level placed it behind the opaque dialog. */
   z-index:0;
-  inset:-34% -18%;
+  inset:-18% -8%;
   pointer-events:none;
-  background:url('/kaifin/images/brand/kaifyn-element-04.png') center / 120% auto no-repeat;
-  opacity:.20;
-  transform:rotate(180deg) scale(1.1);
+  /* Match the route element used in the «Пространство» block. */
+  background:url('/kaifin/images/brand/kaifyn-route-mark.png') center / 116% auto no-repeat;
+  opacity:.15;
+  transform:rotate(180deg);
 }
 .loyalty-modal > * { position:relative; z-index:1; }
 .loyalty-modal .modal-close {
@@ -2353,6 +2354,11 @@ p, button, input, select, textarea, .action-link, .primary-button,
   z-index:1;
   overflow:visible;
 }
+
+/* The hero artwork may continue downward into the next banquet block, but it
+   must not create a horizontal document scrollbar. */
+html:has(.banquet-hero),
+body:has(.banquet-hero) { overflow-x:clip; }
 
 @media (max-width:700px) {
   .site-header::before { inset:-900% -46%; opacity:.24; }
