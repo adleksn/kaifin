@@ -2334,7 +2334,15 @@ p, button, input, select, textarea, .action-link, .primary-button,
   transform:rotate(180deg) scale(1.1);
 }
 .loyalty-modal > * { position:relative; z-index:1; }
-.loyalty-modal__label { margin-left:62px; }
+.loyalty-modal .modal-close {
+  position:absolute;
+  z-index:2;
+  top:18px;
+  right:18px;
+  bottom:auto;
+  left:auto;
+}
+.loyalty-modal__label { margin-left:0; }
 
 @media (max-width:700px) {
   .site-header::before { inset:-900% -46%; opacity:.24; }
@@ -2344,7 +2352,7 @@ p, button, input, select, textarea, .action-link, .primary-button,
   .banquet-request::before,
   .loyalty-program-hero::before { background-size:145% auto; opacity:.20; }
   .loyalty-modal::before { background-size:170% auto; opacity:.13; }
-  .loyalty-modal__label { margin-left:58px; }
+  .loyalty-modal__label { margin-left:0; }
 }
 
 /* Full-width framing: render the complete 01/02 element first, then clip only
@@ -2360,6 +2368,15 @@ p, button, input, select, textarea, .action-link, .primary-button,
   background-position:center;
   background-size:auto 100%;
   transform:translate(-50%, -50%) rotate(90deg);
+}
+.site-header {
+  left:50%;
+  width:100vw;
+  transform:translateX(-50%);
+}
+.site-footer {
+  width:100vw;
+  margin-left:calc(50% - 50vw);
 }
 
 /* The story copy now uses the available column instead of a narrow card. */
