@@ -2346,3 +2346,51 @@ p, button, input, select, textarea, .action-link, .primary-button,
   .loyalty-modal::before { background-size:170% auto; opacity:.13; }
   .loyalty-modal__label { margin-left:58px; }
 }
+
+/* Full-width framing: render the complete 01/02 element first, then clip only
+   its height to the header/footer — never its left or right edge. */
+.site-header::before,
+.site-footer::before {
+  top:50%;
+  right:auto;
+  bottom:auto;
+  left:50%;
+  width:100vw;
+  height:100vw;
+  background-position:center;
+  background-size:auto 100%;
+  transform:translate(-50%, -50%) rotate(90deg);
+}
+
+/* The story copy now uses the available column instead of a narrow card. */
+.home-story {
+  grid-template-columns:minmax(300px, 34%) minmax(0, 1fr);
+  column-gap:clamp(42px, 6vw, 112px);
+}
+.home-story__copy { max-width:900px; }
+.home-story h2 { max-width:16ch; }
+.home-story p:not(.home-story__eyebrow) { max-width:68ch; }
+
+/* Keep the registration CTA immediately after the offer, as before the
+   modal-background treatment. */
+.loyalty-register.primary-button {
+  width:auto;
+  margin:0;
+  align-self:flex-start;
+}
+
+@media (max-width:700px) {
+  .site-header::before,
+  .site-footer::before {
+    top:50%;
+    right:auto;
+    bottom:auto;
+    left:50%;
+    width:100vw;
+    height:100vw;
+    background-size:auto 100%;
+    transform:translate(-50%, -50%) rotate(90deg);
+  }
+  .home-story { grid-template-columns:1fr; }
+  .loyalty-register.primary-button { width:100%; }
+}
