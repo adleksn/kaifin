@@ -2362,17 +2362,21 @@ body:has(.banquet-hero) { overflow-x:clip; }
 
 /* Keep the venue facts full-bleed, while tightening their vertical rhythm. */
 .home-venue__facts div { padding:clamp(20px, 2.2vw, 34px) clamp(12px, 3vw, 48px); }
+.home-venue__facts span {
+  max-width:16ch;
+  margin:10px auto 0;
+  color:#eee0c5d1;
+  font-size:clamp(13px, 1.3vw, 16px);
+  line-height:1.25;
+}
+.home-venue__facts strong {
+  color:var(--brand-cream);
+  font-size:clamp(31px, 5vw, 48px);
+  font-weight:700;
+  letter-spacing:-.075em;
+}
 @media (max-width:700px) {
   .home-venue__facts div { padding:18px 7px; }
-}
-
-/* On wide screens the first visual needs a small breathing margin instead of
-   spanning edge to edge. The mobile composition stays untouched. */
-@media (min-width:901px) {
-  .hero-artwork {
-    width:min(calc(100% - clamp(32px, 4vw, 88px)), 2300px);
-    margin-inline:auto;
-  }
 }
 
 @media (max-width:700px) {
