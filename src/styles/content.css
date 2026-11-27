@@ -810,11 +810,13 @@ body.photoswipe-open { overflow:hidden; }
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(238 224 197 / .65) transparent;
   cursor: grab;
 }
-.team-carousel__viewport::-webkit-scrollbar { display: none; }
+.team-carousel__viewport::-webkit-scrollbar { height: 6px; }
+.team-carousel__viewport::-webkit-scrollbar-track { background: transparent; }
+.team-carousel__viewport::-webkit-scrollbar-thumb { background: rgb(238 224 197 / .65); border-radius: 999px; }
 .team-carousel__viewport:active { cursor: grabbing; }
 .team-track {
   gap: clamp(18px, 2.6vw, 38px);
@@ -1870,4 +1872,149 @@ p, button, input, select, textarea, .action-link, .primary-button,
 @media (prefers-reduced-motion: reduce) {
   .photo-carousel__slide img,
   .home-cuisine__actions .menu-viewer__trigger { transition:none; }
+}
+
+/* Brandbook-led restaurant story and full-width venue figures. */
+.home-story {
+  display:grid;
+  grid-template-columns:minmax(300px, .82fr) minmax(0, 1.18fr);
+  align-items:stretch;
+  gap:clamp(32px, 6vw, 110px);
+  max-width:1280px;
+  margin-inline:auto;
+  overflow:visible;
+}
+.home-story::before { display:none; }
+.home-story__media {
+  position:relative;
+  min-height:clamp(360px, 34vw, 510px);
+  overflow:hidden;
+  border:1px solid rgb(238 224 197 / .42);
+  border-radius:2px;
+}
+.home-story__media::after {
+  position:absolute;
+  inset:auto 0 0;
+  height:34%;
+  background:linear-gradient(transparent, rgb(19 3 0 / .42));
+  content:'';
+  pointer-events:none;
+}
+.home-story__media img {
+  width:100%;
+  max-width:none;
+  height:100%;
+  min-height:0;
+  aspect-ratio:auto;
+  border-radius:0;
+  object-fit:cover;
+}
+.home-story__content {
+  position:relative;
+  display:flex;
+  align-items:center;
+  min-height:clamp(360px, 34vw, 510px);
+  overflow:hidden;
+  border-top:1px solid rgb(238 224 197 / .6);
+  border-bottom:1px solid rgb(238 224 197 / .28);
+}
+.home-story__route {
+  position:absolute;
+  z-index:0;
+  right:-36%;
+  bottom:-16%;
+  width:142%;
+  max-width:none;
+  height:auto;
+  opacity:.26;
+  pointer-events:none;
+  user-select:none;
+}
+.home-story__copy {
+  position:relative;
+  z-index:1;
+  max-width:640px;
+  padding:clamp(34px, 5vw, 76px) 0;
+}
+.home-story h2 {
+  max-width:13ch;
+  margin:0 0 26px;
+  font-size:clamp(34px, 3.7vw, 62px) !important;
+  line-height:1.01;
+}
+.home-story p {
+  max-width:52ch;
+  margin:0 0 16px;
+  color:rgb(238 224 197 / .88);
+}
+.home-story p:last-child { margin-bottom:0; }
+
+.home-venue__facts {
+  position:relative;
+  width:100vw;
+  max-width:none;
+  margin:42px calc(50% - 50vw) 38px;
+  padding-inline:clamp(22px, 9vw, 150px);
+  overflow:hidden;
+  background:rgb(19 3 0 / .16);
+}
+.home-venue__facts::before {
+  position:absolute;
+  inset:0;
+  background:url('/kaifin/images/brand/kaifyn-route-mark.png') center 51% / min(1550px, 104vw) auto no-repeat;
+  content:'';
+  opacity:.14;
+  pointer-events:none;
+}
+.home-venue__facts div {
+  position:relative;
+  z-index:1;
+  padding:clamp(28px, 3vw, 48px) clamp(12px, 3vw, 48px);
+}
+.home-venue__facts strong {
+  color:var(--brand-cream);
+  font-size:clamp(42px, 5vw, 74px);
+  font-weight:700;
+  letter-spacing:-.075em;
+}
+.home-venue__facts span {
+  max-width:16ch;
+  margin:10px auto 0;
+  color:rgb(238 224 197 / .82);
+  font-size:clamp(13px, 1.3vw, 18px);
+  line-height:1.25;
+}
+
+@media (max-width:700px) {
+  .home-story {
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+  .home-story__media {
+    min-height:0;
+    aspect-ratio:4 / 3;
+  }
+  .home-story__content {
+    min-height:0;
+    border-bottom-color:rgb(238 224 197 / .45);
+  }
+  .home-story__route {
+    right:-48%;
+    bottom:-36%;
+    width:156%;
+    opacity:.22;
+  }
+  .home-story__copy { padding:30px 0 38px; }
+  .home-story h2 { max-width:15ch; font-size:clamp(32px, 10vw, 48px) !important; }
+  .home-story p { font-size:16px !important; }
+  .home-venue__facts {
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    margin-top:30px;
+    margin-bottom:28px;
+    padding-inline:12px;
+  }
+  .home-venue__facts div { padding:22px 7px; }
+  .home-venue__facts div + div { border-top:0; border-left:1px solid var(--line); }
+  .home-venue__facts strong { font-size:clamp(32px, 10vw, 42px); }
+  .home-venue__facts span { margin-top:7px; font-size:12px; }
 }
