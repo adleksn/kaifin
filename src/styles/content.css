@@ -2257,3 +2257,92 @@ p, button, input, select, textarea, .action-link, .primary-button,
   .banquet-request::before,
   .loyalty-program-hero::before { background-size:180% auto; opacity:.12; }
 }
+
+/* Brandbook placement corrections: each supplied element is kept in its
+   intended horizontal reading direction and remains visibly present. */
+.site-header::before {
+  inset:-700% -14%;
+  background-image:url('/kaifin/images/brand/kaifyn-element-01.png');
+  background-position:center;
+  background-size:100% auto;
+  opacity:.30;
+  transform:rotate(90deg) scale(1.08);
+}
+.site-footer::before {
+  inset:-210% -10%;
+  background-image:url('/kaifin/images/brand/kaifyn-element-02.png');
+  background-position:center;
+  background-size:100% auto;
+  opacity:.24;
+  transform:rotate(90deg) scale(1.08);
+}
+
+.home-hero__content {
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+}
+.home-hero__content::before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:-155% -15%;
+  pointer-events:none;
+  background:url('/kaifin/images/brand/kaifyn-element-03.png') center / 100% auto no-repeat;
+  opacity:.19;
+  transform:rotate(90deg) scale(1.1);
+}
+
+/* 06, 07 and 04 are horizontal source elements from the brandbook. */
+.banquet-hero::before {
+  inset:-16% -4%;
+  background-image:url('/kaifin/images/brand/kaifyn-element-06.png');
+  background-position:center;
+  background-size:100% auto;
+  opacity:.31;
+  transform:rotate(180deg) scale(1.08);
+}
+.banquet-request::before {
+  inset:-12% -4%;
+  background-image:url('/kaifin/images/brand/kaifyn-element-07.png');
+  background-position:center;
+  background-size:100% auto;
+  opacity:.26;
+  transform:rotate(180deg) scale(1.08);
+}
+.loyalty-program-hero::before {
+  inset:-20% -6%;
+  background-image:url('/kaifin/images/brand/kaifyn-element-04.png');
+  background-position:center;
+  background-size:100% auto;
+  opacity:.22;
+  transform:rotate(180deg) scale(1.08);
+}
+
+.loyalty-modal {
+  isolation:isolate;
+  overflow:hidden;
+}
+.loyalty-modal::before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:-34% -18%;
+  pointer-events:none;
+  background:url('/kaifin/images/brand/kaifyn-element-04.png') center / 120% auto no-repeat;
+  opacity:.16;
+  transform:rotate(180deg) scale(1.1);
+}
+.loyalty-modal > * { position:relative; z-index:1; }
+.loyalty-modal__label { margin-left:62px; }
+
+@media (max-width:700px) {
+  .site-header::before { inset:-900% -46%; opacity:.24; }
+  .site-footer::before { inset:-260% -46%; opacity:.20; }
+  .home-hero__content::before { inset:-160% -72%; opacity:.15; }
+  .banquet-hero::before,
+  .banquet-request::before,
+  .loyalty-program-hero::before { background-size:145% auto; opacity:.20; }
+  .loyalty-modal::before { background-size:170% auto; opacity:.13; }
+  .loyalty-modal__label { margin-left:58px; }
+}
