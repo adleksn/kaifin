@@ -1877,17 +1877,21 @@ p, button, input, select, textarea, .action-link, .primary-button,
 /* Brandbook-led restaurant story and full-width venue figures. */
 .home-story {
   display:grid;
-  grid-template-columns:minmax(300px, .82fr) minmax(0, 1.18fr);
+  grid-template-columns:minmax(300px, 480px) minmax(0, 640px);
   align-items:stretch;
+  justify-content:center;
   gap:clamp(32px, 6vw, 110px);
-  max-width:1280px;
-  margin-inline:auto;
+  margin-inline:0;
   overflow:visible;
+  background:
+    linear-gradient(rgb(136 51 35 / .28), rgb(136 51 35 / .54)),
+    url('/kaifin/images/brand/kaifyn-brand-background-story.png') 50% 48% / cover;
 }
 .home-story::before { display:none; }
 .home-story__media {
   position:relative;
-  min-height:clamp(360px, 34vw, 510px);
+  min-height:0;
+  aspect-ratio:1;
   overflow:hidden;
   border:1px solid rgb(238 224 197 / .42);
   border-radius:2px;
@@ -1913,22 +1917,10 @@ p, button, input, select, textarea, .action-link, .primary-button,
   position:relative;
   display:flex;
   align-items:center;
-  min-height:clamp(360px, 34vw, 510px);
+  min-height:0;
   overflow:hidden;
   border-top:1px solid rgb(238 224 197 / .6);
   border-bottom:1px solid rgb(238 224 197 / .28);
-}
-.home-story__route {
-  position:absolute;
-  z-index:0;
-  right:-36%;
-  bottom:-16%;
-  width:142%;
-  max-width:none;
-  height:auto;
-  opacity:.26;
-  pointer-events:none;
-  user-select:none;
 }
 .home-story__copy {
   position:relative;
@@ -1956,14 +1948,16 @@ p, button, input, select, textarea, .action-link, .primary-button,
   margin:42px calc(50% - 50vw) 38px;
   padding-inline:clamp(22px, 9vw, 150px);
   overflow:hidden;
-  background:rgb(19 3 0 / .16);
+  background:
+    linear-gradient(rgb(19 3 0 / .14), rgb(19 3 0 / .22)),
+    url('/kaifin/images/brand/kaifyn-brand-background-venue.png') center / cover;
 }
 .home-venue__facts::before {
   position:absolute;
   inset:0;
   background:url('/kaifin/images/brand/kaifyn-route-mark.png') center 51% / min(1550px, 104vw) auto no-repeat;
   content:'';
-  opacity:.14;
+  opacity:.09;
   pointer-events:none;
 }
 .home-venue__facts div {
@@ -1992,17 +1986,11 @@ p, button, input, select, textarea, .action-link, .primary-button,
   }
   .home-story__media {
     min-height:0;
-    aspect-ratio:4 / 3;
+    aspect-ratio:1;
   }
   .home-story__content {
     min-height:0;
     border-bottom-color:rgb(238 224 197 / .45);
-  }
-  .home-story__route {
-    right:-48%;
-    bottom:-36%;
-    width:156%;
-    opacity:.22;
   }
   .home-story__copy { padding:30px 0 38px; }
   .home-story h2 { max-width:15ch; font-size:clamp(32px, 10vw, 48px) !important; }
