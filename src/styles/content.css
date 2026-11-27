@@ -2366,6 +2366,15 @@ body:has(.banquet-hero) { overflow-x:clip; }
   .home-venue__facts div { padding:18px 7px; }
 }
 
+/* On wide screens the first visual needs a small breathing margin instead of
+   spanning edge to edge. The mobile composition stays untouched. */
+@media (min-width:901px) {
+  .hero-artwork {
+    width:min(calc(100% - clamp(32px, 4vw, 88px)), 2300px);
+    margin-inline:auto;
+  }
+}
+
 @media (max-width:700px) {
   .site-header::before { inset:-900% -46%; opacity:.24; }
   .site-footer::before { inset:-260% -46%; opacity:.20; }
