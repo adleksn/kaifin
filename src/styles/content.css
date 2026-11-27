@@ -1731,3 +1731,143 @@ p, button, input, select, textarea, .action-link, .primary-button,
 .pswp__menu-page-jump button:hover, .pswp__menu-page-jump button:focus-visible { background:var(--amber); color:var(--ink); }
 .pswp__menu-page-jump button[type='button'] { display:grid; width:38px; padding:0; place-items:center; border-radius:50%; font-size:20px; }
 @media (max-width:700px) { .pswp__top-bar { padding:calc(env(safe-area-inset-top) + 8px) 8px 8px; }.pswp__button--arrow--prev, .pswp__button--arrow--next { margin:0 4px; }.pswp__menu-page-indicator { bottom:calc(env(safe-area-inset-bottom) + 12px); }.pswp__menu-page-jump { bottom:calc(env(safe-area-inset-bottom) + 60px); width:calc(100% - 32px); justify-content:center; }.pswp__menu-page-jump label { flex:1; justify-content:space-between; }.pswp__menu-page-jump input { width:64px; } }
+
+/* Brandbook composition pass: quiet hierarchy, one visual focus per section. */
+:where(body, button, input, select, textarea, .action-link, .primary-button, .site-header, .site-footer) {
+  font-family:'Kaifyn Inter', Inter, Arial, sans-serif;
+}
+
+.home-hero .hero-actions a:hover,
+.home-hero .hero-actions a:focus-visible {
+  background:var(--brand-cream) !important;
+  border-color:var(--brand-cream) !important;
+  color:var(--brand-red) !important;
+}
+
+.home-section {
+  padding-top:clamp(56px, 6vw, 88px);
+  padding-bottom:clamp(64px, 7vw, 96px);
+}
+.home-section__heading { max-width:720px; margin-bottom:30px; }
+.home-section__heading h2,
+.home-story h2,
+.hall-gallery__heading h2,
+.banquet-menu-viewer__heading h2 {
+  font-family:'Kaifyn Inter', Inter, Arial, sans-serif !important;
+  font-size:clamp(30px, 3.5vw, 48px) !important;
+  font-weight:700;
+  letter-spacing:-.055em;
+  line-height:1.06;
+}
+.home-section p,
+.home-story p,
+.home-section__heading p {
+  max-width:62ch;
+  font-size:clamp(16px, 1.25vw, 18px) !important;
+  line-height:1.6;
+}
+
+.home-story {
+  position:relative;
+  isolation:isolate;
+  grid-template-columns:minmax(240px, 360px) minmax(0, 590px);
+  justify-content:center;
+  gap:clamp(28px, 5vw, 72px);
+  overflow:hidden;
+}
+.home-story::before {
+  position:absolute;
+  z-index:-1;
+  right:-20vw;
+  bottom:-5%;
+  width:min(920px, 70vw);
+  height:76%;
+  background:url('/kaifin/images/brand/kaifyn-route-mark.png') center / contain no-repeat;
+  content:'';
+  opacity:.08;
+  pointer-events:none;
+}
+.home-story img {
+  width:100%;
+  max-width:360px;
+  aspect-ratio:4 / 3;
+  border-radius:10px;
+}
+.home-story h2 { max-width:18ch; margin:0 0 22px; }
+.home-story p { margin:0 0 14px; }
+
+.home-cuisine,
+.home-venue { border-top-color:rgb(238 224 197 / .22); }
+.home-cuisine .photo-carousel__slide {
+  flex-basis:clamp(240px, 29vw, 390px);
+  height:clamp(210px, 25vw, 330px);
+  border-radius:10px !important;
+}
+.home-cuisine .photo-carousel__track,
+.home-venue__gallery .photo-carousel__track { gap:12px; }
+.home-venue__gallery .photo-carousel__slide {
+  flex-basis:clamp(250px, 32vw, 440px);
+  height:clamp(220px, 27vw, 360px);
+  border-radius:10px !important;
+}
+.photo-carousel__controls { margin-top:12px; }
+.photo-carousel__controls button {
+  width:40px;
+  height:40px;
+  border-color:rgb(238 224 197 / .6);
+  font-size:19px;
+}
+.home-cuisine__actions { gap:12px; margin-top:22px; }
+.home-cuisine__actions .menu-viewer__trigger {
+  min-height:42px;
+  padding:10px 16px;
+  font-family:'Kaifyn Inter', Inter, Arial, sans-serif;
+  font-size:14px;
+}
+.home-venue__facts { max-width:760px; margin-bottom:28px; }
+.home-venue__facts div { padding:18px 16px; }
+.home-venue__facts strong { font-family:'Kaifyn Inter', Inter, Arial, sans-serif; font-size:clamp(30px, 3vw, 42px); letter-spacing:-.05em; }
+.home-venue__facts span { margin-top:5px; font-size:14px; }
+
+.hall-gallery { padding-top:clamp(54px, 6vw, 80px); padding-bottom:0; }
+.hall-gallery__heading { margin-bottom:20px; }
+.hall-gallery .photo-carousel__slide {
+  flex-basis:clamp(280px, 38vw, 520px);
+  height:clamp(220px, 28vw, 370px);
+  border-radius:10px !important;
+}
+.banquet-menu-viewer { padding-top:clamp(56px, 6vw, 80px); padding-bottom:clamp(64px, 7vw, 96px); }
+
+.loyalty-program-visual {
+  background:var(--brand-red) !important;
+  padding:clamp(40px, 5vw, 72px) clamp(20px, 6vw, 120px);
+}
+.loyalty-program-visual img { max-width:1240px; }
+
+@media (max-width:700px) {
+  .home-section { padding-top:52px; padding-bottom:62px; }
+  .home-section__heading { margin-bottom:24px; }
+  .home-story { grid-template-columns:1fr; gap:24px; }
+  .home-story img { max-width:330px; }
+  .home-story > div { order:0; }
+  .home-story h2 { margin-bottom:16px; }
+  .home-story::before { right:-75%; bottom:-1%; width:170vw; height:58%; opacity:.07; }
+  .home-cuisine .photo-carousel__slide,
+  .home-venue__gallery .photo-carousel__slide,
+  .hall-gallery .photo-carousel__slide {
+    flex-basis:calc(100vw - 72px);
+    height:clamp(200px, 62vw, 290px);
+  }
+  .home-cuisine__actions { gap:10px; }
+  .home-cuisine__actions .menu-viewer { flex:1 1 calc(50% - 5px); }
+  .home-cuisine__actions .menu-viewer__trigger { min-height:40px; padding:10px 8px; font-size:13px; }
+  .home-venue__facts { margin-bottom:22px; }
+  .home-venue__facts div { padding:16px 12px; }
+  .home-venue__facts strong { font-size:30px; }
+  .hall-gallery { padding-top:52px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-carousel__slide img,
+  .home-cuisine__actions .menu-viewer__trigger { transition:none; }
+}

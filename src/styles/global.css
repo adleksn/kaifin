@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@font-face {
+  font-family: 'Kaifyn Inter';
+  src: url('/kaifin/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
 
 @font-face {
   font-family: 'Chinese Restaurant';
@@ -24,18 +30,19 @@
   font-display: swap;
 }
 
-:root { --brand-cream:#eee0c5; --brand-red:#883323; --brand-olive:#7a664c; --ink:var(--brand-red); --ink-soft:var(--brand-red); --paper:var(--brand-cream); --olive:var(--brand-olive); --amber:var(--brand-cream); --red:var(--brand-red); --line:rgb(238 224 197 / .36); --corner-radius:10px; font-family:Inter, Arial, sans-serif; color:var(--paper); background:var(--ink); }
+:root { --brand-cream:#eee0c5; --brand-red:#883323; --brand-olive:#7a664c; --ink:var(--brand-red); --ink-soft:var(--brand-red); --paper:var(--brand-cream); --olive:var(--brand-olive); --amber:var(--brand-cream); --red:var(--brand-red); --line:rgb(238 224 197 / .36); --corner-radius:10px; font-family:'Kaifyn Inter', Inter, Arial, sans-serif; color:var(--paper); background:var(--ink); }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { margin:0; background:var(--ink); }
-body, button, input, select, textarea, option { font-family:Inter, Arial, sans-serif; }
+body, button, input, select, textarea, option { font-family:'Kaifyn Inter', Inter, Arial, sans-serif; }
 a { color:inherit; text-decoration:none; }
 a:focus-visible, button:focus-visible { outline:2px solid var(--amber); outline-offset:3px; }
-h1, h2, h3, h4, h5, h6 { font-family:Inter, Arial, sans-serif !important; font-weight:700; }
+h1, h2, h3, h4, h5, h6 { font-family:'Kaifyn Inter', Inter, Arial, sans-serif !important; font-weight:700; }
 
 .site-header { position:absolute; z-index:3; top:0; width:100%; height:88px; display:flex; align-items:center; justify-content:space-between; padding:0 clamp(22px,4.6vw,72px); border-bottom:1px solid var(--line); text-transform:uppercase; letter-spacing:.025em; font-size:11px; }
-.wordmark { font:800 24px/1 Inter, Arial, sans-serif; letter-spacing:-.055em; }
-.site-header nav { display:flex; gap:clamp(13px,1.9vw,30px); font-family:Inter, Arial, sans-serif; }
+.wordmark { display:inline-flex; align-items:center; width:142px; height:34px; overflow:hidden; }
+.wordmark__logo { display:block; width:142px; height:142px; max-width:none; object-fit:cover; object-position:center 86%; filter:brightness(0) saturate(100%) invert(92%) sepia(19%) saturate(614%) hue-rotate(344deg) brightness(99%) contrast(90%); }
+.site-header nav { display:flex; gap:clamp(13px,1.9vw,30px); font-family:'Kaifyn Inter', Inter, Arial, sans-serif; }
 .site-header nav button { border:0; padding:0; background:transparent; color:inherit; font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer; }
 .site-header nav a:hover, .site-header nav a:focus-visible { color:var(--amber); }
 .site-header__actions { display:flex; align-items:center; gap:16px; }

@@ -7,7 +7,7 @@ const restaurantHref = currentPath === withBase('/') ? '#about' : withBase('/#ab
 const menuHref = currentPath === withBase('/') ? '#cuisine' : withBase('/#cuisine');
 ---
 <header class="site-header">
-  <a class="wordmark" href={withBase('/')} aria-label="Кайфын — главная">КАЙФЫН</a>
+  <a class="wordmark" href={withBase('/')} aria-label="Кайфын — главная"><img class="wordmark__logo" src={withBase('/images/brand/kaifyn-official-wordmark.png')} alt="Кайфын" /></a>
   <nav class="site-header__nav" aria-label="Основная навигация"><a href={restaurantHref}>Ресторан</a><a href={menuHref}>Меню</a>{links.slice(1).map((link) => <a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>{link.label}</a>)}</nav>
   <div class="site-header__actions">
     <button type="button" class="header-book restoplace-click-open">Забронировать</button>
