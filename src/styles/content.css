@@ -2127,3 +2127,133 @@ p, button, input, select, textarea, .action-link, .primary-button,
   .home-story__eyebrow { margin-bottom:14px !important; font-size:10px !important; }
   .home-story__eyebrow::before { width:32px; }
 }
+
+/* Official brand elements: quiet, full-bleed background layers preserve the
+   content's contrast while carrying the visual language of the Silk Road. */
+.site-header,
+.site-footer,
+.home-story,
+.home-venue__facts,
+.banquet-hero,
+.banquet-request,
+.loyalty-program-hero {
+  isolation:isolate;
+  overflow:hidden;
+}
+.site-footer,
+.home-story,
+.home-venue__facts,
+.banquet-hero,
+.banquet-request,
+.loyalty-program-hero { position:relative; }
+
+.site-header::before,
+.site-footer::before,
+.home-story::before,
+.home-venue__facts::before,
+.banquet-hero::before,
+.banquet-request::before,
+.loyalty-program-hero::before {
+  content:"";
+  position:absolute;
+  z-index:0;
+  pointer-events:none;
+  background-repeat:no-repeat;
+}
+
+/* Elements 01 and 02 — a reversed route running across the full chrome. */
+.site-header::before,
+.site-footer::before {
+  inset:0;
+  background-image:url('/kaifin/images/brand/kaifyn-route-mark.png');
+  background-position:center;
+  background-size:112% auto;
+  opacity:.12;
+  transform:rotate(180deg) scale(1.08);
+}
+.site-header > *,
+.site-footer > * { position:relative; z-index:1; }
+
+/* The route in the story and space sections flows from edge to edge. */
+.home-story::before {
+  display:block;
+  inset:0;
+  background-image:url('/kaifin/images/brand/kaifyn-route-mark.png');
+  background-position:center;
+  background-size:120% auto;
+  opacity:.10;
+  transform:rotate(180deg) scale(1.06);
+}
+.home-story__media,
+.home-story__content { position:relative; z-index:1; }
+.home-story__content::before { opacity:0; }
+.home-story__media {
+  overflow:hidden;
+  border-radius:clamp(18px, 2vw, 28px);
+}
+.home-story__media img { border-radius:inherit; }
+
+.home-venue__facts::before {
+  inset:-22% -5%;
+  background-image:url('/kaifin/images/brand/kaifyn-route-mark.png');
+  background-position:center;
+  background-size:110% auto;
+  opacity:.12;
+  transform:rotate(180deg);
+}
+.home-venue__facts div { position:relative; z-index:1; }
+
+/* Element 06 supports the banquet introduction; element 07 the request form. */
+.banquet-hero::before {
+  inset:-36% -6%;
+  background-image:url('/kaifin/images/brand/kaifyn-element-06.png');
+  background-position:center 44%;
+  background-size:100% auto;
+  opacity:.15;
+  transform:rotate(180deg);
+}
+.banquet-request::before {
+  inset:-32% -8%;
+  background-image:url('/kaifin/images/brand/kaifyn-element-07.png');
+  background-position:center 52%;
+  background-size:100% auto;
+  opacity:.13;
+  transform:rotate(180deg);
+}
+.banquet-hero > *,
+.banquet-request > * { position:relative; z-index:1; }
+
+/* Element 04 belongs to the loyalty-program introduction. */
+.loyalty-program-hero::before {
+  inset:-42% -8%;
+  background-image:url('/kaifin/images/brand/kaifyn-element-04.png');
+  background-position:center 48%;
+  background-size:100% auto;
+  opacity:.14;
+}
+.loyalty-program-hero > * { position:relative; z-index:1; }
+
+/* The levels visual deliberately spans the complete viewport, not a narrow card. */
+.loyalty-program-visual {
+  width:100vw;
+  max-width:none;
+  margin-inline:calc(50% - 50vw);
+  padding:0;
+  overflow:hidden;
+}
+.loyalty-program-visual img {
+  display:block;
+  width:100%;
+  max-width:none;
+  height:auto;
+}
+
+@media (max-width:700px) {
+  .site-header::before,
+  .site-footer::before { background-size:190% auto; opacity:.1; }
+  .home-story::before { background-size:220% auto; opacity:.08; }
+  .home-venue__facts::before { inset:-8% -50%; background-size:220% auto; opacity:.09; }
+  .banquet-hero::before,
+  .banquet-request::before,
+  .loyalty-program-hero::before { background-size:180% auto; opacity:.12; }
+}
