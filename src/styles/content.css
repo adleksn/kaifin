@@ -2331,10 +2331,10 @@ p, button, input, select, textarea, .action-link, .primary-button,
   z-index:0;
   inset:-18% -8%;
   pointer-events:none;
-  /* Match the route element used in the «Пространство» block. */
-  background:url('/kaifin/images/brand/kaifyn-route-mark.png') center / 116% auto no-repeat;
-  opacity:.15;
-  transform:rotate(180deg);
+  /* Reuse the textured brand field from the 200 / 500 / 2 fact strip. */
+  background:url('/kaifin/images/brand/kaifyn-brand-background-venue.png') center / cover no-repeat;
+  opacity:.28;
+  transform:none;
 }
 .loyalty-modal > * { position:relative; z-index:1; }
 .loyalty-modal .modal-close {
@@ -2359,6 +2359,12 @@ p, button, input, select, textarea, .action-link, .primary-button,
    must not create a horizontal document scrollbar. */
 html:has(.banquet-hero),
 body:has(.banquet-hero) { overflow-x:clip; }
+
+/* Keep the venue facts full-bleed, while tightening their vertical rhythm. */
+.home-venue__facts div { padding:clamp(20px, 2.2vw, 34px) clamp(12px, 3vw, 48px); }
+@media (max-width:700px) {
+  .home-venue__facts div { padding:18px 7px; }
+}
 
 @media (max-width:700px) {
   .site-header::before { inset:-900% -46%; opacity:.24; }
