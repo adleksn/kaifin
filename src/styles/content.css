@@ -2359,6 +2359,10 @@ p, button, input, select, textarea, .action-link, .primary-button,
    its height to the header/footer — never its left or right edge. */
 .site-header::before,
 .site-footer::before {
+  /* Reset the earlier percentage-based inset before sizing the artwork.
+     Only this decorative layer is full-bleed; the header/footer themselves
+     retain their normal layout width and never move the navigation. */
+  inset:auto;
   top:50%;
   right:auto;
   bottom:auto;
@@ -2370,13 +2374,13 @@ p, button, input, select, textarea, .action-link, .primary-button,
   transform:translate(-50%, -50%) rotate(90deg);
 }
 .site-header {
-  left:50%;
-  width:100vw;
-  transform:translateX(-50%);
+  left:0;
+  width:100%;
+  transform:none;
 }
 .site-footer {
-  width:100vw;
-  margin-left:calc(50% - 50vw);
+  width:100%;
+  margin-left:0;
 }
 
 /* The story copy now uses the available column instead of a narrow card. */
